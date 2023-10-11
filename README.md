@@ -37,10 +37,10 @@ Untuk mewujudkan hal tersebut, kami membuat beberapa modul yang dapat mendukung 
 Selain itu, akan ada beberapa *role* yang ada di dalam pembuatan aplikasi kami.
 
 * Guest 
-Guest hanya diberikan izin untuk mengakses dan menavigasi dalam homepage situs web tanpa hak akses atau izin lebih lanjut untuk menjelajahi, mengedit, atau mengakses fitur, halaman, atau konten lain yang ada.
+Guest merupakan pengguna yang tidak melakukan registrasi/login. Secara singkat, _priviledge_ yang dimiliki oleh Guset hanya untuk mengakses dan menavigasi dalam homepage situs web tanpa hak akses atau izin lebih lanjut untuk menjelajahi, mengedit, atau mengakses fitur, halaman, atau konten lain yang ada.
 
 * User
-Peran dari user adalah sama seperti pelanggan/pengguna biasa yang mengunjungi Sobaca. **User** dapat melakukan registrasi serta autentikasi profil **User**. Selain itu, ia juga mendapatkan akses ke mayoritas fitur yang dimiliki Sobaca seperti pencarian buku, mengulas buku, menambahkan buku ke dalam rak buku user, dan mengakses rincian buku yang tersedia di Sobaca. 
+User adalah pengguna aplikasi yang telah melakukan registrasi/login. **User** dapat melakukan registrasi serta autentikasi profil **User**. Selain itu, ia juga mendapatkan akses ke mayoritas fitur yang dimiliki Sobaca seperti pencarian buku, mengulas buku, menambahkan buku ke dalam rak buku user, dan mengakses rincian buku yang tersedia di Sobaca. Suatu user juga memiliki rak buku sendiri, yang dapat ia isi dengan buku yang sedang dia baca, sudah selesai baca, atau sedang ingin dibaca.
 
 * Admin
 Peran dari admin adalah sebagai pengatur dan penanggung-jawab dari aplikasi Sobaca. Ia memiliki peran dan tanggung jawab meng-update katalog buku yang ada di Sobaca dari dataset yang digunakan lengkap dengan data-datanya, serta otentikasi dan otorisasi akses yang didapatkan oleh **User**.
