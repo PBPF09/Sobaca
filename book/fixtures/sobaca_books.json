@@ -1,0 +1,1402 @@
+[
+  {
+    "pk": 1,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0679425608",
+      "title": "Under the Black Flag: The Romance and the Reality of Life Among the Pirates",
+      "categories": "['History']",
+      "author": "David Cordingly",
+      "year": 1996,
+      "publisher": "Random House",
+      "description": "This is the most authoritative and highly literate account of these pernicious people that I have ever read.”—Patrick O'Brian “[A] wonderfully entertaining history of pirates and piracy . . . a rip-roaring read . . . fascinating and unexpected.”—Men's Journal This rollicking account of the golden age of piracy is packed with vivid history and high seas adventure. David Cordingly, an acclaimed expert on pirates, reveals the spellbinding truth behind the legends of Blackbeard, Captain Kidd, Sir Francis Drake, the fierce female brigands Mary Read and Anne Bonny, and others who rode and robbed upon the world's most dangerous waters. Here, in thrilling detail, are the weapons they used, the ships they sailed, and the ways they fought—and were defeated. Under the Black Flag also charts the paths of fictional pirates such as Captain Hook and Long John Silver. The definitive resource on the subject, this book is as captivating as it is supremely entertaining. Praise for Under the Black Flag “[A] lively history . . . If you've ever been seduced by the myth of the cutlass-wielding pirate, consider David Cordingly's Under the Black Flag.”—USA Today, “Best Bets” “Engagingly told . . . a tale of the power of imaginative literature to re-create the past.”—Los Angeles Times “Entirely engaging and informative . . . a witty and spirited book.”—The Washington Post Book World “Plenty of thrills and adventure to satisfy any reader.”—The Philadelphia Inquirer",
+      "images": "http://books.google.com/books/content?id=fnoi6SM1u5cC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "book.book",
+    "fields": {
+      "isbn": 1552041778,
+      "title": "Jane Doe",
+      "categories": "['Fiction']",
+      "author": "R. J. Kaiser",
+      "year": 1999,
+      "publisher": "Lake Union Publishing",
+      "description": "A double life with a single purpose: revenge. Jane's days at a Midwest insurance company are perfectly ordinary. She blends in well, unremarkably pretty in her floral-print dresses and extra efficient at her low-level job. She's just the kind of woman middle manager Steven Hepsworth likes--meek, insecure, and willing to defer to a man. No one has any idea who Jane really is. Least of all Steven. But plain Jane is hiding something. And Steven's bringing out the worst in her. Nothing can distract Jane from going straight for his heart: allowing herself to be seduced into Steven's bed, to insinuate herself into his career and his family, and to expose all his dirty secrets. It's time for Jane to dig out everything that matters to Steven. So she can take it all away. Just as he did to her.",
+      "images": "http://books.google.com/books/content?id=kLf-swEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0613072103",
+      "title": "Airframe",
+      "categories": "['Fiction']",
+      "author": "Michael Crichton",
+      "year": 1999,
+      "publisher": "Random House Digital, Inc.",
+      "description": "A fatal mid-air collision involving a commercial airliner prompts a frantic, desperate investigation into the causes of the accident, in a thriller exploring the issue of safety and security in the aircraft industry.",
+      "images": "http://books.google.com/books/content?id=hy7Vhdjoc2wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0375706062",
+      "title": "Lying Awake",
+      "categories": "['Fiction']",
+      "author": "Mark Salzman",
+      "year": 2001,
+      "publisher": "Vintage",
+      "description": "Mark Salzman's Lying Awake is a finely wrought gem that plumbs the depths of one woman's soul, and in so doing raises salient questions about the power-and price-of faith. Sister John's cloistered life of peace and prayer has been electrified by ever more frequent visions of God's radiance, leading her toward a deep religious ecstasy. Her life and writings have become examples of devotion. Yet her visions are accompanied by shattering headaches that compel Sister John to seek medical help. When her doctor tells her an illness may be responsible for her gift, Sister John faces a wrenching choice: to risk her intimate glimpses of the divine in favor of a cure, or to continue her visions with the knowledge that they might be false-and might even cost her her life.",
+      "images": "http://books.google.com/books/content?id=yd_vw9KXlOYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0060935464",
+      "title": "To Kill a Mockingbird",
+      "categories": "['Drama']",
+      "author": "Harper Lee",
+      "year": 2002,
+      "publisher": "Dramatic Publishing",
+      "description": "Harper Lee's classic novel of a lawyer in the Deep South defending a black man charged with the rape of a white girl. One of the best-loved stories of all time, To Kill a Mockingbird has earned many distinctions since its original publication in 1960. It won the Pulitzer Prize, has been translated into more than forty languages, sold more than thirty million copies worldwide, and been made into an enormously popular movie. Most recently, librarians across the country gave the book the highest of honors by voting it the best novel of the twentieth century.",
+      "images": "http://books.google.com/books/content?id=0NEbHGREK7cC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "book.book",
+    "fields": {
+      "isbn": "038078243X",
+      "title": "Miss Zukas and the Raven's Dance",
+      "categories": "['Fiction']",
+      "author": "Jo Dereske",
+      "year": 1996,
+      "publisher": "Avon",
+      "description": "An Invitation To Murder A most unusual death has landed Helma Zukas right in the middle of another murder scene. Stanley Plummer has been cataloging a collection of Native American books for Bellehaven's new Cultural Center when his body was found in the Center's ladies room -- stabbed through his heart, and clutching a Barbie doll. Miss Zukas is asked by the library to finish the cataloging. Now she's been asked by the victim -- in a letter dated the day he died -- to get to the bottom of the mystery. Unable to resist the urge to dig into the facts, Helma becomes convinced there's something hidden in the Center that the murderer wants -- and it may be worth killing another cataloger to keep it buried. . .",
+      "images": "http://books.google.com/books/content?id=z1HPvjj8GIMC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0451523652",
+      "title": "Pride and Prejudice",
+      "categories": "['Fiction']",
+      "author": "Jane Austen",
+      "year": 1988,
+      "publisher": "Courier Corporation",
+      "description": "In early nineteenth-century England, a spirited young woman copes with the suit of a snobbish gentleman, as well as the romantic entanglements of her four sisters.",
+      "images": "http://books.google.com/books/content?id=xVeMCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0060179341",
+      "title": "Downtown",
+      "categories": "['Fiction']",
+      "author": "Anne Rivers Siddons",
+      "year": 1994,
+      "publisher": "Simon and Schuster",
+      "description": "A NATIONAL BESTSELLER The New York Times bestselling author of Under the Southern Sky and the Peachtree Bluff series brings “her signature wit, charm, and heart” (Woman’s World) to this sweeping new novel following four women across generations, bound by a beautiful wedding veil and a connection to the famous Vanderbilt family. Four women. One family heirloom. A secret connection that will change their lives—and history as they know it. Present Day: Julia Baxter’s wedding veil, bequeathed to her great-grandmother by a mysterious woman on a train in the 1930s, has passed through generations of her family as a symbol of a happy marriage. But on the morning of her wedding day, something tells her that even the veil’s good luck isn’t enough to make her marriage last forever. Overwhelmed and panicked, she escapes to the Virgin Islands to clear her head. Meanwhile, her grandmother Babs is also feeling shaken. Still grieving the death of her beloved husband, she decides to move out of the house they once shared and into a retirement community. Though she hopes it’s a new beginning, she does not expect to run into an old flame, dredging up the same complicated emotions she felt a lifetime ago. 1914: Socialite Edith Vanderbilt is struggling to manage the luxurious Biltmore Estate after the untimely death of her cherished husband. With 250 rooms to oversee and an entire village dependent on her family to stay afloat, Edith is determined to uphold the Vanderbilt legacy—and prepare her free-spirited daughter Cornelia to inherit it—in spite of her family’s deteriorating financial situation. But Cornelia has dreams of her own. Asheville, North Carolina has always been her safe haven away from the prying eyes of the press, but as she explores more of the rapidly changing world around her, she’s torn between upholding tradition and pursuing the exciting future that lies beyond Biltmore’s gilded gates. In the vein of Therese Anne Fowler’s A Well-Behaved Woman and Jennifer Robson’s The Gown, The Wedding Veil brings to vivid life a group of remarkable women forging their own paths—and explores the mystery of a national heirloom lost to time.",
+      "images": "http://books.google.com/books/content?id=bag1EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0671888587",
+      "title": "I'll Be Seeing You",
+      "categories": "['Biography & Autobiography']",
+      "author": "Mary Higgins Clark",
+      "year": 1994,
+      "publisher": "Random House",
+      "description": "The beloved New York Times bestselling author tells the poignant love story of caring for her parents in their final years in this beautifully written memoir. “I’ll Be Seeing You moved me and broadened my understanding of the human condition.”—Wally Lamb, author of I Know This Much Is True Elizabeth Berg’s father was an Army veteran who was a tough man in every way but one: He showed a great deal of love and tenderness to his wife. Berg describes her parents’ marriage as a romance that lasted for nearly seventy years; she grew up watching her father kiss her mother upon leaving home, and kiss her again the instant he came back. His idea of when he should spend time away from her was never. But then Berg’s father developed Alzheimer’s disease, and her parents were forced to leave the home they loved and move into a facility that could offer them help. It was time for the couple’s children to offer, to the best of their abilities, practical advice, emotional support, and direction—to, in effect, parent the people who had for so long parented them. It was a hard transition, mitigated at least by flashes of humor and joy. The mix of emotions on everyone’s part could make every day feel like walking through a minefield. Then came redemption. I’ll Be Seeing You charts the passage from the anguish of loss to the understanding that even in the most fractious times, love can heal, transform, and lead to graceful—and grateful—acceptance.",
+      "images": "http://books.google.com/books/content?id=yr7NDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0099244926",
+      "title": "The Street Lawyer",
+      "categories": "['Fiction']",
+      "author": "John Grisham",
+      "year": 1999,
+      "publisher": "Ginka Opalchenova",
+      "description": "From the author of THE PARTNER, a thriller, in which the rising star of Drake and Sweeney finds that it is better not to have a conscience if he is to obtain a partnership. But a violent encounter changes his whole outlook on life and he begins to dig into the secrets of Drake and Sweeney. An act which could cost him his life.",
+      "images": "http://books.google.com/books/content?id=3cfucLhk8iEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0060914068",
+      "title": "Love, Medicine and Miracles",
+      "categories": "['Health & Fitness']",
+      "author": "M.D. Bernie S. Siegel",
+      "year": 1988,
+      "publisher": "Harper Collins",
+      "description": "Surgeon Bernie S. Siegel gives an inspirational, first-hand account of how patients can participate in their own recovery. Unconditional love is the most powerful stimulant of the immune system. The truth is: love heals. Miracles happen to exceptional patients every day—patients who have the courage to love, those who have the courage to work with their doctors to participate in and influence their own recovery.",
+      "images": "http://books.google.com/books/content?id=gzl-B6pKvRoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0156047624",
+      "title": "All the King's Men",
+      "categories": "['Fiction']",
+      "author": "Robert Penn Warren",
+      "year": 1982,
+      "publisher": "Houghton Mifflin Harcourt",
+      "description": "Willie Stark's obsession with political power leads to the ultimate corruption of his gubernatorial administration.",
+      "images": "http://books.google.com/books/content?id=prTKs7YY11EC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0380715899",
+      "title": "A Soldier of the Great War",
+      "categories": "['Fiction']",
+      "author": "Mark Helprin",
+      "year": 1992,
+      "publisher": "Avon Books",
+      "description": "A Roman student is torn from his carefree life when World War I breaks out, and fifty years later, recounts the triumphs and tragedies of his existence to an illiterate factory worker",
+      "images": "http://books.google.com/books/content?id=KpJ0PwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0525244581",
+      "title": "The Tao of Pooh",
+      "categories": "['Humor']",
+      "author": "Benjamin Hoff",
+      "year": 1982,
+      "publisher": "Penguin Group USA",
+      "description": "An expert in Chinese philosophy explains facets of Taoism using Milne's famous character and explores the world of Winnie-the-Pooh through Tao, characterizing Pooh as a simple bear who subscribes to the principles of successful living",
+      "images": "http://books.google.com/books/content?id=kC4-B8Dg10MC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0425071588",
+      "title": "Starship Troopers",
+      "categories": "['Fiction']",
+      "author": "Robert A. Heinlein",
+      "year": 1984,
+      "publisher": "Penguin",
+      "description": "In a futuristic military adventure a recruit goes through the roughest boot camp in the universe and into battle with the Terran Mobile Infantry in what historians would come to call the First Interstellar War",
+      "images": "http://books.google.com/books/content?id=rmEIDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0375410538",
+      "title": "Anil's Ghost",
+      "categories": "['Fiction']",
+      "author": "MICHAEL ONDAATJE",
+      "year": 2000,
+      "publisher": "Vintage Canada",
+      "description": "Following the phenomenal success of Michael Ondaatje’s Booker Prize-winning third novel, The English Patient, expectations were almost insurmountable. The internationally acclaimed #1 bestseller had made Ondaatje the first Canadian novelist ever to win the Booker. Four years later, in 1996, a motion picture based on the book brought the story to a vast new audience. The film, starring Ralph Fiennes and Juliette Binoche, went on to win numerous prizes, among them nine Academy Awards, including Best Picture. Worldwide English-language sales of the book topped two million copies. But in April 2000, Anil’s Ghost was widely hailed as Ondaatje’s most powerful and engrossing novel to date. Winning a Governor General’s Literary Award for Fiction, the Kiriyama Pacific Rim Book Prize and the Giller Prize, Anil’s Ghost became an international bestseller. “Nowhere has Ondaatje written more beautifully,” said The New York Times Book Review. The setting is Sri Lanka. Steeped in centuries of cultural achievement and tradition, the country has been ravaged in the late twentieth century by bloody civil war. As in The English Patient, Ondaatje’s latest novel follows a woman’s attempt to piece together the lost life of a victim of war. Anil Tissera, born in Sri Lanka but educated in England and the U.S., is sent by an international human rights group to participate in an investigation into suspected mass political murders in her homeland. Working with an archaeologist, she discovers a skeleton whose identity takes Anil on a fascinating journey that involves a riveting mystery. What follows, in a novel rich with character, emotion, and incident, is a story about love and loss, about family, identity and the unknown enemy. And it is a quest to unlock the hidden past – like a handful of soil analyzed by an archaeologist, the story becomes more diffuse the farther we reach into history. A universal tale of the casualties of war, unfolding as a detective story, the book gradually gives way to a more intricate exploration of its characters, a symphony of loss and loneliness haunted by a cast of solitary strangers and ghosts. The atrocities of a seemingly futile, muddled war are juxtaposed against the ancient, complex and ultimately redemptive culture and landscape of Sri Lanka. Anil’s Ghost is Michael Ondaatje's first novel to be set in the country of his birth. “There’s a tendency with us in England and North America to say it’s a book ‘about Sri Lanka.’ But it’s just my take on a few characters, a personal tunnelling into that … The book’s not just about Sri Lanka; it’s a story that’s very familiar in other parts of the world” – in Africa, in Yugoslavia, in South America, in Ireland. “I didn’t want it to be a political tract. I wanted it to be a human study of people in the midst of fear.”",
+      "images": "http://books.google.com/books/content?id=hY0Fj-xqnpsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 17,
+    "model": "book.book",
+    "fields": {
+      "isbn": "087113375X",
+      "title": "Modern Manners: An Etiquette Book for Rude People",
+      "categories": "['Humor']",
+      "author": "P.J. O'Rourke",
+      "year": 1990,
+      "publisher": "Open Road + Grove/Atlantic",
+      "description": "An “extremely funny” take on the decline of civility, from the #1 New York Times–bestselling author of How the Hell Did This Happen? (The Plain Dealer). In Modern Manners, cultural guru P. J. O’Rourke provides the essential accessory for the truly contemporary man or woman—a rulebook for living in a world without rules. Traditionally, good manners were a means of becoming as bland and invisible as everyone else, thus avoiding calling attention to one’s own awkwardness and stupidity. Today, with everyone wanting to appear special, stupidity is at a premium, and manners—as outrageous and bizarre as possible—are a wonderful way to distinguish ourselves, or at least have a fine time trying. This irreverent and hilarious guide to anti-etiquette offers pointed advice on topics from sex and entertaining to reading habits and death. With the most up-to-date forms of vulgarity, churlishness, and presumption, the latest fashions in discourtesy and barbarous display, O’Rourke is our guide to the art of incivility. “Modern Manners is O’Rourke doing what he has always done: making hilarious, insightful, often vicious fun of the world and all its inhabitants.” —People “A reader who rushes through [Modern Manners] from cover to cover—like I did—will feel like a child who has gorged on chocolate cake: happy, but a bit disappointed that it’s all gone. The reason O’Rourke’s book is so successful, however, is not just his great sense of humor. O’Rourke’s writing has a cutting edge behind it, which makes a reader’s laughter just a bit thought-provoking, and just a bit rueful . . . Very funny.” —Chicago Tribune",
+      "images": "http://books.google.com/books/content?id=VGGGGm1QYPgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0340792655",
+      "title": "Turning Thirty",
+      "categories": "['Fiction']",
+      "author": "Mike Gayle",
+      "year": 2001,
+      "publisher": "Simon and Schuster",
+      "description": "What's the big deal? Unlike a lot of people, Matt Beckford is actually looking forward to turning thirty. His twenties really weren't so great...and now he has his love life, his career, his finances -- even his record collection -- pretty much in order, like any good grown-up should. But when, out of the blue, Elaine announces she \"can't do this anymore,\" Matt is left with the prospect of facing the big three-oh alone. Compounding his misery is the fact that he has to move back in with his parents. What's it all about, Alfie? Mum and Dad immediately start driving Matt up the wall, and emails from Elaine and nights out with his old school chum Gershwin aren't enough to snap Matt out of his existential funk. So he decides to track down more old schoolmates and see how they're handling this thirty thing. One by one, he gets in touch with the rest of the magnificent seven -- Pete, Bev, Katrina, Elliot, and Ginny, his former on-off girlfriend -- and soon the old gang is back together. But they're a lot older and a lot has changed and, even if he and Ginny still seem attracted to each other, you can't have an on-off girlfriend when you're thirty. Can you?",
+      "images": "http://books.google.com/books/content?id=a0noq6UZBwoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0316748641",
+      "title": "Pasquale's Nose: Idle Days in an Italian Town",
+      "categories": "['Travel']",
+      "author": "Michael Rips",
+      "year": 2002,
+      "publisher": "Little, Brown",
+      "description": "Everywhere hailed for its quirkiness, its hilarity, its charm, Pasquale's Nose tells the story of a New York City lawyer who runs away to a small Etruscan village with his wife and new baby, and discovers a community of true eccentrics -- warring bean growers, vanishing philosophers, a blind bootmaker, a porcupine hunter -- among whom he feels unexpectedly at home.",
+      "images": "http://books.google.com/books/content?id=LskzjjJz4qYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 20,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0553347594",
+      "title": "McDonald's: Behind the Arches",
+      "categories": "['Business & Economics']",
+      "author": "John F. Love",
+      "year": 1995,
+      "publisher": "Bantam",
+      "description": "Discusses the people, the strategies, and the innovations that turned a hamburger stand into a multi-billion-dollar corporation that revolutionized an industry and influenced the culture of America.",
+      "images": "http://books.google.com/books/content?id=A0bVh37jqOUC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 21,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0312953453",
+      "title": "Blood Oath",
+      "categories": "['Fiction']",
+      "author": "David Morrell",
+      "year": 1994,
+      "publisher": "Penguin",
+      "description": "Zach Barrows is a cocky, ambitious White House employee until he's abruptly transferred out and partnered with Nathaniel Cade, a secret agent sworn to protect the president. But Cade is no ordinary civil servant. Bound 140 years ago by a special blood oath, Nathanial Cade is a vampire. On the orders of the president he defends the nation against enemies far stranger-and even more dangerous-than civilians like Zach could ever imagine.",
+      "images": "http://books.google.com/books/content?id=OGil_o0R3bMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 22,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0446519804",
+      "title": "The Alibi",
+      "categories": "['Fiction']",
+      "author": "Sandra Brown",
+      "year": 1999,
+      "publisher": "Bantam",
+      "description": "Ex-narcotics detective Elena Estes wants nothing more than to live in peace training her horses, but after she finds the body of a young female co-worker, she launches an investigation that leads to the Russian mob and a cadre of Palm Beach bad boys.",
+      "images": "http://books.google.com/books/content?id=ckrxnFaUHx8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 23,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0553802461",
+      "title": "Dead Aim",
+      "categories": "['Fiction']",
+      "author": "IRIS JOHANSEN",
+      "year": 2003,
+      "publisher": "Bantam",
+      "description": "During a gut-wrenching assignment photographing a disaster, photojournalist Alex Graham begins to suspect that the \"natural\" catastrophe had really been a case of premeditated mass murder, but when the former military assassin assigned to protect her reveals his own lethal agenda, Alex finds herself torn between two deadly situations. Reprint.",
+      "images": "http://books.google.com/books/content?id=ljnuEWXdYQEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 24,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0671042858",
+      "title": "The Girl Who Loved Tom Gordon",
+      "categories": "['Fiction']",
+      "author": "Stephen King",
+      "year": 2000,
+      "publisher": "Simon and Schuster",
+      "description": "From international bestseller Stephen King, a classic story that engages our emotions on the most primal level, a fairy tale grimmer than Grimm but aglow with a girl’s indomitable spirit. What if the woods were full of them? And of course they were, the woods were full of everything you didn’t like, everything you were afraid of and instinctively loathed, everything that tried to overwhelm you with nasty, no-brain panic. The brochure promised a “moderate-to-difficult” six-mile hike on the Maine-New Hampshire branch of the Appalachian Trail, where nine-year-old Trisha McFarland was to spend Saturday with her older brother Pete and her recently divorced mother. When she wanders off to escape their constant bickering, then tries to catch up by attempting a shortcut through the woods, Trisha strays deeper into a wilderness full of peril and terror. Especially when night falls. Trisha has only her wits for navigation, only her ingenuity as a defense against the elements, only her courage and faith to withstand her mounting fear. For solace she tunes her Walkman to broadcasts of Boston Red Sox games and the gritty performances of her hero, number thirty-six, relief pitcher Tom Gordon. And when her radio’s reception begins to fade, Trisha imagines that Tom Gordon is with her—her key to surviving an enemy known only by the slaughtered animals and mangled trees in its wake.",
+      "images": "http://books.google.com/books/content?id=8MTqKDAsgpwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 25,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0743249992",
+      "title": "Bringing Down the House: The Inside Story of Six M.I.T. Students Who Took Vegas for Millions",
+      "categories": "['Games']",
+      "author": "Ben Mezrich",
+      "year": 2003,
+      "publisher": "Simon and Schuster",
+      "description": "Recounts the story of how a notorious gang of MIT blackjack savants devised and received backing for a system for winning at the world's most sophisticated casinos, an endeavor that earned them more than three million dollars. Originally published as Bringing Down the House. Reprint. (A Columbia Pictures film, written by Peter Steinfeld & Allan Loeb, directed by Robert Luketic, releasing March 2008, starring Kevin Spacey, Kate Bosworth, Laurence Fishburne, Jim Sturgess, & others) (Current Affairs)",
+      "images": "http://books.google.com/books/content?id=hE8JK3JfKl0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 26,
+    "model": "book.book",
+    "fields": {
+      "isbn": "038001503X",
+      "title": "One Hundred Years of Solitude",
+      "categories": "['Fiction']",
+      "author": "Gabriel Garcia Marquez",
+      "year": 1970,
+      "publisher": "Everyman's Library",
+      "description": "The evolution and eventual decadence of a small South American town is mirrored in the family history of the Buendias.",
+      "images": "http://books.google.com/books/content?id=w0-zUL-87uAC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 27,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0451410319",
+      "title": "Hush",
+      "categories": "['Juvenile Fiction']",
+      "author": "Anne Frasier",
+      "year": 2002,
+      "publisher": "Penguin",
+      "description": "Twelve-year-old Toswiah finds her life changed when her family enters the witness protection program.",
+      "images": "http://books.google.com/books/content?id=4y9nEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 28,
+    "model": "book.book",
+    "fields": {
+      "isbn": "039575514X",
+      "title": "My Antonia",
+      "categories": "['Czech Americans']",
+      "author": "Willa Cather",
+      "year": 1995,
+      "publisher": "Girlebooks",
+      "description": "The story of a frontier family in the Midwest.",
+      "images": "http://books.google.com/books/content?id=aAEzAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 29,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0670880728",
+      "title": "Bridget Jones's Diary",
+      "categories": "['Fiction']",
+      "author": "Helen Fielding",
+      "year": 1998,
+      "publisher": "Penguin",
+      "description": "Chronicles a year in the life of Bridget Jones, a single, thirtysomething woman on a perpetual quest for self-improvement, as she struggles to cope with relationships, weight control, and the other baffling complexities of modern life.",
+      "images": "http://books.google.com/books/content?id=LtNSdRFFRbAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 30,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0553278223",
+      "title": "The Martian Chronicles",
+      "categories": "['Fiction']",
+      "author": "RAY BRADBURY",
+      "year": 1984,
+      "publisher": "Simon and Schuster",
+      "description": "The tranquility of Mars is disrupted by humans who want to conquer space, colonize the planet, and escape a doomed Earth.",
+      "images": "http://books.google.com/books/content?id=HzQXlPS48PQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 31,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0345311396",
+      "title": "Private Screening",
+      "categories": "['Fiction']",
+      "author": "Richard North Patterson",
+      "year": 1994,
+      "publisher": "Open Road Media",
+      "description": "A crackerjack thriller” by the #1 New York Times–bestselling author of Silent Witness: A lawyer defending a Vietnam vet is caught in a kidnapper’s web (Publishers Weekly). All of America is watching when a sniper’s bullet cuts down presidential hopeful James Kilcannon. As the nation rises up in outrage, one lawyer is bold enough to represent the Vietnam veteran accused of firing the fatal shot. Tony Lord has never shied away from a fight, and he will do whatever it takes to get his client a fair trial. A year later, tragedy strikes Kilcannon’s rock-star girlfriend, Stacy Tarrant. Her assistant is kidnapped by a masked terrorist known as Phoenix, who threatens to execute him on live television unless he meets Phoenix’s demands. As Tony helps Stacy through the ordeal, he discovers that Phoenix has connections to the Kilcannon slaying and intends to mount his own televised trial—in which Tony and Stacy are the defendants and Phoenix is the executioner.",
+      "images": "http://books.google.com/books/content?id=36eaBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 32,
+    "model": "book.book",
+    "fields": {
+      "isbn": "038076654X",
+      "title": "Petals on the River",
+      "categories": "['Fiction']",
+      "author": "Kathleen E. Woodiwiss",
+      "year": 1997,
+      "publisher": "Harper Collins",
+      "description": "A proud and spirited woman whose life was stolen from her... A man of secrets accused of a terrible crime... In a place of new beginnings their destinies are joined—in a gloriously romantic new work from the incomparable storyteller. The fiery and outspoken adopted daughter of one of England's most formidable a women, Shemaine O'Hearn has made powerful enemies. And now her adversaries have found a way to remove the hot-blooded beauty from her life of privilege: by falsely convicting Shemaine of thievery and sending her in shackles to America, where she is to be sold in indentured servitude to the highest bidder. In a bustling port city in the colony of Virginia, she becomes the servant of Gage Thornton—a shipbuilder with a young child in need of a nanny. And despite whispered rumors condemning the handsome widower for the untimely death of his wife, Shemaine cannot ignore her desire for this caring, generous and enigmatic stranger who silently aches with his growing need for her—even as grave peril reaches out from across a vast ocean to threaten their flowering love. The fiery and outspoken adopted daughter of one of England's most formidable women, Shemaine O'Hearn has made powerful enemies. And now her adversaries have found a way to remove the hot-blooded beauty from her life of privilege: by falsely convicting Shemaine of thievery and sending her in shackles to America, where she is to be sold in indentured servitude to the highest bidder.",
+      "images": "http://books.google.com/books/content?id=NrSGWEFiRjUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 33,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0440241537",
+      "title": "The King of Torts",
+      "categories": "['Fiction']",
+      "author": "JOHN GRISHAM",
+      "year": 2003,
+      "publisher": "Dell",
+      "description": "Washed-up public defender Clay Carter's latest case, a routine street killing, takes an unexpected turn when he discovers evidence of a conspiracy involving a large drug company and a lawsuit with a huge potential settlement. Reprint. 35,000 first printing.",
+      "images": "http://books.google.com/books/content?id=h1BfDy8N3XoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 34,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0452282152",
+      "title": "Girl with a Pearl Earring",
+      "categories": "['Fiction']",
+      "author": "Tracy Chevalier",
+      "year": 2001,
+      "publisher": "Plume Books",
+      "description": "A poor seventeenth-century servant girl knows her place in the household of the painter Johannes Vermeer, but when he begins to paint her, nasty whispers and rumors circulate throughout the town, in a deluxe edition of the best-selling novel that is enhanced by full-color reproductions of the Vermeer paintings mentioned in the book. Reissue.",
+      "images": "http://books.google.com/books/content?id=x7xrPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 35,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0803251718",
+      "title": "Crazy Horse",
+      "categories": "['History']",
+      "author": "Mari Sandoz",
+      "year": 1961,
+      "publisher": "U of Nebraska Press",
+      "description": "Crazy Horse, the legendary military leader of the Oglala Sioux whose personal power and social nonconformity contributed to his reputation as being ?strange,? fought in many famous battles, including the Little Bighorn, and held out tirelessly against the U.S. government?s efforts to confine the Lakotas to reservations. Finally, in the spring of 1877 he surrendered, only to meet a violent death. More than a century later Crazy Horse continues to hold a special place in the hearts and minds of his people. Mari Sandoz offers a powerful evocation of the long-ago world and enduring spirit of Crazy Horse. Chosen as a 2007 One Book, One Nebraska selection, this edition of Crazy Horse includes discussion questions and a comprehensive glossary to enhance the reader's experience with this classic Sandoz text.",
+      "images": "http://books.google.com/books/content?id=5jwmu_0J_8wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 36,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0670848549",
+      "title": "Secret History",
+      "categories": "['Fiction']",
+      "author": "Donna Tartt",
+      "year": 0,
+      "publisher": "Vintage",
+      "description": "INTERNATIONAL BESTSELLER • A contemporary literary classic and \"an accomplished psychological thriller ... absolutely chilling\" (Village Voice), from the Pulitzer Prize-winning author of The Goldfinch. Under the influence of their charismatic classics professor, a group of clever, eccentric misfits at an elite New England college discover a way of thinking and living that is a world away from the humdrum existence of their contemporaries. But when they go beyond the boundaries of normal morality their lives are changed profoundly and forever, and they discover how hard it can be to truly live and how easy it is to kill.",
+      "images": "http://books.google.com/books/content?id=VO2w8m-ZAeMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 37,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0064472264",
+      "title": "On the Bright Side, I'm Now the Girlfriend of a Sex God: Further Confessions of Georgia Nicolson",
+      "categories": "['Juvenile Fiction']",
+      "author": "Louise Rennison",
+      "year": 2002,
+      "publisher": "Harper Collins",
+      "description": "Georgia Nicolson has started dating the Sex God (aka Robbie). So life should be perfect . . . except in Georgia's life, nothing is ever perfect. Her cat, Angus (the size of a small Labrador), is terrorizing the neighborhood. Her sister, Libby (who is slightly mad), hides her pooey knickers at the bottom of Georgia's bed. Then the Sex God breaks it off because she's too young. It's time for a plan. It's time for a Red Herring. It's time for Georgia to become a \"heartless boy magnet!",
+      "images": "http://books.google.com/books/content?id=teTs3_7tBNwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 38,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0312148267",
+      "title": "The Wind in the Willows",
+      "categories": "['Self-Help']",
+      "author": "Kenneth Grahame",
+      "year": 1996,
+      "publisher": "BEYOND BOOKS HUB",
+      "description": "Since its beginnings as a series of stories told to Kenneth Grahame’s young son, The Wind in the Willows has gone on to become one of the best-loved children’s books of all time. The timeless story of Toad, Rat, Mole, and Badger has delighted readers of all ages for more than eighty years. Friendly Rat, mild-mannered Mole, wise Badger, and kind—but conceited—Toad all live on the banks of the Thames. While Mole and Rat are content to go out in a row boat or travel the roads in a caravan, Toad prefers the excitement of motor cars. He’s already wrecked seven! While his friends try to keep him out of trouble, his passion for cars eventually results in his being caught and kept prisoner in the remotest dungeon of the best-guarded castle in all the land. Somehow, he has to escape and get home but what will he find when he gets there? The Wind in the Willows is a book for those “who keep the spirit of youth alive in them; of life, sunshine, running water, woodlands, dusty roads, winter firesides.” So, wrote Kenneth Grahame of his timeless tale of Rat, Mole, Badger, and Toad.",
+      "images": "http://books.google.com/books/content?id=dKJIEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 39,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0373836023",
+      "title": "Powder and Patch",
+      "categories": "['Fiction']",
+      "author": "Georgette Heyer",
+      "year": 2004,
+      "publisher": "Harlequin",
+      "description": "When Cleone Charteris returns from finishing school, she is determined to find a sophisticated, aristocratic husband, but her childhood friend, Philip Jettan, has other plans for the lovely lady as he launches an amorous campaign to win her hand in marriage. Reprint.",
+      "images": "http://books.google.com/books/content?id=L2xAcyBlglEC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 40,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0553280589",
+      "title": "Eva Luna",
+      "categories": "['Chile']",
+      "author": "Isabel Allende",
+      "year": 1989,
+      "publisher": "Lectorum Publications",
+      "description": "En Eva Luna, su tercera novela, Isabel Allende recupera su país a través de la memoria y de la imaginación. La cautivadora protagonista de este libro es un nostálgico alter ego de la autora, que se llama a sí misma \"ladrona de historias\", precisamente porque en las historias radica el secreto de la vida y del mundo.Como una moderna Scherezade, Eva Luna convierte su vida en una tragicomedia por la que desfila una sorprendente galería de personajes: un embalsamador de cadáveres, una madrina que sobrevive a una decapitación, una mujer con cuerpo de hombre, un fotógrafo austríaco atormentado por los recuerdos del nazismo... Con ternura e impecable factura literaria, Isabel Allende perfila el destino de sus personajes como parte indisoluble del destino colectivo de un continente marcado por el mestizaje, las injusticias sociales y la búsqueda de la propia identidad. Este logrado universo narrativo es el resultado de una lúcida conciencia histórica y social, así como de una propuesta estética que constituye una singular expresión del realismo mágico.",
+      "images": "http://books.google.com/books/content?id=ylMdAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 41,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0684833395",
+      "title": "Catch 22",
+      "categories": "['Fiction']",
+      "author": "Joseph Heller",
+      "year": 1996,
+      "publisher": "Simon and Schuster",
+      "description": "Presents the contemporary classic depicting the struggles of a U.S. airman attempting to survive the lunacy and depravity of a World War II base",
+      "images": "http://books.google.com/books/content?id=Xfze51E7TEoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 42,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0963094424",
+      "title": "Angels and Visitations: A Miscellany",
+      "categories": "['Fiction']",
+      "author": "Neil Gaiman",
+      "year": 1993,
+      "publisher": "Dreamhaven Books",
+      "description": "A miscellany of fiction, humour, non-fiction, poetry, and artwork, Angels & visitations journeys from science fiction and fantasy shorts to detective stories and meticulously-researched literary works.",
+      "images": "http://books.google.com/books/content?id=VG-GRwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 43,
+    "model": "book.book",
+    "fields": {
+      "isbn": "156971620X",
+      "title": "Harlequin Valentine",
+      "categories": "['Comics & Graphic Novels']",
+      "author": "Neil Gaiman",
+      "year": 2002,
+      "publisher": "Dark Horse Comics",
+      "description": "In this modern hardcover retelling of a classic commedia dell'arte legend of tomfoolery and hopeless, fawning love, creators Neil Gaiman (The Sandman, the Newbery Medal-winning The Graveyard Book) and John Bolton (Evil Dead) update the relationship of Harlequin and Columbine. A buffoon burdened with a brimming heart, Harlequin chases his sensible, oblivious Columbine around the city streets, having given his heart freely. Consumed with love, the impulsive clown sees his heart dragged about town, with a charming surprise to bend the tale in a modern direction. Gaiman's writing is poetic and as heartfelt as the subject matter. Bolton's art, a combination of digitally enhanced photorealism and dynamic painting, provides sensational depth with bright characters over fittingly muted backgrounds. Those who have spent Valentine's Day alone are aware that the cold February holiday can be hard to swallow. Gaiman and Bolton want you to know that all it takes is a steak knife, a fork, and a bottle of quality ketchup!",
+      "images": "http://books.google.com/books/content?id=9hyADQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 44,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0375719180",
+      "title": "The Miracle Life of Edgar Mint: A Novel",
+      "categories": "['Fiction']",
+      "author": "Brady Udall",
+      "year": 2002,
+      "publisher": "W. W. Norton & Company",
+      "description": "An ingenious tale [that] takes its heart from Dickens and its soul from America’s great outlaw West.\" —Elle Half Apache and mostly orphaned, Edgar Presley Mint’s trials begin on an Arizona reservation at the age of seven, when the mailman’s jeep accidentally runs over his head. As he is shunted from the hospital to a school for delinquents to a Mormon foster family, comedy, pain, and trouble accompany Edgar through a string of larger-than-life experiences. Through it all, readers will root for this irresistible innocent who never truly loses heart and whose quest for the mailman leads him to an unexpected home.",
+      "images": "http://books.google.com/books/content?id=lndjgijiXXkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 45,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0345391691",
+      "title": "The Battle for God",
+      "categories": "['Religion']",
+      "author": "Karen Armstrong",
+      "year": 2001,
+      "publisher": "Ballantine Reader's Circle",
+      "description": "Reveals how the fundamentalist movements in Christianity, Judaism, and Islam were born out of a dread of modernity.",
+      "images": "http://books.google.com/books/content?id=hS2PTTqqeowC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 46,
+    "model": "book.book",
+    "fields": {
+      "isbn": "014023828X",
+      "title": "The Tortilla Curtain",
+      "categories": "['Fiction']",
+      "author": "T. Coraghessan Boyle",
+      "year": 1996,
+      "publisher": "Penguin",
+      "description": "The lives of two different couples--wealthy Los Angeles liberals Delaney and Kyra Mossbacher, and Candido and America Rincon, a pair of Mexican illegals--suddenly collide, in a story that unfolds from the shifting viewpoints of the various characters.",
+      "images": "http://books.google.com/books/content?id=NCSMDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 47,
+    "model": "book.book",
+    "fields": {
+      "isbn": "055329198X",
+      "title": "Wolf Moon",
+      "categories": "['Fiction']",
+      "author": "John R. Holt",
+      "year": 1997,
+      "publisher": "Anchor",
+      "description": "NEW YORK TIMES BESTSELLER • On the trail of a killer who cannot possibly exist ... Jeremy Logan, the renowned \"enigmalogist,\" has often found himself in situations where keeping an open mind could mean the difference between life and death, and that has never been more true than now. When Logan travels to an isolated writers' retreat deep in the Adirondacks to work on his book, he discovers the remote community has been rocked by the grisly death of a hiker on Desolation Mountain. The attack occurred during the full moon and the body was severely mauled, but the unusual savagery calls into question the initial suspicions of a bear attack. Logan's theories take a dramatic turn when he meets Laura Feverbridge, a respected scientist who is still struggling with the violent loss of her father months earlier. As Feverbridge shares her research with Logan, he begins to wonder whether he is actually up against something he can’t believe is real.",
+      "images": "http://books.google.com/books/content?id=TZIiDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 48,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0375406530",
+      "title": "Waiting",
+      "categories": "['Fiction']",
+      "author": "Ha Jin",
+      "year": 1999,
+      "publisher": "WaterBrook",
+      "description": "After her husband leaves her, Jane Lindsay finds an old ring in a box of relics from a British jumble sale and discovers a Latin inscription in the band along with just one other word: \"Jane.\" Feeling instant connection to the mysterious ring bearing hernamesake, Jane begins a journey to learn more about the ring--and perhaps about herself and the lives of a sixteenth century dressmaker, Lucy Day, and the innocent young woman known in history as Lady Jane Grey.",
+      "images": "http://books.google.com/books/content?id=zfRvDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 49,
+    "model": "book.book",
+    "fields": {
+      "isbn": 1573228737,
+      "title": "Affinity",
+      "categories": "['Fiction']",
+      "author": "Sarah Waters",
+      "year": 2002,
+      "publisher": "Hachette UK",
+      "description": "Affinity is the work of an intense and atmospheric imagination . . . Sarah Waters is such an interesting writer, a kind of feminist Dickens' Fiona Pitt-Kethley, Daily Telegraph Set in and around the women's prison at Milbank in the 1870s, Affinity is an eerie and utterly compelling ghost story, a complex and intriguing literary mystery and a poignant love story with an unexpected twist in the tale. Following the death of her father, Margaret Prior has decided to pursue some 'good work' with the lady criminals of one of London's most notorious gaols. Surrounded by prisoners, murderers and common thieves, Margaret feels herself drawn to one of the prisons more unlikely inmates - the imprisoned spiritualist - Selina Dawes. Sympathetic to the plight of this innocent-seeming girl, Margaret sees herself dispensing guidance and perhaps friendship on her visits, little expecting to find herself dabbling in a twilight world of seances, shadows, unruly spirits and unseemly passions.",
+      "images": "http://books.google.com/books/content?id=VjbT1vMpDqkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 50,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0449207544",
+      "title": "Proof",
+      "categories": "['Education']",
+      "author": "Dick Francis",
+      "year": 1990,
+      "publisher": "MIT Press",
+      "description": "How to educate the next generation of college students to invent, to create, and to discover—filling needs that even the most sophisticated robot cannot. Driverless cars are hitting the road, powered by artificial intelligence. Robots can climb stairs, open doors, win Jeopardy, analyze stocks, work in factories, find parking spaces, advise oncologists. In the past, automation was considered a threat to low-skilled labor. Now, many high-skilled functions, including interpreting medical images, doing legal research, and analyzing data, are within the skill sets of machines. How can higher education prepare students for their professional lives when professions themselves are disappearing? In Robot-Proof, Northeastern University president Joseph Aoun proposes a way to educate the next generation of college students to invent, to create, and to discover—to fill needs in society that even the most sophisticated artificial intelligence agent cannot. A “robot-proof” education, Aoun argues, is not concerned solely with topping up students' minds with high-octane facts. Rather, it calibrates them with a creative mindset and the mental elasticity to invent, discover, or create something valuable to society—a scientific proof, a hip-hop recording, a web comic, a cure for cancer. Aoun lays out the framework for a new discipline, humanics, which builds on our innate strengths and prepares students to compete in a labor market in which smart machines work alongside human professionals. The new literacies of Aoun's humanics are data literacy, technological literacy, and human literacy. Students will need data literacy to manage the flow of big data, and technological literacy to know how their machines work, but human literacy—the humanities, communication, and design—to function as a human being. Life-long learning opportunities will support their ability to adapt to change. The only certainty about the future is change. Higher education based on the new literacies of humanics can equip students for living and working through change.",
+      "images": "http://books.google.com/books/content?id=pmYyDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 51,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0743470389",
+      "title": "The Snow Garden",
+      "categories": "['Fiction']",
+      "author": "Christopher Rice",
+      "year": 2004,
+      "publisher": "Simon and Schuster",
+      "description": "When the death of a respected professor's wife reveals an illicit relationship between a student and his teacher, Atherton University becomes the scene of ever escalating intrigue, speculation, dark desires, fear, and violence. By the author of A Density of Souls. Reprint.",
+      "images": "http://books.google.com/books/content?id=TsdszX5SkG0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 52,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0451527747",
+      "title": "Alice's Adventures in Wonderland and Through the Looking Glass",
+      "categories": "['Fiction']",
+      "author": "Lewis Carroll",
+      "year": 2000,
+      "publisher": "Simon and Schuster",
+      "description": "All the \"muchness\" of Wonderland captured in one book! Follow Alice down the rabbit hole to Wonderland and enjoy tea with the Mad Hatter, find your way with the Cheshire Cat, and play croquet with the Queen of Hearts. On the other side of the looking-glass, meet Tweedledee and Tweedledum, the White Queen, and a host of other characters that share a different reality.",
+      "images": "http://books.google.com/books/content?id=didZDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 53,
+    "model": "book.book",
+    "fields": {
+      "isbn": 3453177746,
+      "title": "Hannibal",
+      "categories": "['Fiction']",
+      "author": "Thomas Harris",
+      "year": 2001,
+      "publisher": "Dell",
+      "description": "#1 NEW YORK TIMES BESTSELLER • “Is it as good as Red Dragon and Silence of the Lambs? No . . . this one is better.”—Stephen King, The New York Times Book Review You remember Hannibal Lecter: gentleman, genius, cannibal. Seven years have passed since Dr. Lecter escaped from custody. And for seven years he’s been at large, free to savor the scents, the essences, of an unguarded world. But intruders have entered Dr. Lecter’s world, piercing his new identity, sensing the evil that surrounds him. For the multimillionaire Hannibal left maimed, for a corrupt Italian policeman, and for FBI agent Clarice Starling, who once stood before Lecter and who has never been the same, the final hunt for Hannibal Lecter has begun. All of them, in their separate ways, want to find Dr. Lecter. And all three will get their wish. But only one will live long enough to savor the reward. . . . Praise for Hannibal “Interested in getting the hell scared out of you? Buy this book on a Friday . . . lock all doors and windows. And by Monday , you might just be able to sleep without a night-light.”—Newsday “Strap yourself in for one heck of a ride. . . . It’ll scare your socks off.”—Denver Post “A stunner . . . writing in language as bright and precise as a surgeon’s scalpel, Harris has created a world as mysterious as Hannibal’s memory palace and as disturbing as a Goya painting. This is one book you don’t want to read alone at night.”—The Atlanta Journal-Constitution “Relentless . . . endlessly terrifying . . . 486 fast-paced pages, in which every respite is but a prelude to further furious action . . . Hannibal begins with a murderous paroxysm that leaves the reader breathless. . . . Hannibal speaks to the imagination, to the feelings, to the passions, to exalted senses and to debased ones. Harris’s voice will be heard for a while.”—Los Angeles Times “A pleasurable sense of dread.”—The Wall Street Journal “Enormously satisfying . . . a smashing good time, turning the pages for thrills, chills, horror and finally, a bracing, deliciously wicked slap in the face . . . perhaps the very best the thriller/horror genre is capable of producing.”—San Diego Union-Tribune",
+      "images": "http://books.google.com/books/content?id=N8mOeVOPzasC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 54,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0553569074",
+      "title": "Wouldn't Take Nothing for My Journey Now",
+      "categories": "['Biography & Autobiography']",
+      "author": "Maya Angelou",
+      "year": 1994,
+      "publisher": "Hachette UK",
+      "description": "Lessons in living from the bestselling and beloved author of I KNOW WHY THE CAGED BIRD SINGS A brilliant writer, a fierce friend and a truly phenomenal woman' BARACK OBAMA The woman warrior who is armed with wit and courage will be among the first to celebrate victory' says Maya Angelou, bestselling author of I KNOW WHY THE CAGED BIRD SINGS and one of our best-loved writers. Here she writes about family, argues for spirit and grace, insists on the importance of laughter and style and reflects on brutality and crime. She has the courage to say the unfashionable: 'virtue, purity, temperance, goodness, worth or even moderation...we must return them to a vigorous role in our lives', and the wit to call for them with humour. As lessons in living, they are a unique inspiration. 'She moved through the world with unshakeable calm, confidence and a fierce grace . . . She will always be the rainbow in my clouds' OPRAH WINFREY 'She was important in so many ways. She launched African American women writing in the United States. She was generous to a fault. She had nineteen talents - used ten. And was a real original. There is no duplicate' TONI MORRISON",
+      "images": "http://books.google.com/books/content?id=O8ekan14Iz4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 55,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0385503857",
+      "title": "Oryx and Crake",
+      "categories": "['Fiction']",
+      "author": "Margaret Atwood",
+      "year": 2003,
+      "publisher": "Hachette UK",
+      "description": "By the author of THE HANDMAID'S TALE and ALIAS GRACE * Pigs might not fly but they are strangely altered. So, for that matter, are wolves and racoons. A man, once named Jimmy, lives in a tree, wrapped in old bedsheets, now calls himself Snowman. The voice of Oryx, the woman he loved, teasingly haunts him. And the green-eyed Children of Crake are, for some reason, his responsibility. * Praise for Oryx and Crake: 'In Jimmy, Atwood has created a great character: a tragic-comic artist of the future, part buffoon, part Orpheus. An adman who's a sad man; a jealous lover who's in perpetual mourning; a fantasist who can only remember the past' -INDEPENDENT 'Gripping and remarkably imagined' -LONDON REVIEW OF BOOKS",
+      "images": "http://books.google.com/books/content?id=NljT2Bn3Y-wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 56,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0812523385",
+      "title": "Selected Poems of Emily Dickinson",
+      "categories": "['Poetry']",
+      "author": "Emily Dickinson",
+      "year": 1995,
+      "publisher": "Wordsworth Editions",
+      "description": "During Emily's life only seven of her 1775 poems were published. This collection of her work shows her breadth of vision and a passionate intensity and awe for life, love, nature, time and eternity. Once branded an eccentric Dickinson is now regarded as a major American poet.",
+      "images": "http://books.google.com/books/content?id=0pYZS1NLzWsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 57,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0385495145",
+      "title": "The Messenger",
+      "categories": "['Young Adult Fiction']",
+      "author": "JOSEPH GIRZONE",
+      "year": 2002,
+      "publisher": "Knopf Books for Young Readers",
+      "description": "DON’T MISS BRIDGE OF CLAY, MARKUS ZUSAK’S FIRST NOVEL SINCE THE BOOK THIEF AND AN UNFORGETTABLE AND SWEEPING FAMILY SAGA. From the author of the extraordinary #1 New York Times bestseller The Book Thief, I Am the Messenger is an acclaimed novel filled with laughter, fists, and love. A MICHAEL L. PRINTZ HONOR BOOK FIVE STARRED REVIEWS Ed Kennedy is an underage cabdriver without much of a future. He's pathetic at playing cards, hopelessly in love with his best friend, Audrey, and utterly devoted to his coffee-drinking dog, the Doorman. His life is one of peaceful routine and incompetence until he inadvertently stops a bank robbery. That's when the first ace arrives in the mail. That's when Ed becomes the messenger. Chosen to care, he makes his way through town helping and hurting (when necessary) until only one question remains: Who's behind Ed's mission?",
+      "images": "http://books.google.com/books/content?id=qCDyT1q6OjIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 58,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0679733825",
+      "title": "Sisters of the Earth: Women's Prose and Poetry About Nature",
+      "categories": "['Literary Collections']",
+      "author": "Lorraine Anderson",
+      "year": 1991,
+      "publisher": "Vintage",
+      "description": "Presents an anthology of poetry, essays, stories, and journal entries by Emily Dickinson, Zora Neale Hurston, Diane Ackerman, Ursula Le Guin, Terry Tempest Williams, Willa Cather, and many others who offer a personal view of humankind's relationship with the natural world. Original.",
+      "images": "http://books.google.com/books/content?id=N5ZBDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 59,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0385333919",
+      "title": "Be Cool",
+      "categories": "['Fiction']",
+      "author": "Elmore Leonard",
+      "year": 1999,
+      "publisher": "Harper Collins",
+      "description": "Get Shorty’s Chili Palmer is back in Be Cool, a classic novel of suspense from New York Times bestselling author Elmore Leonard. But this time it’s no more Mr. Nice Guy. After a smash hit and a flop, B-movie-producer Chili Palmer is looking for another score. Lunching with a record company executive, Chili's exploring a hot new idea—until the exec, a former \"associate\" from Chili's Brooklyn days, gets whacked. Segue from real life to reel life. Chili's found his plot. It's a slam-bang opener: the rubout of a record company mogul. Cut to an ambitious wannabe singer named Linda Moon. She has attitude and a band. She's perfect. Zoom in to reality. Linda's manager thinks Chili's poaching and he's out to get even, with the help of his switch-hitting Samoan bodyguard. But somebody else beat them to the punch, as Chili discovers when he gets home and finds a corpse at his desk. Somebody made a mistake...",
+      "images": "http://books.google.com/books/content?id=0Q5rjCKss2QC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 60,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0671026801",
+      "title": "The Hunted",
+      "categories": "['Young Adult Fiction']",
+      "author": "Alan Jacobson",
+      "year": 2001,
+      "publisher": "Living",
+      "description": "After surviving the earthquake and tsunami, Shy manages to make it back to land but he is far from safe because a secret his cruise ship co-worker, Addie, shared with him is one that people have killed for, and now that Shy knows, he has become a moving target.",
+      "images": "http://books.google.com/books/content?id=7KouDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 61,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0060158638",
+      "title": "The Bean Trees",
+      "categories": "['Fiction']",
+      "author": "Barbara Kingsolver",
+      "year": 1988,
+      "publisher": "Harper Collins",
+      "description": "The Bean Trees is the work of a visionary. . . . It leaves you open-mouthed and smiling.” — Los Angeles Times A bestseller that has come to be regarded as an American classic, The Bean Trees is the novel that launched Barbara Kingsolver’s remarkable literary career. It is the charming, engrossing tale of rural Kentucky native Taylor Greer, who only wants to get away from her roots and avoid getting pregnant. She succeeds, but inherits a three-year-old Native American girl named Turtle along the way, and together, from Oklahoma to Arizona, half-Cherokee Taylor and her charge search for a new life in the West. Hers is a story about love and friendship, abandonment and belonging, and the discovery of surprising resources in seemingly empty places. This edition includes a P.S. section with additional insights from the author, background material, suggestions for further reading, and more.",
+      "images": "http://books.google.com/books/content?id=wgxMqRRWzT8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 62,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0061000280",
+      "title": "The Fly on the Wall",
+      "categories": "['Fiction']",
+      "author": "Tony Hillerman",
+      "year": 1990,
+      "publisher": "Urban Books",
+      "description": "You would have to be a fly on the wall to learn of the secret love affair between Paige, a divorced English teacher, and Theo, a high school student and star basketball player. You will be a fly on the sizzling-hot walls when this flirtatious and lustful duo takes risks during detentions, school dances, and games. However, once in her bedroom, he teaches the lessons and she becomes the willing and ready-to-learn student. What happens when her ex-husband, who happens to be his coach, walks in on them?",
+      "images": "http://books.google.com/books/content?id=5UMUAAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 63,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0312195516",
+      "title": "The Red Tent (Bestselling Backlist)",
+      "categories": "['Fiction']",
+      "author": "Anita Diamant",
+      "year": 1998,
+      "publisher": "Picador",
+      "description": "Her name is Dinah. In the Bible, her life is only hinted at in a brief and violent detour within the more familiar chapters of the Book of Genesis that are about her father, Jacob, and his dozen sons. Told in Dinah's voice, this novel reveals the traditions and turmoils of ancient womanhood--the world of the red tent. It begins with the story of her mothers--Leah, Rachel, Zilpah, and Bilhah--the four wives of Jacob. They love Dinah and give her gifts that sustain her through a hard-working youth, a calling to midwifery, and a new home in a foreign land. Dinah's story reaches out from a remarkable period of early history and creates an intimate connection with the past. Deeply affecting, The Red Tent combines rich storytelling with a valuable achievement in modern fiction: a new view of biblical women's society.",
+      "images": "http://books.google.com/books/content?id=P4AdKq7LlZcC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 64,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0515111279",
+      "title": "The Cat Who Wasn't There",
+      "categories": "['Fiction']",
+      "author": "Lilian Jackson Braun",
+      "year": 1994,
+      "publisher": "Penguin",
+      "description": "While attempting to solve a perplexing mystery in Scotland, prize-winning reporter Qwilleran relies on help from his two Siamese cats, back home in the U.S. Reprint. PW. AB.",
+      "images": "http://books.google.com/books/content?id=8oveqGP3tSsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 65,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0440147956",
+      "title": "Light a Penny Candle",
+      "categories": "['Family & Relationships']",
+      "author": "Maeve Binchy",
+      "year": 1994,
+      "publisher": "Penguin",
+      "description": "The chaotic events of World War II force Elizabeth White, a shy, young English girl, to escape to Ireland, where she shares a friendship with Aisling O'Connor, with whom she endures years of change, joy, sorrow, soaring dreams, bitter betrayals, and an unbreakable bond. Reissue.",
+      "images": "http://books.google.com/books/content?id=ZN95yNZ5-cAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 66,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0380710218",
+      "title": "Postmortem",
+      "categories": "['Fiction']",
+      "author": "Patricia Daniels Cornwell",
+      "year": 1993,
+      "publisher": "Simon and Schuster",
+      "description": "Discover the “dazzling…fascinating” (Los Angeles Times) forensic thriller that launched the New York Times bestselling Kay Scarpetta series from #1 bestselling crime writer Patricia Cornwell. Under cover of night in Richmond, Virginia, a monster strikes, leaving a gruesome trail of stranglings that has paralyzed the city. Medical examiner Kay Scarpetta suspects the worst: a deliberate campaign by a brilliant serial killer whose signature offers precious few clues. With an unerring eye, she calls on the latest advances in forensic research to unmask the madman. But this investigation will test Kay like no other, because it’s being sabotaged from within—and someone wants her dead.",
+      "images": "http://books.google.com/books/content?id=tTDHXgAZ8S4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 67,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0671673688",
+      "title": "While My Pretty One Sleeps",
+      "categories": "['Fiction']",
+      "author": "Mary Higgins Clark",
+      "year": 1990,
+      "publisher": "Simon and Schuster",
+      "description": "Neeve Kearny may be the only person in New York worried about the disappearance of Ethel Lambston. Ethel, a bestselling author famous for her juicy exposés, is one of the best customers at Neeve's exclusive Madison Avenue boutique. But Ethel's ex-husband, her parasitical nephew, and the fashion moguls skewered in her latest article all have reason to be glad she's no longer around. When Ethel Lambston is found with her throat cut, Neeve's memories of her mother's long-unsolved murder loom up once again. Now as an innocent witness in the Lambston investigation, Neeve is drawn into a new nightmare...a sinister labyrinth of greed and ambition that will lead her into mortal danger... A stunning tale of murder, glamour and romance, While My Pretty One Sleeps is the most exciting novel yet from Mary Higgins Clark, America's undisputed master of suspense.",
+      "images": "http://books.google.com/books/content?id=mgJ2UCf9MHMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 68,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0375422412",
+      "title": "Three Junes",
+      "categories": "['Fiction']",
+      "author": "Julia Glass",
+      "year": 2002,
+      "publisher": "Anchor Books",
+      "description": "This strong and memorable debut novel draws the reader deeply into the lives of several central characters during three separate Junes spanning ten years.",
+      "images": "http://books.google.com/books/content?id=ZyXGD_G514YC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 69,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0385335407",
+      "title": "The Kiss",
+      "categories": "['Juvenile Fiction']",
+      "author": "Danielle Steel",
+      "year": 2001,
+      "publisher": "Macmillan",
+      "description": "A debut entry in a new trilogy by the author of the Jenna Fox Chronicles introduces Princess Lia, who flees an unwanted marriage and expectations about her supernatural legacy only to be pursued by her jilted fiancé and a ruthless assassin.",
+      "images": "http://books.google.com/books/content?id=u4LAAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 70,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0440220602",
+      "title": "The Chamber",
+      "categories": "['Fiction']",
+      "author": "John Grisham",
+      "year": 1995,
+      "publisher": "Longman",
+      "description": "Twenty-two years after the bombing of a Mississippi law office in which Marvin Kramer's two sons died, Klan member Sam Cayhill, the accused killer, has nearly exhausted his death row appeals, until young lawyer Adam Hall takes the case.",
+      "images": "http://books.google.com/books/content?id=gDIScAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 71,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0849943450",
+      "title": "The Canopy",
+      "categories": "['Fiction']",
+      "author": "Angela Elwell Hunt",
+      "year": 2003,
+      "publisher": "Thomas Nelson",
+      "description": "Deep in the lush and dangerous rain forests of Peru, Alexandra Pace and her team search determinedly for a cure for deadly diseases. One strain of the disease has already begun the process of ravaging Alexandra's own mind and body. Finding a cure is the only hope for her and for her daughter, who has almost certainly inherited the same disease. Alex believes she is searching for a needle in a haystack until she meets Michael Kenway, a British doctor who lost his wife when \"mad cow disease\" ravaged Britain in the 1990's. He presents her with an incredible story--a patient suffering from the disease was cured by a mythical \"healing tribe\" living deep in the Amazon jungle. Reluctantly placing her faith in Michael, who is entirely too religious for her comfort, Alexandra and her team seek out an unreached indigenous group who may hold the cure not only for Alex, but also for the world. Award-winning, best-selling author Angela Hunt combines the unique rainforest setting, modern science, and a thrilling race for a cure into a powerful message of faith and redemption.",
+      "images": "http://books.google.com/books/content?id=xA7towi26TYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 72,
+    "model": "book.book",
+    "fields": {
+      "isbn": "042517736X",
+      "title": "Abduction",
+      "categories": "['Juvenile Fiction']",
+      "author": "Robin Cook",
+      "year": 2000,
+      "publisher": "Penguin",
+      "description": "Thirteen-year-old Bonnie has a feeling of foreboding on the very day that her six-year-old brother Matt and their dog Pookie are abducted, and she becomes involved in a major search effort as well as a frightening adventure. Reprint.",
+      "images": "http://books.google.com/books/content?id=GiKKDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 73,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0140272100",
+      "title": "Vanished",
+      "categories": "['Fiction']",
+      "author": "Mary McGarry Morris",
+      "year": 1997,
+      "publisher": "Dell",
+      "description": "Vanished tells the story of a man and woman faced with an almost unthinkable tragedy—the mysterious abduction of their son. In the late 1930s, in the shadow of the Lindbergh kidnapping, and as war looms in Europe, Marielle Patterson shares and elegant Manhattan brownstone with her husband, Malcolm, and their little boy, Teddy. Though the couple's lives are filled with secrets, Marielle is a devoted wife and mother, and Malcolm is a man everyone admires. On the eve of Teddy's disappearance, Marielle runs into her first love, American expatriate Charles Delauney. And when Teddy is kidnapped, Charles is first blamed, then arrested. But as the search for Teddy widens, even Marielle is scrutinized by the FBI and special agent John Taylor. Suspicions and accusations mingle with terror and heartbreak as every threat, every failure, every fear, is remembered, examined, explored. During Charles Delauney's trial, a series of revalations begins to unravel the about Marielle, Charles, and Malcolm, uncovering the motives and passions controlling their lives. Vanished is a tale of guilt, desire, suspense, and of people drawn inexorably together, seeking the child who... vanished.",
+      "images": "http://books.google.com/books/content?id=ZmY7voM0He0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 74,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0449209121",
+      "title": "The Amazing Mrs. Pollifax",
+      "categories": "['Fiction']",
+      "author": "Dorothy Gilman",
+      "year": 1992,
+      "publisher": "Fawcett",
+      "description": "Once again the irrepressible Mrs. Pollifax, that very special agent with her own very special brand of logic, is off on an incredible escapade of international intrigue . . . from the exotic towns and countryside of Turkey to a mysterious rendezvous with a gypsy caravan. “You are in effect replacing a dead man, Mrs. Pollifax. . . .” When Emily Pollifax answered the phone that Sunday morning she quickly forgot about her Garden Club tea in the afternoon. The last time she had heard the voice on the other end of the line it had sent of her off on a journey that plunged her into a wild tangle of secret agents and high adventure. Now the man from the CIA was asking if she could leave immediately on a mission that would take her halfway across the world. What could Mrs. Pollifax say but yes? Praise for The Amazing Mrs. Pollifax “Mrs. Pollifax is an enchantress.”—The New York Times “One of the most suspense-creating and unorthodox heroines of our time is Mrs. Pollifax . . . . A charmer!”—Shrevport Times",
+      "images": "http://books.google.com/books/content?id=OniBAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 75,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0671525751",
+      "title": "Someone to Watch Over Me : A Novel",
+      "categories": "['Fiction']",
+      "author": "Judith McNaught",
+      "year": 2003,
+      "publisher": "Harper Collins",
+      "description": "Someone to Watch Over Me is a classic tale from New York Times bestselling author Lisa Kleypas. In this Regency romance, Kleypas, the author of Seduce Me at Sunrise, tells the story of a scandalous beauty with no memory of who she is and the man determined to unravel the secrets of her past.",
+      "images": "http://books.google.com/books/content?id=mPjc7yfJyZYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 76,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0060930187",
+      "title": "The Bell Jar : A Novel (Perennial Classics)",
+      "categories": "['Fiction']",
+      "author": "Sylvia Plath",
+      "year": 2000,
+      "publisher": "e-artnow",
+      "description": "This carefully crafted ebook: \"The Bell Jar\" is formatted for your eReader with a functional and detailed table of contents. Esther Greenwood, a young woman from the suburbs of Boston, gains a summer internship at a prominent magazine in New York City, under editor Jay Cee; however, Esther is neither stimulated nor excited by either the big city or the glamorous culture and lifestyle that girls her age are expected to idolize and emulate. She instead finds her experience to be frightening and disorienting. From hereafter her mental state keeps deteriorating until she starts feeling helpless as if being kept inside a glass bell jar! The Bell Jar is the only novel written by the American writer and poet Sylvia Plath. Originally published under the pseudonym \"Victoria Lucas\" in 1963, the novel is semi-autobiographical, with the names of places and people changed. The book is often regarded as a roman à clef because the protagonist's descent into mental illness parallels Plath's own experiences with what may have been clinical depression or bipolar II disorder. Plath died by suicide a month after its first UK publication. The novel was published under Plath's name for the first time in 1967 and was not published in the United States until 1971, in accordance with the wishes of both Plath's husband, Ted Hughes, and her mother.",
+      "images": "http://books.google.com/books/content?id=INCSDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 77,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0425179672",
+      "title": "The River King",
+      "categories": "['Fiction']",
+      "author": "Alice Hoffman",
+      "year": 2001,
+      "publisher": "Penguin Group",
+      "description": "A town divided by class lines is thrown into turmoil by a mysterious death, which begins to unravel the lives of a fifteen-year-old girl, a young boy, and a women running from her own destiny. By the author of Local Girls. Reprint.",
+      "images": "http://books.google.com/books/content?id=PLAmByvVjf8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 78,
+    "model": "book.book",
+    "fields": {
+      "isbn": "006015781X",
+      "title": "Why Do Clocks Run Clockwise? and Other Imponderables: Mysteries of Everyday Life Explained",
+      "categories": "['Curiosities and wonders']",
+      "author": "David Feldman",
+      "year": 1987,
+      "publisher": "HarperCollins",
+      "description": "This compilation of arcane facts about everyday objects, practices, and traditions reveals how Teflon sticks to cookware; why firehouses have Dalmatians; why \"2 x 4s\" don't measure two inches by four inches; why the sides of aluminum foil are different, and other mysteries",
+      "images": "http://books.google.com/books/content?id=8fIkAQAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 79,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0385314019",
+      "title": "Women on the Case",
+      "categories": "['Health & Fitness']",
+      "author": "Sara Paretsky",
+      "year": 1996,
+      "publisher": "Riverhead Books (Hardcover)",
+      "description": "Shows working women how to use the skills they have formed at work to keep themselves committed to a healthy diet and overcome their weaknesses for fatty foods and sweets",
+      "images": "http://books.google.com/books/content?id=tud3jX5WwJYC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    }
+  },
+  {
+    "pk": 80,
+    "model": "book.book",
+    "fields": {
+      "isbn": "067087311X",
+      "title": "Icy Sparks",
+      "categories": "['Fiction']",
+      "author": "Gwynn Rubio",
+      "year": 1998,
+      "publisher": "Penguin",
+      "description": "A New York Times Notable Book and the March 2001 selection of Oprah's Book Club® ! Icy Sparks is the sad, funny and transcendent tale of a young girl growing up in the mountains of Eastern Kentucky during the 1950’s. Gwyn Hyman Rubio’s beautifully written first novel revolves around Icy Sparks, an unforgettable heroine in the tradition of Scout in To Kill a Mockingbird or Will Treed in Cold Sassy Tree. At the age of ten, Icy, a bright, curious child orphaned as a baby but raised by adoring grandparents, begins to have strange experiences. Try as she might, her \"secrets\"—verbal croaks, groans, and physical spasms—keep afflicting her. As an adult, she will find out she has Tourette’s Syndrome, a rare neurological disorder, but for years her behavior is the source of mystery, confusion, and deep humiliation. Narrated by a grown up Icy, the book chronicles a difficult, but ultimately hilarious and heartwarming journey, from her first spasms to her self-acceptance as a young woman. Curious about life beyond the hills, talented, and energetic, Icy learns to cut through all barriers—physical, mental, and spiritual—in order to find community and acceptance. Along her journey, Icy faces the jeers of her classmates as well as the malevolence of her often-ignorant teachers—including Mrs. Stilton, one of the most evil fourth grade teachers ever created by a writer. Called willful by her teachers and \"Frog Child\" by her schoolmates, she is exiled from the schoolroom and sent to a children’s asylum where it is hoped that the roots of her mysterious behavior can be discovered. Here Icy learns about difference—her own and those who are even more scarred than she. Yet, it isn’t until Icy returns home that she really begins to flower, especially through her friendship with the eccentric and obese Miss Emily, who knows first-hand how it feels to be an outcast in this tightly knit Appalachian community. Under Miss Emily’s tutelage, Icy learns about life’s struggles and rewards, survives her first comical and heartbreaking misadventure with romance, discovers the healing power of her voice when she sings, and ultimately—takes her first steps back into the world. Gwyn Hyman Rubio’s Icy Sparks is a fresh, original, and completely redeeming novel about learning to overcome others’ ignorance and celebrate the differences that make each of us unique.",
+      "images": "http://books.google.com/books/content?id=XG6-eP4-UxsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 81,
+    "model": "book.book",
+    "fields": {
+      "isbn": "015600710X",
+      "title": "Strange Fits of Passion: A Novel",
+      "categories": "['Fiction']",
+      "author": "Anita Shreve",
+      "year": 1999,
+      "publisher": "HarperCollins",
+      "description": "Thrilling\"* with an ingenious structure, Strange Fits of Passion powerful portrait of truth, deception, and a troubled marriage from acclaimed novelist Anita Shreve. *The New Yorker Everyone believes that Maureen and Harrold English, two successful New York City journalists, have a happy, stable marriage. It's the early '70s, and no one discusses or even suspects domestic abuse. But after Maureen suffers another brutal beating, she flees with her infant daughter to a coastal town in Maine. The weeks pass slowly, and just as Maureen settles into her new life and new identity, Harrold reappears, bringing the story to a violent, unforgettable climax. Nearly nineteen years later, a cache of documents regarding Maureen English is given to her daughter by a journalist. The truth should lie within them, but the papers raise far more questions than they answer...",
+      "images": "http://books.google.com/books/content?id=nB-Yrc4d02EC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 82,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0425182843",
+      "title": "Edge of Danger",
+      "categories": "['Fiction']",
+      "author": "Jack Higgins",
+      "year": 2002,
+      "publisher": "HarperCollins UK",
+      "description": "The action-packed new Sean Dillon novel. Master thriller writer Jack Higgins plunges his hugely popular hero into his ninth adventure – racing against time to prevent an assassination that would shock the world.",
+      "images": "http://books.google.com/books/content?id=OgwoCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 83,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0679781307",
+      "title": "The Reader",
+      "categories": "['Fiction']",
+      "author": "Carol Brown Janeway",
+      "year": 1998,
+      "publisher": "Vintage",
+      "description": "Hailed for its coiled eroticism and the moral claims it makes upon the reader, this mesmerizing novel is a story of love and secrets, horror and compassion, unfolding against the haunted landscape of postwar Germany. When he falls ill on his way home from school, fifteen-year-old Michael Berg is rescued by Hanna, a woman twice his age. In time she becomes his lover—then she inexplicably disappears. When Michael next sees her, he is a young law student, and she is on trial for a hideous crime. As he watches her refuse to defend her innocence, Michael gradually realizes that Hanna may be guarding a secret she considers more shameful than murder.",
+      "images": "http://books.google.com/books/content?id=2JYJicwT84cC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 84,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0743460529",
+      "title": "Daddy's Little Girl",
+      "categories": "['Fiction']",
+      "author": "Mary Higgins Clark",
+      "year": 2003,
+      "publisher": "Simon and Schuster",
+      "description": "A Simon & Schuster eBook. Simon & Schuster has a great book for every reader.",
+      "images": "http://books.google.com/books/content?id=Tdt8AgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 85,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0609606727",
+      "title": "Julie and Romeo",
+      "categories": "['Fiction']",
+      "author": "Jeanne Ray",
+      "year": 2000,
+      "publisher": "Crown",
+      "description": "A deliciously funny and wickedly sexy novel of love found (finally!) and love threatened (inevitably) by the families who claim to love us best. Romeo Cacciamani and Julie Roseman are rival florists in Boston, whose families have hated each other for as long as anyone can remember (what they can't remember is why). When these two vital, lonely people see each other across a crowded lobby at a small business owners' seminar, an intense attraction blooms that neither tries to squelch. They're not sure what fate has in store for them, but they're not about to let something as silly as a generations-long feud stand in the way of finding out. That is, not until Romeo's octogenarian mother, Julie's meddling ex-husband, and a cast of grown Cacciamani and Roseman children begin to intervene with a passionate hatred that matches their newly found love, stroke for stroke. Think Montagues and Capulets, think wise and witty and thoroughly modern. Julie and Romeo is a love story for the ages. All ages.",
+      "images": "http://books.google.com/books/content?id=toDJQ4oUnKYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 86,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0399148582",
+      "title": "You Cannot Be Serious",
+      "categories": "['Biography & Autobiography']",
+      "author": "John McEnroe",
+      "year": 2002,
+      "publisher": "Penguin",
+      "description": "A no-holds-barred, intimate memoir by John McEnroe—the bad boy of professional tennis. John McEnroe stunned the tennis elite when he came out of nowhere to make the Wimbledon semifinals at the age of eighteen—and just a few years later, he was ranked number one in the world. You Cannot Be Serious is McEnroe at his most personal, an intimate examination of Johnny Mac, the kid from Queens, and his “wild ride” through the world of professional tennis at a boom time when players were treated like rock stars. In this “bracing serve-and-volley autobiography” (The Boston Globe) he candidly explores the roots of his famous on-court explosions; his ambivalence toward the sport that made him famous; his adventures (and misadventures) on the road; his views of colleagues from Connors to Borg to Lendl; his opinions of contemporary tennis; his marriages to actress Tatum O'Neal and pop star Patty Smyth; and his roles as husband, father, senior tour player, and often-controversial commentator.",
+      "images": "http://books.google.com/books/content?id=E_mdNadAvV0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 87,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0767908473",
+      "title": "The Sorcerer's Companion: A Guide to the Magical World of Harry Potter",
+      "categories": "['Literary Criticism']",
+      "author": "ALLAN ZOLA KRONZEK",
+      "year": 2001,
+      "publisher": "Broadway",
+      "description": "In a revised edition of a best-selling book, fully updated to include Harry Potter and the Order of the Phoenix, the author unearths a centuries-old trove of true history, folklore and mythology behind Harry Potter's fantastic universe. Original.",
+      "images": "http://books.google.com/books/content?id=hGqODQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 88,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0316776963",
+      "title": "Me Talk Pretty One Day",
+      "categories": "['Humor']",
+      "author": "David Sedaris",
+      "year": 2001,
+      "publisher": "Back Bay Books",
+      "description": "A new collection from David Sedaris is cause for jubilation. His recent move to Paris has inspired hilarious pieces, including Me Talk Pretty One Day, about his attempts to learn French. His family is another inspiration. You Cant Kill the Rooster is a portrait of his brother who talks incessant hip-hop slang to his bewildered father. And no one hones a finer fury in response to such modern annoyances as restaurant meals presented in ludicrous towers and cashiers with 6-inch fingernails. Compared by The New Yorker to Twain and Hawthorne, Sedaris has become one of our best-loved authors. Sedaris is an amazing reader whose appearances draw hundreds, and his performancesincluding a jaw-dropping impression of Billie Holiday singing I wish I were an Oscar Meyer weinerare unforgettable. Sedariss essays on living in Paris are some of the funniest hes ever written. At last, someone even meaner than the French! The sort of blithely sophisticated, loopy humour that might have resulted if Dorothy Parker and James Thurber had had a love child. Entertainment Weekly on Barrel Fever Sidesplitting Not one of the essays in this new collection failed to crack me up; frequently I was helpless. The New York Times Book Review on Naked",
+      "images": "http://books.google.com/books/content?id=WVKiq9stTNgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 89,
+    "model": "book.book",
+    "fields": {
+      "isbn": 1555834531,
+      "title": "Hood",
+      "categories": "['Juvenile Fiction']",
+      "author": "Emma Donoghue",
+      "year": 1998,
+      "publisher": "Hachette UK",
+      "description": "From bestselling author Chris Colfer comes a new book about a beloved character: Queen Red Riding Hood. The young queen gives us her take on politics, government, health, love, and of course, what it means to be royalty. A must-have for new and old fans alike.",
+      "images": "http://books.google.com/books/content?id=GJwaCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 90,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0451456548",
+      "title": "Cold Iron",
+      "categories": "['Fiction']",
+      "author": "Melisa Michaels",
+      "year": 1997,
+      "publisher": "Orbit",
+      "description": "A young mage-in-training takes up the sword and is unwittingly pulled into a violent political upheaval, in the first book of this epic fantasy trilogy by Miles Cameron, author of The Red Knight. Aranthur is a promising young mage. But the world is not safe and after a confrontation leaves him no choice but to display his skill with a blade, Aranthur is instructed to train under a renowned Master of Swords. During his intensive training he begins to question the bloody life he's chosen. And while studying under the Master, he finds himself thrown into the middle of a political revolt that will impact everyone he's come to know. To protect his friends, Arnathur will be forced to decide if he can truly follow the Master of Swords into a life of violence and cold-hearted commitment to the blade. Masters & MagesCold Iron For more from Miles Cameron, check out: The Traitor Son Cycle The Red Knight The Fell Sword The Dread Wyrm The Plague of Swords The Fall of Dragons",
+      "images": "http://books.google.com/books/content?id=9JBKDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 91,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0374343381",
+      "title": "Lark in the Morning",
+      "categories": "['Poetry']",
+      "author": "Nancy Garden",
+      "year": 1991,
+      "publisher": "University of Chicago Press",
+      "description": "Robert Kehew augments his own verse translations with those of Pound & Snodgrass, to provide a collection that captures both the poetic pyrotechnics of the original verse & the astonishing variety of troubadour voices.",
+      "images": "http://books.google.com/books/content?id=q41XiQ_OY-MC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 92,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0440219604",
+      "title": "I Hadn't Meant to Tell You This",
+      "categories": "['Juvenile Fiction']",
+      "author": "Jacqueline Woodson",
+      "year": 1995,
+      "publisher": "Penguin",
+      "description": "Twelve-year-old Marie, the only black girl in the eighth grade willing to befriend her white classmate Lena, discovers that Lena's father is doing horrible things to her in private.",
+      "images": "http://books.google.com/books/content?id=exlPDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 93,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0743467523",
+      "title": "Dreamcatcher",
+      "categories": "['Fiction']",
+      "author": "Stephen King",
+      "year": 2003,
+      "publisher": "Simon and Schuster",
+      "description": "From master storyteller Stephen King comes his classic #1 New York Times bestseller about four friends who encounter evil in the Maine woods. Twenty-five years ago, in their haunted hometown of Derry, Maine, four boys bravely stood together and saved a mentally challenged child from vicious local bullies. It was something that fundamentally changed them, in ways they could never begin to understand. These lifelong friends—now with separate lives and separate problems—make it a point to reunite every year for a hunting trip deep in the snowy Maine woods. This time, though, chaos erupts when a stranger suddenly stumbles into their camp, freezing, deliriously mumbling about lights in the sky. And all too quickly, the four companions are plunged into a horrifying struggle for survival with an otherworldly threat and the forces that oppose it...where their only chance of survival is locked into their shared past—and the extraordinary element that bonds them all...",
+      "images": "http://books.google.com/books/content?id=AeErDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 94,
+    "model": "book.book",
+    "fields": {
+      "isbn": "039457513X",
+      "title": "Billy Bathgate",
+      "categories": "['Fiction']",
+      "author": "E. L. Doctorow",
+      "year": 1989,
+      "publisher": "Random House",
+      "description": "To open this book is to enter the perilous, thrilling world of Billy Bathgate, the brazen boy who is accepted into the inner circle of the notorious Dutch Schultz gang. Like an urban Tom Sawyer, Billy takes us along on his fateful adventures as he becomes good-luck charm, apprentice, and finally protégé to one of the great murdering gangsters of the Depression-era underworld in New York City. The luminous transformation of fact into fiction that is E. L. Doctorow’s trademark comes to triumphant fruition in Billy Bathgate, a peerless coming-of-age tale and one of Doctorow’s boldest and most beloved bestsellers.",
+      "images": "http://books.google.com/books/content?id=Rf7F5BotqCMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 95,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0394559487",
+      "title": "Citizens: A Chronicle of the French Revolution",
+      "categories": "['History']",
+      "author": "Simon Schama",
+      "year": 1989,
+      "publisher": "Penguin UK",
+      "description": "The most authoritative social, cultural and narrative history of the French Revolution, and one of the great landmarks of modern history publishing. 'Monumental...provocative and stylish, Simon Schama's account of the first few years of the great Revolution in France, and of the decades that led up to it, is thoughtful, informed and profoundly revisionist' Eugen Weber, The New York Times Book Review",
+      "images": "http://books.google.com/books/content?id=sesqMfp1gUcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 96,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0451180054",
+      "title": "Trial by Fire",
+      "categories": "['True Crime']",
+      "author": "Nancy Taylor Rosenberg",
+      "year": 1996,
+      "publisher": "Thomas Dunne Books",
+      "description": "In only 90 seconds, a fire in the Station nightclub killed 100 people and injured hundreds more. It would take nearly 20 years to find out why—and who was really at fault. All it took for a hundred people to die during a show by the hair metal band Great White was a sudden burst from two giant sparklers that ignited the acoustical foam lining the Station nightclub. But who was at fault? And who would pay? This being Rhode Island, the two questions wouldn't necessarily have the same answer. Within 24 hours the governor of Rhode Island and the local police commissioner were calling for criminal charges, although the investigation had barely begun, no real evidence had been gathered, and many of the victims hadn't been identified. Though many parties could be held responsible, fingers pointed quickly at the two brothers who owned the club. But were they really to blame? Bestselling author and three-time Emmy Award-winning reporter Scott James investigates all the central figures, including the band's manager and lead singer, the fire inspector, the maker of the acoustical foam, as well as the brothers. Drawing on firsthand accounts, interviews with many involved, and court documents, James explores the rush to judgment about what happened that left the victims and their families, whose stories he also tells, desperate for justice. Trial By Fire is the heart-wrenching story of the fire's aftermath because while the fire, one of America's deadliest, lasted fewer than two minutes, the search for the truth would take twenty years.",
+      "images": "http://books.google.com/books/content?id=ECjQDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 97,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0451155750",
+      "title": "The Dead Zone",
+      "categories": "['Fiction']",
+      "author": "Stephen King",
+      "year": 2004,
+      "publisher": "Simon and Schuster",
+      "description": "A man awakens from a 5-year coma to discover he has powers to see visions of the past, present and future, a power which drives him insane.",
+      "images": "http://books.google.com/books/content?id=O53jCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 98,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0553101439",
+      "title": "West of Dodge: Frontier Stories",
+      "categories": "['Fiction']",
+      "author": "Louis L'Amour",
+      "year": 1996,
+      "publisher": "Bantam",
+      "description": "WHERE THE REAL FRONTIER BEGINS A young cowpuncher stakes a claim that can only be sealed with fists and a .44 Colt. . . . A gunfighter, tired of violence, finds himself pushed down a trail of bloody revenge. . . . From purple sage to gambler’s gold, from a señorita’s tempting smile to a splash of blood in the dust, here are stories with a distinctive L’Amour twist. A quiet farmer defends his honor in a moment of panic and luck . . . only to find true courage on the run from the dead man’s brothers. A young drifter defends a lady’s honor . . . and finds himself the quarry of a hanging posse. An aging marshal with a reputation as a crack shot faces a stranger who knows his secret. With relentless suspense and unforgettable drama, Louis L’Amour once again paints a vivid portrait of our western heritage that will live forever.",
+      "images": "http://books.google.com/books/content?id=EjoimAdCGHAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 99,
+    "model": "book.book",
+    "fields": {
+      "isbn": "039914563X",
+      "title": "The Bear and the Dragon",
+      "categories": "['Fiction']",
+      "author": "Tom Clancy",
+      "year": 2000,
+      "publisher": "Penguin",
+      "description": "Don't Miss the Original Series Tom Clancy's Jack Ryan Starring John Krasinski! President Jack Ryan faces a world crisis unlike any he has ever known in Tom Clancy's extraordinary #1 New York Times bestseller. A high-level assassination attempt in Russia has the newly elected Ryan sending his most trusted eyes and ears—including antiterrorism specialist John Clark—to Moscow, for he fears the worst is yet to come. And he’s right. The attempt has left the already unstable Russia vulnerable to ambitious forces in China eager to fulfill their destiny—and change the face of the world as we know it...",
+      "images": "http://books.google.com/books/content?id=B0oJPv_XEjIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  },
+  {
+    "pk": 100,
+    "model": "book.book",
+    "fields": {
+      "isbn": "0380002450",
+      "title": "Awakening",
+      "categories": "['Psychology']",
+      "author": "Kate Chopin",
+      "year": 1982,
+      "publisher": "Vintage",
+      "description": "Awakenings--which inspired the major motion picture--is the remarkable story of a group of patients who contracted sleeping-sickness during the great epidemic just after World War I. Frozen for decades in a trance-like state, these men and women were given up as hopeless until 1969, when Dr. Oliver Sacks gave them the then-new drug L-DOPA, which had an astonishing, explosive, \"awakening\" effect. Dr. Sacks recounts the moving case histories of his patients, their lives, and the extraordinary transformations which went with their reintroduction to a changed world.",
+      "images": "http://books.google.com/books/content?id=DIMpyllgatAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  }
+]
