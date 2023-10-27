@@ -1,4 +1,5 @@
 import datetime
+import random
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render, redirect
@@ -6,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from book.models import Book
 
 @login_required(login_url='/login')
 def show_main(request):
@@ -16,7 +18,7 @@ def show_main(request):
         last_login = 'N/A'
     context = {
         'name': 'Sobaca',
-        'class': 'PBP F', 
+ 
         'last_login' : last_login
     }
     return render(request, "main.html", context)
@@ -37,6 +39,9 @@ def register(request):
 
 
 def login_user(request):
+    random_id = random.randint(1,Book.objects.count())
+    books = Book.objects.get(pk=random_id)
+    
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -48,7 +53,7 @@ def login_user(request):
             return response
         else:
             messages.info(request, 'Sorry, incorrect username or password. Please try again.')
-    context = {}
+    context = {'random_book' : books}
     return render(request, 'login.html', context)
 
 
