@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from book.models import Book
+from django.http import JsonResponse
 
 @login_required(login_url='/login')
 def show_main(request):
@@ -63,3 +64,5 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+

@@ -4,18 +4,24 @@
 {% block meta %}
 
     <link rel="stylesheet" href="{%static 'loginstyle.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 {% endblock meta %}
 
 {% block content %}
 
-<div class="login-card">
+<body>
+    <div class="navbar">
+        <a class="app-name" href="#">Sobaca</a>
+    </div>
 
     
-       
-    <p> our daily selection:  {{random_book.title}} - {{random_book.author}}</p>
-
-
+    
+<div class="login-card">
+    <p>Bingung mau baca apa? </p>
+    
+    <img src="{{ random_book.images }}" alt="{{ random_book.title }} Cover">
+    <p>{{random_book.title}} - {{random_book.author}} </p>
     <h1 class="title">Login</h1>
     
     <form method="POST" action="">
@@ -50,4 +56,10 @@
     
 </div>
 
+</body>
+
+<script>
+
+ </script>
+    
 {% endblock content %}
