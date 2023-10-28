@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{%static 'objstyles.css' %}">
+{% endblock meta %}
 
 {% block content %}
   <div class="container">
-    <h2>My Reading Objectives</h2>
+    <h2>Targetku bersama Sobaca</h2>
     
     <div class="btn-group">
       <a href="?filter=" class="btn {% if filter_status == '' %}btn-primary{% else %}btn-secondary{% endif %}">All Objectives</a>
@@ -12,18 +17,30 @@
 
     <div class="card-deck">
       {% for objective in objectives %}
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">{{ objective.title }}</h5>
-            <p class="card-text">{{ objective.description }}</p>
-            {% if objective.is_completed %}
-              <p>Status: Completed</p>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"> {{objective.title}}</h5>
+          {% if objective.is_completed %}
+          <h6 class="card-subtitle mb-2 text-muted">Completed</h6>
             {% else %}
-              <p>Status: In Progress</p>
+            <h6 class="card-subtitle mb-2 text-muted">In Progress</h6>
             {% endif %}
-          </div>
+          <p class="card-text">{{ objective.description }}</p>
+          <a href="{% url 'challenges:edit_objective' objective.id %}" class="card-link">Edit</a>
+          <a href="{% url 'challenges:complete_objective' objective.id %}" class="card-link">Mark as Complete</a>
         </div>
+      </div>
       {% endfor %}
     </div>
+
   </div>
+
+  <div class="create-button">
+    <a href="{% url 'challenges:create_objective' %}" class="btn btn-primary">Create New Objective</a>
+  </div>
+
+
+  <script>
+    
+  </script>
 {% endblock %}

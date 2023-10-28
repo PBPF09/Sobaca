@@ -1,16 +1,26 @@
-{% extends 'base.html' %}
-
+{% extends 'base.html' %} 
 {% load static %}
 
 
+{% block meta %}
+    <link rel="stylesheet" href="{%static 'createstyles.css' %}">
+{% endblock meta %}
 {% block content %}
-<link rel="stylesheet" href="{%static 'createstyle.css' %}">
-  <div class="container">
-    <h2>Create Your Reading Objective</h2>
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="btn btn-primary">Create Objective</button>
-    </form>
-  </div>
-{% endblock %}
+
+
+<h1>Tambahkan Targetmu!</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td>
+                <input  type="submit" value="Add Objective" class="add-product-button"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,97 @@
+/* Import the Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* Apply the Poppins font to the whole page */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; /* Remove default margin */
+    background-color: #e8f4ea; /* Lightest color as the background */
+}
+
+/* Style for the container */
+.container {
+    max-width: 1200px; /* Adjust the max-width as needed */
+    margin: 0 auto;
+    padding: 20px; /* Add space around the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style for the header and filters */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Add space between the header and the cards */
+}
+
+/* Style for filter buttons */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between filter buttons */
+}
+
+.btn-primary {
+    background-color: #b8d8be; /* Darkest color for primary buttons */
+}
+
+.btn-secondary {
+    background-color: #c8e1cc; /* Dark color for secondary buttons */
+}
+
+/* Style for the objectives list */
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Center the cards horizontally */
+    gap: 20px; /* Adjust the gap between cards */
+}
+
+/* Style for individual objective cards */
+.card {
+    background-color: #e0f0e3; /* Light color for cards */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(25% - 20px);
+    position: relative;
+}
+
+.card-header {
+    background-color: #d2e7d6; /* Darker color for card header */ 
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+/* Style for buttons */
+.card-body a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Center the "Create Objective" button */
+.create-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}

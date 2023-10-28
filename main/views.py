@@ -41,7 +41,6 @@ def register(request):
 def login_user(request):
     random_id = random.randint(1,Book.objects.count())
     books = Book.objects.get(pk=random_id)
-    
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -67,3 +66,15 @@ def logout_user(request):
 
 def guest(request):
     return render(request, 'main.html')
+
+from django.http import JsonResponse
+
+def get_random_book(request):
+    random_id = random.randint(1, Book.objects.count())
+    random_book = Book.objects.get(pk=random_id)
+    data = {
+        'title': random_book.title,
+        'author': random_book.author,
+        'image_url': random_book.images
+    }
+    return JsonResponse(data)
