@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .BookPage_GridContainer {
+            display: grid;
+            margin: 2rem 4rem 2rem 4rem;
+            background-color: #fff;
+            grid-template-columns: 1fr 2fr;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .BookPage_LeftColumn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .BookPage_RightColumn {
+            padding: 2rem;
+            text-align: left;
+        }
+
+        .BookCover_image {
+            border-radius: 5px;
+            max-width: 100%;
+            max-height: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .Text__title1 {
+            margin: 0;
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+            color: #333;
+        }
+
+        .Text__title3 {
+            margin: 0;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            color: #666;
+        }
+
+        p {
+            color: #333;
+        }
+
+        h1, h3 {
+            margin: 0;
+        }
+
+        @media only screen and (min-width: 48em) and (max-width: 63.9375em) {
+            .BookPage_GridContainer {
+                grid-template-columns: 1fr; /* Single column layout in portrait view */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="BookPage_GridContainer">
+        <div class="BookPage_LeftColumn">
+            <div class="Sticky" style="position: sticky; top: 112px;">
+                <div class="BookPage_Cover">
+                    <div class="BookCover_image">
+                        <img src="{{ book.images }}" alt="{{ book.title }} Cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="BookPage_RightColumn">
+            <h1 class="Text__title1"><strong>{{ book.title }}</strong></h1>
+            <h3 class "Text__title3">{{ book.author }}</h3>
+            <p>{{ book.description }}</p>
+            <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+            <p><strong>Kategori:</strong> {{ book.categories }}</p>
+            <p><strong>Tahun:</strong> {{ book.year }}</p>
+            <p><strong>Penerbit:</strong> {{ book.publisher }}</p>
+        </div>
+    </div>
+</body>
+</html>
