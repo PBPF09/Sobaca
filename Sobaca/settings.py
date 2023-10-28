@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main',
     'modul_data_buku',
     'book',
+    'user_registered',
 ]
 
 MIDDLEWARE = [
