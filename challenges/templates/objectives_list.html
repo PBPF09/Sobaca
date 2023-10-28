@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>My Reading Objectives</h2>
+    
+    <div class="btn-group">
+      <a href="?filter=" class="btn {% if filter_status == '' %}btn-primary{% else %}btn-secondary{% endif %}">All Objectives</a>
+      <a href="?filter=completed" class="btn {% if filter_status == 'completed' %}btn-primary{% else %}btn-secondary{% endif %}">Completed</a>
+      <a href="?filter=noncompleted" class="btn {% if filter_status == 'noncompleted' %}btn-primary{% else %}btn-secondary{% endif %}">Non-Completed</a>
+    </div>
+
+    <div class="card-deck">
+      {% for objective in objectives %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ objective.title }}</h5>
+            <p class="card-text">{{ objective.description }}</p>
+            {% if objective.is_completed %}
+              <p>Status: Completed</p>
+            {% else %}
+              <p>Status: In Progress</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

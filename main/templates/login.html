@@ -18,10 +18,11 @@
     
     
 <div class="login-card">
-    <p>Bingung mau baca apa? </p>
+    <p class ="random">Bingung mau baca apa? Tenang ada Sobaca! </p>
+    <p class="random">Rekomendasi hari ini adalah</p>
     
     <img src="{{ random_book.images }}" alt="{{ random_book.title }} Cover">
-    <p>{{random_book.title}} - {{random_book.author}} </p>
+    <p class="random">{{random_book.title}} - {{random_book.author}} </p>
     <h1 class="title">Login</h1>
     
     <form method="POST" action="">
@@ -47,19 +48,18 @@
         </ul>
     {% endif %}
     <div class="login-black">
-        Don't have an account yet? 
-        <div class="login-blue" >
-            <a href="{% url 'main:register' %}" >Register Now</a>
+        <p class="bottom-text">Don't have an account yet?</p>
+        <div class="login-blue">
+            <a href="{% url 'main:register' %}" class="bottom-link">Register Now</a>
         </div>
-        
     </div>
+    <a class="main-page-button" href="{% url 'main:guest' %}">Klik disini untuk langsung melihat katalog Sobaca!</a>
+    
     
 </div>
 
 </body>
 
-<script>
 
- </script>
     
 {% endblock content %}

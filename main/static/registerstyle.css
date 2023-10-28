@@ -9,7 +9,7 @@
 
 /* Navbar styles */
 .navbar {
-    background: var(--background); /* Use the background color from the palette for the navbar */
+    background: #b8d8be; /* Use the background color from the palette for the navbar */
     padding: 16px;
     display: flex;
     justify-content: space-between;
@@ -21,6 +21,17 @@
     z-index: 100;
 }
 
+.navbar .app-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.navbar .app-name:hover {
+    text-decoration: none;
+}
 
 body {
     background-size: cover;
@@ -32,48 +43,31 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    position: relative; 
+    position: relative;
     background-color: #e8f4ea; /* Use pastel green background color */
 }
 
+/* Common styles for both login and register cards */
 .login-card h1,
 .login-card label,
-.login-card a {
+.login-card a,
+.register-card h1,
+.register-card label,
+.register-card a {
     font-family: 'Poppins', sans-serif;
     color: rgb(19, 10, 54);
 }
 
-.login-card a {
+.login-card a,
+.register-card a {
     font-family: 'Poppins', sans-serif;
     color: #4162FF;
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
-.text-title{
-    font-size: 32px;
-}
-
-.register-card {
-    text-align: center;
-    background-color: #e0f0e3; 
-    border-radius: 32px;
-    padding: 30px;
-    width: 500px;
-    text-align: left;
-    padding-top: 50px;
-    backdrop-filter: blur(6px);
-    border: 2px solid rgba(255, 255, 255, 0.439); 
-}
-
-.register-card h1 {
-    font-family: 'Poppins', sans-serif;
-}
-
-.register-card form {
-    font-family: 'Poppins', sans-serif;
-    margin-top: 20px; 
-}
-
+/* Common styles for form inputs */
+.login-card input[type="text"],
+.login-card input[type="password"],
 .register-card input[type="text"],
 .register-card input[type="password"] {
     font-family: 'Poppins', sans-serif;
@@ -85,17 +79,22 @@ body {
     font-size: 16px;
 }
 
+/* Common styles for form groups */
+.login-card .form-group,
 .register-card .form-group {
     margin-bottom: 24px;
 }
 
-.register-card .form-group label {
+.login-card .form-group label,
+register-card .form-group label {
     font-family: 'Poppins', sans-serif;
     margin-bottom: 8px;
     text-align: left;
-    display: block; 
+    display: block;
 }
 
+/* Common styles for the add product button */
+.login-card .add-product-button,
 .register-card .add-product-button {
     font-size: 18px;
     display: inline-flex;
@@ -111,6 +110,21 @@ body {
     border: none;
     cursor: pointer;
 }
+
+/* Specific styles for the register card */
+.register-card {
+    text-align: center;
+    background-color: #e0f0e3;
+    border-radius: 32px;
+    padding: 30px;
+    width: 500px;
+    text-align: left;
+    padding-top: 50px;
+    backdrop-filter: blur(6px);
+    border: 2px solid rgba(255, 255, 255, 0.439);
+}
+
+/* Additional CSS classes for alignment and padding */
 .left-align {
     text-align: left;
 }
@@ -119,9 +133,10 @@ body {
     text-align: center;
 }
 
-.password{
+.password {
     text-align: center;
 }
-.padding-top{
+
+.padding-top {
     padding-top: 20px;
 }

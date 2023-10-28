@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{%static 'createstyle.css' %}">
+  <div class="container">
+    <h2>Create Your Reading Objective</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Create Objective</button>
+    </form>
+  </div>
+{% endblock %}

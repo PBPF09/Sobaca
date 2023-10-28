@@ -1,4 +1,3 @@
-/* Define the color palette */
 :root {
     --primary-blue: #4162FF;
     --background-lightest: #e8f4ea;
@@ -10,7 +9,7 @@
 
 /* Navbar styles */
 .navbar {
-    background: var(--background); /* Use the background color from the palette for the navbar */
+    background: #b8d8be; /* Use the background color from the palette for the navbar */
     padding: 16px;
     display: flex;
     justify-content: space-between;
@@ -50,13 +49,15 @@ body {
 }
 
 
-
+.random{
+    font-family: 'Poppins', sans-serif;
+}
 
 .login-card h1,
 .login-card label,
 .login-card a {
     font-family: 'Poppins', sans-serif;
-    color: rgb(85, 203, 93);
+    color: #b8d8be;
 }
 
 .login-card a {
@@ -132,7 +133,7 @@ body {
     align-items: center;
     gap: 16px;
     border-radius: 16px;
-    background: var(--primary-blue, #4162FF);
+    background: #b8d8be;
     color: antiquewhite;
     text-decoration: none;
     border: none;

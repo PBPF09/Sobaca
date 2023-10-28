@@ -27,7 +27,6 @@ def show_main(request):
 
 def register(request):
     form = UserCreationForm()
-
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -66,3 +65,5 @@ def logout_user(request):
     return response
 
 
+def guest(request):
+    return render(request, 'main.html')
