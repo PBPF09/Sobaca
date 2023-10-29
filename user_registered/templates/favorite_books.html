@@ -58,7 +58,6 @@
         <div id = "quote_text" class="flex items-center justify-center"></div>
     <br>
 </main>
-{% endblock content %}
 
 {% block scripts %}
     <script>
@@ -66,7 +65,6 @@
             document.getElementById("quote_text").innerHTML = ""
             const quotes = await getQuotes()
             let htmlString = `<h3> ${quotes[quotes.length -1].fields.text}</h3>`
- 
             
             document.getElementById("quote_text").innerHTML = htmlString
         }
@@ -74,11 +72,11 @@
         refreshItems()
         
         async function getQuotes() {
-            return fetch("{% url 'reader:get_quote' %}").then((res) => res.json())
+            return fetch("{% url 'main:user_registered:get_quote' %}").then((res) => res.json())
         }
 
         function addQuote() {
-            fetch("{% url 'reader:create_quote' %}", {
+            fetch("{% url 'main:user_registered:create_quote' %}", {
                 method: "POST",
                 body: new FormData(document.querySelector('#form'))
             }).then(refreshItems)
@@ -91,3 +89,4 @@
 
     </script>
 {% endblock scripts %}
+{% endblock content %}
