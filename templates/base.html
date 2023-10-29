@@ -43,12 +43,52 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body style="margin-top: 100px;">
         <div class="navbar">
             <a class="app-name" href="#">Sobaca</a>
-            <a class="app-name" href="{% url 'discussion:show_discussion' %}">Discussion</a>
+            <div>
+                <a href="{% url 'user_registered:profile' %}">
+                    <h5>Welcome {{ user.username }}</h5>
+                </a>
+            </div>
+            <div>
+                <a href="{% url 'user_registered:favorite' %}">
+                    <h5>{{ user.username }}'s Favorite</h5>
+                </a>
+            </div>
+            <div>
+                <a href="{% url 'discussion:show_discussion' %}">
+                    <h5>Discussion</h5>
+                </a>
+            </div>
         </div>
         {% block content %}
         {% endblock content %}
     </body>
+    <style>
+        .navbar {
+            background: #b8d8be; 
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .navbar .app-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: antiquewhite;
+            text-decoration: none;
+        }
+
+        .navbar .app-name:hover {
+            text-decoration: none;
+        }
+    </style>
 </html>

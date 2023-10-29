@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E1F3DB;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+#books-library {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.custom-card {
+    background-color: #FFFFFF;
+    border: 1px solid #4C956C;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.custom-card:hover {
+    transform: scale(1.05);
+}
+
+.custom-card img {
+    height: 300px;
+    object-fit:fill;
+    width: 100%;
+}
+
+.card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.book-detail{
+    justify-content: center;
+    text-align: center;
+}
+
+.book-detail img{
+    height: 100px;
+    object-fit: fill;
+    width: 70px;
+}
+
+.add-thread {
+    background-color: #4C956C;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.add-thread:hover {
+    background-color: #306145; 
+}
+
+.modal-content {
+    background-color: #E1F3DB;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background-color: #4C956C;
+    color: #FFFFFF;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-body {
+    background-color: #FFFFFF;
+}
+
+.modal-footer {
+    background-color: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+}

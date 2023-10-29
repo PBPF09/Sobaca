@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from book.models import Book
 from book_catalog.models import Review, WantToRead, Reading, Read
+from user_registered.models import FavoriteBook
 from book_catalog.forms import ReviewForm
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
@@ -66,7 +67,7 @@ def add_review(request, id_buku):
         add_review = request.POST['review']
         review = Review(book=add_book, user=add_user, review=add_review)
         review.save()
-        return HttpResponse(b"CREATED", status=201)
+        return HttpResponseRedirect(reverse('book_catalog:show', args=(id_buku,)))
     return HttpResponseNotFound(b"NOT FOUND")
 
 # fungsi untuk mengambil review dari buku
@@ -76,4 +77,16 @@ def get_reviews(request, id_buku):
         review = Review.objects.filter(book=book)
         data = serializers.serialize('json', review)
         return HttpResponse(data, content_type='application/json')
+    return HttpResponseNotFound(b"NOT FOUND")
+
+# fungsi untuk menambahkan ke favorite
+@login_required(login_url='login')
+@csrf_exempt
+def add_favorite(request, id_buku):
+    if request.method == "POST":
+        add_book = Book.objects.get(pk=id_buku)
+        add_user = request.user
+        favorite = FavoriteBook(book=add_book, user=add_user)
+        favorite.save()
+        return HttpResponseRedirect(reverse('book_catalog:show', args=(id_buku,)))
     return HttpResponseNotFound(b"NOT FOUND")

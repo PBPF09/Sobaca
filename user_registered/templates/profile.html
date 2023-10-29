@@ -125,7 +125,7 @@
 
     async function getProducts() {
         console.log("mask")
-        return fetch("{% url 'main:user_registered:get_profile' %}").then((res) => res.json())
+        return fetch("{% url 'user_registered:get_profile' %}").then((res) => res.json())
     }
     async function refreshProducts() {
         document.getElementById("ganti1").innerHTML = ""
@@ -152,7 +152,7 @@
     refreshProducts()
    
     function addProduct() {
-        fetch("{% url 'main:user_registered:edit_profile' %}", {
+        fetch("{% url 'user_registered:edit_profile' %}", {
             method: "POST",
             body: new FormData(document.querySelector('#form'))
         }).then(refreshProducts)
