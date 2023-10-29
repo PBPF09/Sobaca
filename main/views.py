@@ -31,7 +31,7 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your account has been successfully created!')
+            messages.success(request, 'Selamat bergabung dengan Sobaca!')
             return redirect('main:login')
     context = {'form':form}
     return render(request, 'register.html', context)
@@ -51,7 +51,7 @@ def login_user(request):
             response.set_cookie('last_login', str(datetime.datetime.now()))
             return response
         else:
-            messages.info(request, 'Sorry, incorrect username or password. Please try again.')
+            messages.info(request, 'Waduh, sepertinya username atau password salah.')
     context = {'random_book' : books}
     return render(request, 'login.html', context)
 

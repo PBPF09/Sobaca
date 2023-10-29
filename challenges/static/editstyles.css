@@ -62,7 +62,7 @@ input[type="text"] {
 }
 
 .navbar {
-    background: #b8d8be; /* Use the background color from the palette for the navbar */
+    background: #b8d8be; 
     padding: 16px;
     display: flex;
     justify-content: space-between;

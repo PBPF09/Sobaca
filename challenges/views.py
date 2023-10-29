@@ -57,23 +57,3 @@ def get_objectives_json(request):
     return HttpResponse(serializers.serialize('json', objective_item))
 
 
-@csrf_exempt
-def add_product_ajax(request):
-    if request.method == 'POST':
-        name = request.POST.get("name")
-        price = request.POST.get("price")
-        description = request.POST.get("description")
-        user = request.user
-
-        new_product = Objective(name=name, price=price, description=description, user=user)
-        new_product.save()
-
-        return HttpResponse(b"CREATED", status=201)
-
-    return HttpResponseNotFound()
-
-
-@csrf_exempt
-def remove_product_ajax(request, id):
-    Objective.objects.filter(pk=id).delete()
-    return HttpResponseRedirect(reverse("challenges:objective_list"))

@@ -7,9 +7,8 @@
     --background-darker: #b8d8be;
 }
 
-/* Navbar styles */
 .navbar {
-    background: #b8d8be; /* Use the background color from the palette for the navbar */
+    background: #b8d8be; 
     padding: 16px;
     display: flex;
     justify-content: space-between;
@@ -33,19 +32,18 @@
     text-decoration: none;
 }
 
-/* Update the body styles to account for the navbar and background color */
 body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin: 80px 12px 12px; /* Adjust the top margin to accommodate the navbar */
+    margin: 80px 12px 12px; 
     padding: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 80px); /* Subtract the navbar height */
+    min-height: calc(100vh - 80px); 
     position: relative;
-    background-color: #e8f4ea; /* Use the background color from the palette */
+    background-color: #e8f4ea; 
 }
 
 

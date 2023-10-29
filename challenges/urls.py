@@ -1,5 +1,5 @@
 from django.urls import path
-from challenges.views import create_objective, edit_objective, complete_objective, objectives_list,get_objectives_json,add_product_ajax,remove_product_ajax
+from challenges.views import create_objective, edit_objective, complete_objective, objectives_list,get_objectives_json
 
 app_name = 'challenges'
 
