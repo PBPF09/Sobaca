@@ -1,9 +1,11 @@
-from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, JsonResponse
 from django.core import serializers
 from django.shortcuts import render
-from discussion.models import DiscussionReply, DiscussionThread
+from django.urls import reverse
+from .models import DiscussionReply, DiscussionThread
 from book.models import Book
 from django.views.decorators.csrf import csrf_exempt
+from .forms import ThreadForm
 
 # Create your views here.
 def show_discussion(request):

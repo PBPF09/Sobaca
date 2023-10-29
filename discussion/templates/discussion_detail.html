@@ -5,107 +5,107 @@
     <link rel="stylesheet" href="{% static 'discussion_detail.css' %}">
     <style>
         .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-.max-w-3xl {
-    max-width: 48rem;
-}
+        .max-w-3xl {
+            max-width: 100%;
+        }
 
-.bg-white {
-    background-color: #fff;
-}
+        .bg-green {
+            background-color: #4CAF50; /* Warna hijau */
+            color: #fff; /* Warna teks putih untuk kontras */
+        }
 
-.rounded-lg {
-    border-radius: 1rem;
-}
+        .rounded-lg {
+            border-radius: 1rem;
+        }
 
-.shadow-md {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.text-2xl {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
+        .text-2xl {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
 
-.text-gray-500 {
-    color: #999;
-}
+        .text-gray-500 {
+            color: #999;
+        }
 
-.text-gray-700 {
-    color: #333;
-}
+        .text-gray-700 {
+            color: #333;
+        }
 
-/* CSS untuk balasan (replies) */
-.max-w-3xl .my-4 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
+        /* CSS untuk balasan (replies) */
+        .my-4 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
 
-.my-4 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
+        p {
+            margin: 0;
+        }
 
-p {
-    margin: 0;
-}
+        /* Tombol "Reply this Thread" */
+        #replyLink {
+            text-decoration: none;
+            color: #fff; /* Warna teks putih */
+            cursor: pointer;
+            background-color: #4CAF50; /* Warna hijau */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
 
-/* Tombol "Reply this Thread" */
-#replyLink {
-    text-decoration: none;
-    color: #007bff;
-    cursor: pointer;
-}
+        #replyLink:hover {
+            background-color: #45a049; /* Warna hijau yang lebih gelap saat dihover */
+        }
 
-#replyLink:hover {
-    text-decoration: underline;
-}
+        /* Gaya untuk modal reply */
+        .modal-dialog {
+            max-width: 600px;
+        }
 
-/* Gaya untuk modal reply */
-.modal-dialog {
-    max-width: 600px;
-}
+        .modal-content {
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
 
-.modal-content {
-    border: none;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-}
+        .fs-5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
 
-.fs-5 {
-    font-size: 1.25rem;
-    font-weight: 600;
-}
+        .font-weight-bold {
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-.font-weight-bold {
-    font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
+        /* Gaya untuk balasan dalam modal */
+        .modal-body {
+            padding: 1rem;
+        }
 
-/* Gaya untuk balasan dalam modal */
-.modal-body {
-    padding: 1rem;
-}
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
 
-.form-group {
-    margin-bottom: 1.5rem;
-}
+        /* Tombol "Reply" dalam modal */
+        .btn-primary {
+            background-color: #4CAF50; /* Warna hijau */
+            color: #fff; /* Warna teks putih */
+            border: none;
+            border-radius: 5px;
+        }
 
-/* Tombol "Reply" dalam modal */
-.btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
+        .btn-primary:hover {
+            background-color: #45a049; /* Warna hijau yang lebih gelap saat dihover */
+        }
     </style>
 {% endblock meta %}
 
@@ -118,7 +118,6 @@ p {
         <p class="text-gray-700 my-4">{{ content }}</p>
     </div>
     <div id="replies-container" class="max-w-3xl mx-auto mt-4">
-        <!-- Daftar Balasan Akan Muncul Di Sini -->
     </div>
     <a href="#" id="replyLink" data-bs-toggle="modal" data-bs-target="#replyModal">Reply this Thread</a>
 </div>
@@ -175,7 +174,15 @@ p {
                     <p class="text-gray-500">Created by ${reply.user} - ${formattedDate}</p>
                     <p class="text-gray-700 my-2">${reply.content}</p>
                 </div>
+                <div
+                ${thread.is_author ?
+                        `<div class="button-container">
+                        <a class="button delete-button" id="delete-reply" name="delete-reply">Delete</button>
+                        <a class="button edit-button" id="edit-reply" name="edit-reply">Edit</button> 
+                        </div>` : ``}
+                
                 `;
+                
                 repliesContainer.innerHTML += replyHTML;
             });
         } else {

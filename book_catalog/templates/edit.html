@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+{% block content %}
+<head>
+    <title>Edit Buku</title>
+</head>
+<body>
+    <h1>Edit Buku</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Edit"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+{% endblock %}
+</html>

@@ -23,5 +23,6 @@ urlpatterns = [
     path('discussion/', include('discussion.urls')),
     path('api/books/', include('book.urls')),
     path('challenges/', include('challenges.urls')),
-    path('search_book/', include('search_book.urls'))
+    path('search_book/', include('search_book.urls')),
+    path('book/', include('book_catalog.urls')),
 ]

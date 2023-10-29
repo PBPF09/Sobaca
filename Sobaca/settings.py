@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main',
     'discussion',
     'modul_data_buku',
+    'book_catalog',
     'book',
     'user_registered',
     'challenges',
