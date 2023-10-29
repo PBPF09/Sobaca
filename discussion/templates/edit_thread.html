@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 my-5">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="mt-4">Edit Thread</h1>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <form method="POST" class="mt-4">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="{{ form.name.id_for_label }}" class="form-label">Title</label><br>
+                                {{ form.title }}
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.amount.id_for_label }}" class="form-label">Ticket Amount</label> <br>
+                                {{ form.content }}
+                            </div>
+                            <a href="{% url 'discussion:join_discussion' %}" class="btn btn-danger">Kembali</a>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

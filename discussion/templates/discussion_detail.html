@@ -3,110 +3,6 @@
 
 {% block meta %}
     <link rel="stylesheet" href="{% static 'discussion_detail.css' %}">
-    <style>
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .max-w-3xl {
-            max-width: 100%;
-        }
-
-        .bg-green {
-            background-color: #4CAF50; /* Warna hijau */
-            color: #fff; /* Warna teks putih untuk kontras */
-        }
-
-        .rounded-lg {
-            border-radius: 1rem;
-        }
-
-        .shadow-md {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .text-2xl {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .text-gray-500 {
-            color: #999;
-        }
-
-        .text-gray-700 {
-            color: #333;
-        }
-
-        /* CSS untuk balasan (replies) */
-        .my-4 {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin: 0;
-        }
-
-        /* Tombol "Reply this Thread" */
-        #replyLink {
-            text-decoration: none;
-            color: #fff; /* Warna teks putih */
-            cursor: pointer;
-            background-color: #4CAF50; /* Warna hijau */
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
-        #replyLink:hover {
-            background-color: #45a049; /* Warna hijau yang lebih gelap saat dihover */
-        }
-
-        /* Gaya untuk modal reply */
-        .modal-dialog {
-            max-width: 600px;
-        }
-
-        .modal-content {
-            border: none;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-        }
-
-        .fs-5 {
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-
-        .font-weight-bold {
-            font-weight: 600;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Gaya untuk balasan dalam modal */
-        .modal-body {
-            padding: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        /* Tombol "Reply" dalam modal */
-        .btn-primary {
-            background-color: #4CAF50; /* Warna hijau */
-            color: #fff; /* Warna teks putih */
-            border: none;
-            border-radius: 5px;
-        }
-
-        .btn-primary:hover {
-            background-color: #45a049; /* Warna hijau yang lebih gelap saat dihover */
-        }
-    </style>
 {% endblock meta %}
 
 {% block content %}
@@ -119,7 +15,7 @@
     </div>
     <div id="replies-container" class="max-w-3xl mx-auto mt-4">
     </div>
-    <a href="#" id="replyLink" data-bs-toggle="modal" data-bs-target="#replyModal">Reply this Thread</a>
+    <button href="#" id="replyLink" data-bs-toggle="modal" data-bs-target="#replyModal">Reply this Thread</button>
 </div>
 
 <div class="modal fade" id="replyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -170,17 +66,15 @@
                 const date = new Date(reply.date_create);
                 const formattedDate = date.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
                 const replyHTML = `
-                <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-4 my-4">
+                <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-4 my-4 replies-box">
                     <p class="text-gray-500">Created by ${reply.user} - ${formattedDate}</p>
                     <p class="text-gray-700 my-2">${reply.content}</p>
+                    ${reply.is_author ?
+                            `<div class="button-container">
+                            <button class="button delete-button" id="delete-reply" name="delete-reply" onclick="">Delete</button>
+                            <button class="button edit-button" id="edit-reply" name="edit-reply" onclick="edit_reply/${reply.id}">Edit</button> 
+                            </div>` : ``}
                 </div>
-                <div
-                ${thread.is_author ?
-                        `<div class="button-container">
-                        <a class="button delete-button" id="delete-reply" name="delete-reply">Delete</button>
-                        <a class="button edit-button" id="edit-reply" name="edit-reply">Edit</button> 
-                        </div>` : ``}
-                
                 `;
                 
                 repliesContainer.innerHTML += replyHTML;
@@ -190,9 +84,8 @@
         }
     }
     refreshReply();
-
+    
     async function addReply(threadId, userId){
-        console.log("Masuk Fungsi addReply")
         document.getElementById("form").reset();
         $('#replyModal').modal('show');
     }

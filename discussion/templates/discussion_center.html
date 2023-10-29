@@ -44,7 +44,7 @@
                             <button class="discussion-button detail-button" id="view-detail"
                                 name="view-detail" data-thread-id="${thread.id}")>View Detail</button>
                             ${thread.is_author ?
-                                `<button class="discussion-button edit-button" id="edit-thread" name="edit-thread">Edit</button>` : ``}
+                                `<button class="discussion-button edit-button" id="edit-thread" name="edit-thread" onclick="edit_thread/${thread.id}">Edit</button>` : ``}
                         </div>
                     </div>
                 </div>

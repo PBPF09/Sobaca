@@ -1,0 +1,73 @@
+.thread {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4CAF50;
+    color: #fff; 
+    border: 1px solid #45a049; 
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.thread-content {
+    flex: 1;
+}
+
+.thread-actions {
+    margin-left: 10px;
+}
+
+.replies {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.reply {
+    width: 100%;
+    background-color: #4CAF50; /* Warna hijau */
+    color: #fff;
+    border: 1px solid #45a049; /* Warna hijau yang lebih gelap */
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reply-content {
+    flex: 1;
+}
+
+.reply-actions {
+    margin-left: 10px;
+}
+
+.button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.delete-button {
+    background-color: #ff6347;
+}
+
+.edit-button {
+    background-color: #007bff; 
+}
+
+.green-button {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.green-button:hover {
+    background-color: #45a049;
+}

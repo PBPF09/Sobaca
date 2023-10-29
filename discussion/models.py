@@ -1,6 +1,6 @@
 from django.db import models
 from book.models import Book
-from django.contrib.auth.models import User #JANGAN LUPA GANTI SAMA MODUL YANG DIBUAT NANTI
+from django.contrib.auth.models import User
 
 class DiscussionThread(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
