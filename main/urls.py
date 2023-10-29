@@ -13,7 +13,6 @@ urlpatterns = [
     path('register/', register, name='register'), 
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
-    path('user_registered/', include('user_registered.urls')),
     path('guest/', guest, name='guest'),
     path('get_random_book/', get_random_book, name='get_random_book')
 ]
