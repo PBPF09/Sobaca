@@ -69,11 +69,6 @@
                 <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-4 my-4 replies-box">
                     <p class="text-gray-500">Created by ${reply.user} - ${formattedDate}</p>
                     <p class="text-gray-700 my-2">${reply.content}</p>
-                    ${reply.is_author ?
-                            `<div class="button-container">
-                            <button class="button delete-button" id="delete-reply" name="delete-reply" onclick="">Delete</button>
-                            <button class="button edit-button" id="edit-reply" name="edit-reply" onclick="edit_reply/${reply.id}">Edit</button> 
-                            </div>` : ``}
                 </div>
                 `;
                 
