@@ -15,4 +15,7 @@ urlpatterns = [
     path('add-thread/', add_thread_discussion, name='add_thread_discussion'),
     path('get-reply/<int:threadId>', get_reply_thread, name='get_reply_thread'),
     path('add-reply/', add_reply_discussion, name='add_reply_discussion'),
+    path('delete_reply/<int:id>', delete_reply, name='delete_reply'),
+    path('edit_reply/<int:id>', edit_reply, name='edit_reply'),
+    path('edit_thread/<int:id>', edit_thread, name='edit_thread'),
 ]
