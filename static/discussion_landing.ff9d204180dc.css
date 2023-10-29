@@ -1,0 +1,45 @@
+.hero {
+    background-image: url("DiscussionHero.2b3c295962ce.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero .button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button-container .discussion-button {
+    margin: 0 20px;
+    padding: 15px 30px;
+    background-color: #008000;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container .discussion-button:hover {
+    background-color: #b8d8be;
+}
