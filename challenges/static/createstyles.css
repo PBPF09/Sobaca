@@ -1,0 +1,87 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e8f4ea; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333; 
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #FFF; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    margin-bottom: 10px;
+}
+
+td {
+    padding: 8px 0;
+}
+
+label {
+    font-weight: bold;
+    color: #555; 
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #CCC; 
+    border-radius: 4px;
+}
+
+.add-product-button {
+    background-color: #b8d8be; 
+    color: #FFF;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-product-button:hover {
+    background-color: #d2e7d6; 
+}
+
+.navbar {
+    background: #b8d8be; 
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.navbar .app-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.navbar .app-name:hover {
+    text-decoration: none;
+}

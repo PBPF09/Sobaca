@@ -1,136 +1,82 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block meta %}
-    <title>Login</title>
+
+    <link rel="stylesheet" href="{%static 'loginstyle.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 {% endblock meta %}
 
 {% block content %}
-<style>
-    body {
-        background: linear-gradient(to right, #b7e4c7, #93d8af);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
 
-    .login-card {
-        background: linear-gradient(to right, #93d8af, #b7e4c7);
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        display: flex;
-        max-width: 800px;
-        width: 100%;
-    }
+<body>
+    <div class="navbar">
+        <a class="app-name" href="#">Sobaca</a>
+    </div>
 
-    .left-side, .right-side {
-        flex: 1;
-        padding: 20px;
-    }
-
-    .left-side {
-        background: #fff;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-    }
-
-    .right-side {
-        background: #93d8af;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .right-side a {
-        text-decoration: none;
-        color: #008000;
-    }
-
-    .right-side a:hover {
-        text-decoration: underline;
-    }
-
-    .login h1 {
-        color: #008000;
-    }
-
-    .login form {
-        margin: 20px 0;
-    }
-
-    .login table {
-        width: 100%;
-    }
-
-    .login input[type="text"],
-    .login input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 5px 0;
-    }
-
-    .login .btn {
-        background: #008000;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .login .btn:hover {
-        background: #006400;
-    }
-
-    .login ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .login ul li {
-        color: red;
-    }
-</style>
-
+    
+    
 <div class="login-card">
-    <div class="left-side">
-        <div class="login">
-            <h1>Login</h1>
-            <form method="POST" action="">
-                {% csrf_token %}
-                <table>
-                    <tr>
-                        <td>Username: </td>
-                        <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-                    </tr>
-                    <tr>
-                        <td>Password: </td>
-                        <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input class="btn login_btn" type="submit" value="Login"></td>
-                    </tr>
-                </table>
-            </form>
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}     
+    <p class ="random">Bingung mau baca apa? Tenang ada Sobaca! </p>
+    <p class="random">Rekomendasi hari ini adalah</p>
+    
+    <img src="{{ random_book.images }}" alt="{{ random_book.title }} Cover">
+    <p class="random">{{random_book.title}} - {{random_book.author}} </p>
+    <button id="refreshRandomBook">Mau yang lain, dong!</button>
+
+    <h1 class="title">Login</h1>
+    
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" placeholder="Username" class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Password" class="form-input">
+        </div>
+        <div class="form-group">
+            <input class="add-product-button" type="submit" value="Login">
+        </div>
+    </form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="login-black">
+        <p class="bottom-text">Belum jadi sobat membaca?</p>
+        <div class="login-blue">
+            <a href="{% url 'main:register' %}" class="bottom-link">Register disini!</a>
         </div>
     </div>
-    <div class="right-side">
-        Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-    </div>
+    <a class="main-page-button" href="{% url 'main:guest' %}">Klik disini untuk langsung melihat katalog Sobaca!</a>
+    
+    
 </div>
 
+</body>
+
+<script>
+    async function refreshRandomBook(){
+        const response = await fetch("{% url 'main:get_random_book' %}");
+        if(response.ok){
+            const data = await response.json();
+            document.querySelector('img').src = data.images;
+            document.querySelector('.random').textContent = data.title + ' - ' + data.author;
+
+        }else{
+            console.error("Gagal mengambil buku")
+        }
+    }
+    document.getElementById('refreshRandomBook').addEventListener('click', refreshRandomBook)
+</script>
+
+
+    
 {% endblock content %}

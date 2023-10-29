@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'modul_data_buku',
     'book',
     'user_registered',
+    'challenges',
 ]
 
 MIDDLEWARE = [
