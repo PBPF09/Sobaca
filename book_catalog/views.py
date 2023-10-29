@@ -67,7 +67,7 @@ def add_review(request, id_buku):
         add_review = request.POST['review']
         review = Review(book=add_book, user=add_user, review=add_review)
         review.save()
-        return HttpResponse(b"CREATED", status=201)
+        return HttpResponseRedirect(reverse('book_catalog:show', args=(id_buku,)))
     return HttpResponseNotFound(b"NOT FOUND")
 
 # fungsi untuk mengambil review dari buku

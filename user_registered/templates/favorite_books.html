@@ -21,9 +21,9 @@
     <h1 class="text-2xl sm:text-3xl font-semibold">Favorite Books</h1>
         <ul id="list_fav_book" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 mt-8" >
         {% for favorite_book in favorite_books %}
-        <a href="favorite-books/{{ favorite_book.book.pk }}">
+        <a href="{% url 'book_catalog:show' favorite_book.book.id %}"> 
             <li class="rounded-md shadow bg-white relative">
-                <img src="{{ favorite_book.book.image }}" alt="{{ favorite_book.book.title }}" class="rounded-t-md w-full aspect-[4/6] object-cover bg-slate-300" />
+                <img src="{{ favorite_book.book.images }}" alt="{{ favorite_book.book.title }}" class="rounded-t-md w-full aspect-[4/6] object-cover bg-slate-300" />
                 <div class="p-3 pt-1 border-t-2 border-t-slate-200">
                 <h3 class="text-lg sm:text-xl font-semibold max-w-[20ch] overflow-hidden truncate">{{ favorite_book.book.title }}</h3>
                 <small>{{ favorite_book.book.author}}</small>

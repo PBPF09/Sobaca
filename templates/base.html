@@ -26,6 +26,11 @@
                 </a>
             </div>
             <div>
+                <a href="{% url 'user_registered:favorite' %}">
+                    <h5>{{ user.username }}'s Favorite</h5>
+                </a>
+            </div>
+            <div>
                 <a href="{% url 'discussion:show_discussion' %}">
                     <h5>Discussion</h5>
                 </a>
