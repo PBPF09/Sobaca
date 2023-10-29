@@ -75,6 +75,6 @@ def get_random_book(request):
     data = {
         'title': random_book.title,
         'author': random_book.author,
-        'image_url': random_book.images
+        'images': random_book.images
     }
     return JsonResponse(data)

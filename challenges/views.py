@@ -23,13 +23,12 @@ def create_objective(request):
 
 def objectives_list(request):
     status = request.GET.get('filter')
-
     if status == 'completed':
-        objectives = Objective.objects.filter(is_completed=True)
+        objectives = Objective.objects.filter(user=request.user, is_completed=True)
     elif status == 'noncompleted':
-        objectives = Objective.objects.filter(is_completed=False)
+        objectives = Objective.objects.filter(user=request.user, is_completed=False)
     else:
-        objectives = Objective.objects.all()  
+        objectives = Objective.objects.filter(user=request.user)  
 
 
     return render(request, 'objectives_list.html', {'objectives': objectives})

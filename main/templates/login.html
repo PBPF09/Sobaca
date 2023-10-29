@@ -23,7 +23,7 @@
     
     <img src="{{ random_book.images }}" alt="{{ random_book.title }} Cover">
     <p class="random">{{random_book.title}} - {{random_book.author}} </p>
-    <button id="refreshRandomBook">Refresh Random Book</button>
+    <button id="refreshRandomBook">Mau yang lain, dong!</button>
 
     <h1 class="title">Login</h1>
     
@@ -61,6 +61,21 @@
 </div>
 
 </body>
+
+<script>
+    async function refreshRandomBook(){
+        const response = await fetch("{% url 'main:get_random_book' %}");
+        if(response.ok){
+            const data = await response.json();
+            document.querySelector('img').src = data.images;
+            document.querySelector('.random').textContent = data.title + ' - ' + data.author;
+
+        }else{
+            console.error("Gagal mengambil buku")
+        }
+    }
+    document.getElementById('refreshRandomBook').addEventListener('click', refreshRandomBook)
+</script>
 
 
     
