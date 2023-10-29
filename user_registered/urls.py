@@ -9,6 +9,4 @@ urlpatterns = [
     path('get_profile/', get_profile,name = 'get_profile'),
     path('favorite/', favorite, name='favorite'),
     path('get_favoriteBook/', get_favoriteBook, name='get_favoriteBook'),
-    path('create_quote/', create_quote, name='create_quote'),
-    path('get_quote/', get_quote, name='get_quote'),
 ]

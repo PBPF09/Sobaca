@@ -61,18 +61,3 @@ def favorite(request):
 def get_favoriteBook(request):
     favorite_books = FavoriteBook.objects.filter(owner=request.user)
     return HttpResponse(serializers.serialize('json', favorite_books))
-
-@csrf_exempt
-def create_quote(request):
-    if request.method == 'POST':
-        text = request.POST.get("text")
-
-        new_quote = Quote(text=text)
-        new_quote.save()
-        return HttpResponse(b"CREATED", status=201)
-
-    return HttpResponseNotFound()
-
-def get_quote(request):
-    quote = Quote.objects.all()
-    return HttpResponse(serializers.serialize('json', quote))
