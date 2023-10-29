@@ -1,128 +1,128 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block meta %}
-<title>Dashboard Profile</title>
-{% endblock meta %}
+<!-- Link font style yang digunakan -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
 {% block content %}
 <style>
-    #update-modal {
+    body {
+        background-color: #d2e7d6; 
+        font-family: 'Poppins', sans-serif;
+        align-items: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
+        width: 80%;
     }
 
-    #update-modal::before {
-        content: "";      
-        display: inline-block;
-        height: 100%;    
-        margin-right: -4px;
-        vertical-align: middle;
-        text-align: center;
+    .btn-primary {
+        background-color: #2ecc71;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
     }
 
-    .modal-dialog { 
-        display: inline-block;  
-        text-align: left;   
-        vertical-align: middle;
+    .btn-secondary {
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
     }
 
+    .btn-primary:hover {
+        background-color: #27ae60;
+    }
+
+    .bold-font {
+        font-weight: bold;
+    }
 </style>
-<div class="px-4">
-  <div class="
-        justify-center
-        items-center
-        bg-white
-        mx-auto
-        max-w-2xl
-        rounded-lg
-        my-16
-        p-16
-      ">
-    <div style="margin-bottom:30px;">
-        <h1 class="text-2xl font-medium">Dashboard Profile</h1>
-    </div>
-    <div  class="gap-5 md:columns-3 mb-10">
+<div class="container">
+    <div class="card">
+        <h1 class="bold-font">Dashboard Profile</h1>
         <div>
             <div class="mt-5">
                 <h6><b>Username</b></h6>
                 {{ username }}<br>
             </div>
-        <div id="ganti1">   
-            <div class="mt-5">
-                <h6><b>Name</b></h6>
-                {{ name }}<br>
-            </div>
-        
-        
-            <div class="mt-5">
-                <h6><b>Kota</b></h6>
-                {{ city }}<br>
-            </div>
-            <div class="mt-5">
-                <h6><b>Genre Favorit</b></h6>
-                {{ fav_genre }}<br>
-            </div>
-        
-        </div> 
-    </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Profile</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div id="ganti1">
+                <div class="mt-5">
+                    <h6><b>Nama</b></h6>
+                    {{ name }}<br>
                 </div>
-                <div class="modal-body">
-                    <form id="form" onsubmit="return false;">
-                        {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="name" class="col-form-label">Nama:</label>
-                            <input type="text" class="form-control" id="name" name="name"></input>
-                        </div>
-                        <div class="mb-3">
-                            <label for="city" class="col-form-label">Kota:</label>
-                            <input type="text" class="form-control" id="city" name="city"></input>
-                        </div>
-                        <div class="mb-3">
-                            <label for="fav_genre" class="col-form-label">Genre Favorit:</label>
-                            <input type="text" class="form-control" id="fav_genre" name="fav_genre"></input>
-                        </div>
-                    </form>
+                <div class="mt-5">
+                    <h6><b>Kota</b></h6>
+                    {{ city }}<br>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Edit Profile</button>
+                <div class="mt-5">
+                    <h6><b>Genre Favorit</b></h6>
+                    {{ fav_genre }}<br>
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Profile</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" onsubmit="return false;">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name" class="col-form-label">Nama:</label>
+                                <input type="text" class="form-control" id="name" name="name"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="city" class="col-form-label">Kota:</label>
+                                <input type="text" class="form-control" id="city" name="city"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fav_genre" class="col-form-label">Genre Favorit:</label>
+                                <input type="text" class="form-control" id="fav_genre" name="fav_genre"></input>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Edit Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Profile</button>
     </div>
+</div>
 
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Profile</button>
-
-    </div>
-    
 <script>
     // Grabs all the Elements by their IDs which we had given them
     let modal = document.getElementById("update-modal");
     let editBtn = document.getElementById("edit-btn");
     let closeBtn = document.getElementById("close-btn");
 
-    // We want the modal to open when the Open button is clicked
-    // editBtn.onclick = function() {
-    //     $("#update-modal").fadeIn();
-    // }
-    // // We want the modal to close when the Close button is clicked
-    // closeBtn.onclick = function() {
-    //     $("#update-modal").fadeOut();
-    // }
-
-    // // The modal will close when the user clicks anywhere outside the modal
-    // window.onclick = function(event) {
-    //     if (event.target == modal) {
-    //         $("#update-modal").fadeOut();
-    //     }
-    // }
     async function getProducts() {
         console.log("mask")
         return fetch("{% url 'main:user_registered:get_profile' %}").then((res) => res.json())
@@ -146,8 +146,6 @@
                 ${products[0].fields.fav_genre}<br>
             </div>
         </div>` 
-       
-        
         document.getElementById("ganti1").innerHTML = htmlString
     }
 

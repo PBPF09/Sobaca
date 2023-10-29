@@ -2,10 +2,33 @@
 <html>
 <head>
     <title>Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <style>
+        .user-review {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            max-width: 60%;
+        }
+        .review-text {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.5rem;
+            color: #333;
+        }
+        .review-user {
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 1.5rem;
+            color: #666;
+        }
         body {
+            background-color: #d2e7d6; 
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
         }
@@ -20,11 +43,21 @@
         }
 
         .BookPage_LeftColumn {
+            /* ubah menjadi sticky di atas */
+            padding: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
         }
+
+        .Sticky {
+            position: sticky;
+            top: 120px;
+            bottom: 200px;
+            z-index: 1;
+        }
+
 
         .BookPage_RightColumn {
             padding: 2rem;
@@ -36,6 +69,12 @@
             max-width: 100%;
             max-height: 600px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @media only screen and (min-width: 48em) {
+            .BookCover_image {
+                max-width: 130px; /* Set max-width to 400px on larger screens */
+            }
         }
 
         .Text__title1 {
@@ -64,29 +103,210 @@
             .BookPage_GridContainer {
                 grid-template-columns: 1fr; /* Single column layout in portrait view */
             }
+            .BookPage_LeftColumn {
+                display:block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .btn-primary {
+        background-color: #2ecc71;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        }
+
+        .btn-secondary {
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #27ae60;
         }
     </style>
 </head>
 <body>
-    <div class="BookPage_GridContainer">
+    <div class="BookPage_GridContainer" id="BookDetails">
         <div class="BookPage_LeftColumn">
-            <div class="Sticky" style="position: sticky; top: 112px;">
+            <div class="Sticky">
                 <div class="BookPage_Cover">
                     <div class="BookCover_image">
-                        <img src="{{ book.images }}" alt="{{ book.title }} Cover">
+                        <img id="images" src="{{ book.images }}" alt="{{ book.title }} Cover">
                     </div>
                 </div>
+                <br>
+                <!-- tombol untuk menampilkan modal optionModal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#optionModal">
+                    Tambahkan ke Rak
+                </button>
             </div>
         </div>
         <div class="BookPage_RightColumn">
-            <h1 class="Text__title1"><strong>{{ book.title }}</strong></h1>
-            <h3 class "Text__title3">{{ book.author }}</h3>
-            <p>{{ book.description }}</p>
-            <p><strong>ISBN:</strong> {{ book.isbn }}</p>
-            <p><strong>Kategori:</strong> {{ book.categories }}</p>
-            <p><strong>Tahun:</strong> {{ book.year }}</p>
-            <p><strong>Penerbit:</strong> {{ book.publisher }}</p>
+            <h1 class="Text__title1" id="title"><strong>{{ book.title }}</strong></h1>
+            <h3 class="Text__title3" id="author">{{ book.author }}</h3>
+            <p id="description">{{ book.description }}</p>
+            <p id="isbn"><strong>ISBN:</strong> {{ book.isbn }}</p>
+            <p id="categories"><strong>Kategori:</strong> {{ book.categories }}</p>
+            <p id="year"><strong>Tahun:</strong> {{ book.year }}</p>
+            <p id="publisher"><strong>Penerbit:</strong> {{ book.publisher }}</p>
+            <div class="review">
+                <h3>Review</h3>
+                <!-- jika review kosong, berikan keterangan review kosong -->
+                {% if reviews|length == 0 %}
+                <p style="margin-top: 20px; margin-bottom: 20px;">Belum ada review untuk buku ini.</p>
+                {% endif %}
+                <div id="reviewsContainer">
+                    <!-- Container untuk menampilkan review yang sudah ada -->
+                    {% for review in reviews %}
+                    <div class="user-review">
+                        <p class="review-text">{{ review.review }}</p>
+                        <p class="review-user">{{ review.user }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div style="margin-top: 20px; margin-bottom: 20px;">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reviewModal">
+                    Tulis Review
+                </button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
+<div class="modal fade" id="optionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width: 400px;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Pilih Opsi</h5>
+            </div>
+            <div class="modal-body" style="display: flex; justify-content: space-between;">
+                <button type="button" class="btn btn-primary" style="margin-right: 10px;" onclick="add_want_to_read()">Ingin Dibaca</button>
+                <button type="button" class="btn btn-primary" style="margin-right: 10px;" onclick="add_reading()">Sedang Dibaca</button>
+                <button type="button" class="btn btn-primary" onclick="add_read()">Sudah Dibaca</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal review -->
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reviewModalLabel">Tulis Review</h5>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{% url 'book_catalog:add_review' book.pk %}">
+                    {% csrf_token %}
+                    <div class="form-group" align="center">
+                        {{ reviewForm.review }}
+                    </div>
+                    <div align="center">
+                        <button type="submit" class="btn btn-primary">Kirim</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    async function add_want_to_read() {
+        fetch("{% url 'book_catalog:add_want_to_read' book.pk %}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}"
+            },
+        }).then(response => {
+            if (response.status === 201) {
+                alert("Buku berhasil ditambahkan ke rak Ingin Dibaca");
+            } else {
+                alert("Gagal menambahkan buku ke rak Ingin Dibaca");
+            }
+        });
+    }
+    async function add_reading() {
+        fetch("{% url 'book_catalog:add_reading' book.pk %}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}"
+            },
+        }).then(response => {
+            if (response.status === 201) {
+                alert("Buku berhasil ditambahkan ke rak Sedang Dibaca");
+            } else {
+                alert("Gagal menambahkan buku ke rak Sedang Dibaca");
+            }
+        });
+    }
+    async function add_read() {
+        fetch("{% url 'book_catalog:add_read' book.pk %}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}"
+            },
+        }).then(response => {
+            if (response.status === 201) {
+                alert("Buku berhasil ditambahkan ke rak Sudah Dibaca");
+            } else {
+                alert("Gagal menambahkan buku ke rak Sudah Dibaca");
+            }
+        });
+    }
+
+    // Menangani submit review form
+    document.getElementById("reviewForm").addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        fetch("{% url 'book_catalog:add_review' book.pk %}", {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => {
+            if (response.status === 201) {
+                alert("Review berhasil ditambahkan");
+                // reset form
+                document.getElementById("reviewForm").reset();
+                $('#reviewModal').modal('hide');
+                fetchReviews();
+            } else {
+                alert("Gagal menambahkan review");
+            }
+        });
+    });
+
+    // Fungsi untuk mengambil daftar review
+    function fetchReviews() {
+        fetch("{% url 'book_catalog:get_reviews' book.pk %}")
+        .then(response => response.json())
+        .then(reviews => {
+            const reviewsContainer = document.getElementById("reviewsContainer");
+            // Kosongkan konten sebelumnya
+            reviewsContainer.innerHTML = "";
+            reviews.forEach(review => {
+                const reviewElement = document.createElement("div");
+                reviewElement.innerHTML = `<p>${review.review}</p><p>${review.user}</p>`;
+                reviewsContainer.appendChild(reviewElement);
+            });
+        });
+    }
+
+    // Panggil fungsi untuk mengambil daftar review saat halaman dimuat
+    fetchReviews();
+</script>
 </html>
