@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'discussion_center.css' %}">
+    
+{% endblock meta %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" id="threads-library">
+        </div>
+    </div>
+    
+    <script>
+        async function getThreads() {
+            return fetch("{% url 'discussion:get_thread_json' %}").then((res) => res.json())
+        }
+
+        async function refreshThread() {
+            document.getElementById("threads-library").innerHTML = ""
+            const threads = await getThreads()
+            let htmlString = ``
+            dataThreads = threads.threads
+            dataThreads.forEach(thread => {
+                var date = new Date(thread.date_create)
+                var day = date.toLocaleDateString('en-US', {weekday:"long"})
+                var localeDate = date.toLocaleString('en-US', {day:"2-digit", month:"long", year:"numeric", hour:"numeric", minute:"numeric"})
+                date = day + ", " + localeDate
+                htmlString += `
+                <div class="thread-card">
+                    <div class="book-identity">
+                        <img src="${thread.book.image}" alt="Gambar Buku"><br>
+                        <small>${thread.book.isbn}</small>
+                        <p><b>${thread.book.title}</b></p>
+                        <p>Author : ${thread.book.author}</p>
+                        <p>Publish Year : ${thread.book.year}</p>
+                    </div>
+                    <div class="thread-info">
+                        <h3>${thread.title}</h3>
+                        <p>Created by ${thread.user} - ${date}</p>
+                        <span><p>${thread.content}</p></span>
+                        <div class="button-container">
+                            <button class="discussion-button detail-button" id="view-detail"
+                                name="view-detail" data-thread-id="${thread.id}")>View Detail</button>
+                            ${thread.is_author ?
+                                `<button class="discussion-button edit-button" id="edit-thread" name="edit-thread">Edit</button>` : ``}
+                        </div>
+                    </div>
+                </div>
+                `
+            });
+            document.getElementById("threads-library").innerHTML = htmlString
+            const addButtons = document.querySelectorAll(".detail-button");
+            addButtons.forEach((button) => {
+                button.addEventListener("click", function(){
+                    const threadId = this.getAttribute('data-thread-id');
+                    const url = "{% url 'discussion:detail_discussion' 0 %}".replace("0", threadId);
+                    console.log(url)
+                    window.location.href = url;
+                });
+            });
+
+            const editButtons = document.querySelectorAll("edit-button");
+            addButtons.forEach((button) => {
+                button.addEventListener("click", function(){
+                    const threadId = this.getAttribute('data-thread-id');
+                    const url = "{% url 'discussion:detail_discussion' 0 %}".replace("0", threadId);
+                    console.log(url)
+                    window.location.href = url;
+                });
+            });
+        }
+        refreshThread()
+        
+
+        
+
+    </script>
+{% endblock content %}

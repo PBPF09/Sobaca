@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'discussion_landing.css' %}">
+{% endblock meta %}
+
+{% block content %}
+    <div class="hero">
+        <h1>Welcome To Sobaca Discussion Forum</h1>
+        <p>Find your book and start discuss with Sobaca community</p>
+        <div class="button-container">
+            <button class="discussion-button" id="discussion-start" name="discussion-start">Create a New Discussion</button>
+            <button class="discussion-button" id="discussion-join" name="discussion-join" >Join Discussion</button>
+        </div>
+    </div>
+    <div class="book-container" id="books-library"></div>
+    <script>
+        document.getElementById('discussion-start').onclick = function() {
+            window.location.href = "{% url 'discussion:start_discussion' %}";
+        }
+        document.getElementById('discussion-join').onclick = function() {
+            window.location.href = "{% url 'discussion:join_discussion' %}";
+        }
+    </script>
+{% endblock content %}

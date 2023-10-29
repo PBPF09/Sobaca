@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{%static 'objstyles.css' %}">
+{% endblock meta %}
+
+{% block content %}
+<div class="navbar">
+  <a class="app-name" href="#">Sobaca</a>
+</div>
+
+  <div class="container">
+    <h2>Targetku bersama Sobaca</h2>
+    
+    <div class="btn-group">
+      <a href="?filter=" class="btn {% if filter_status == '' %}btn-primary{% else %}btn-secondary{% endif %}">All Objectives</a>
+      <a href="?filter=completed" class="btn {% if filter_status == 'completed' %}btn-primary{% else %}btn-secondary{% endif %}">Completed</a>
+      <a href="?filter=noncompleted" class="btn {% if filter_status == 'noncompleted' %}btn-primary{% else %}btn-secondary{% endif %}">Non-Completed</a>
+    </div>
+
+    <div class="card-deck">
+      {% for objective in objectives %}
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"> {{objective.title}}</h5>
+          {% if objective.is_completed %}
+          <h6 class="card-subtitle mb-2 text-muted">Completed</h6>
+            {% else %}
+            <h6 class="card-subtitle mb-2 text-muted">In Progress</h6>
+            {% endif %}
+          <p class="card-text">{{ objective.description }}</p>
+          <a href="{% url 'challenges:edit_objective' objective.id %}" class="card-link">Edit</a>
+          <a href="{% url 'challenges:complete_objective' objective.id %}" class="card-link">Mark as Complete</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <div class="create-button">
+    <a href="{% url 'challenges:create_objective' %}" class="btn btn-primary">Create New Objective</a>
+  </div>
+
+
+{% endblock %}
