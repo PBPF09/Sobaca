@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'start_discussion.css' %}">
+{% endblock meta %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" id="books-library">
+        </div>
+    </div>
+    <div class="modal fade" id="threadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="exampleModalLabel">Add Your Discussion Topic </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="book-detail mb-3">
+                    <h5 class=" font-weight-bold " style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);" id="book-modal-title"></h5>
+                    <div class="image-container-modal">
+                        <img src="" id="book-modal-image" alt="Book Cover">
+                    </div>
+                    <p class="card-text" id="book-modal-author"></p>
+                    <p class="card-text" id="book-modal-year"></p>
+                    <small class="text-muted" id="book-modal-ISBN"></small>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="form-group mb-3">
+                            <label for="thread-bookId">Book ID</label>
+                            <input type="text" class="form-control" id="thread-bookId" name="thread-bookId" readonly></input>
+                        </div>                   
+                        <div class="form-group mb-3">
+                            <label for="thread-title">Thread Title</label>
+                            <textarea class="form-control" id="thread-title" name="thread-title" required></textarea>
+                        </div>                   
+                        <div class="form-group mb-3">
+                            <label for="thread-content">What's Your Opinion</label>
+                            <textarea class="form-control" id="thread-content" name="thread-content" required></textarea>
+                        </div>                   
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="button-add" data-bs-dismiss="modal">Add Discussion Topic</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        async function getBooks() {
+            return fetch("{% url 'discussion:get_book_json' %}").then((res) => res.json())
+        }
+
+        async function refreshBook() {
+            document.getElementById("books-library").innerHTML = ""
+            const books = await getBooks()
+            let htmlString = ``
+            
+            books.forEach(book => {
+                htmlString += `
+                <div class="col-md-3 mb-3 card custom-card">
+                        <img src="${book.fields.images}" class="card-img-top equal-height" alt="${book.fields.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${book.fields.title}</h5>
+                            <p class="card-text">${book.fields.author}</p>
+                        </div>
+                        <button 
+                            type="button" data-bs-toggle="modal" data-bs-target="#threadModal"
+                            class="btn btn-success mb-2 add-thread"
+                            data-book-title="${book.fields.title}"
+                            data-book-image="${book.fields.images}"
+                            data-book-author="${book.fields.author}"
+                            data-book-year="${book.fields.year}"
+                            data-book-ISBN="${book.fields.isbn}"
+                            data-book-id="${book.pk}">Add Book Discussion
+                        </button>
+                </div>
+                `;
+            });
+            document.getElementById("books-library").innerHTML = htmlString
+
+            const addButtons = document.querySelectorAll(".add-thread");
+            addButtons.forEach((button) => {
+                button.addEventListener("click", function(){
+                    const id = this.getAttribute('data-book-id');
+                    const title = this.getAttribute('data-book-title');
+                    const image = this.getAttribute('data-book-image');
+                    const author = this.getAttribute('data-book-author');
+                    const year = this.getAttribute('data-book-year');
+                    const ISBN = this.getAttribute('data-book-ISBN');
+                    
+                    addThread(id, title, image, author, year, ISBN);
+                });
+            });
+        }
+
+        async function addThread(bookId, bookTitle, bookImage, bookAuthor, bookYear, bookISBN){
+            document.getElementById("form").reset()
+            document.getElementById('thread-bookId').value = bookId
+            document.getElementById('book-modal-title').textContent = bookTitle
+            document.getElementById('book-modal-image').src = bookImage
+            document.getElementById('book-modal-author').textContent = bookAuthor
+            document.getElementById('book-modal-year').textContent = bookYear
+            document.getElementById('book-modal-ISBN').textContent = bookISBN
+            $('#threadModal').modal('show');
+        }
+        
+        async function addThreadConfirmed() {
+            const formData = new FormData(document.querySelector('#form'))
+            
+            formData.append("thread-bookId", document.getElementById('thread-bookId').value)
+            fetch("{% url 'discussion:add_thread_discussion' %}", {
+            method: "POST",
+            body: formData
+            }).then(function() {
+                const result = confirm("Do you wanna go to the thread that you create?")
+                if (result){
+                    window.location.href = "{% url 'discussion:join_discussion' %}";
+                }else{
+                    refreshBook()
+                }
+            })
+        }
+        refreshBook()
+        document.getElementById('button-add').onclick = addThreadConfirmed
+    </script>
+{% endblock content %}

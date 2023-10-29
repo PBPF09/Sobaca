@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'discussion_detail.css' %}">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .max-w-3xl {
+            max-width: 100%;
+        }
+
+        .bg-green {
+            background-color: #4CAF50; /* Warna hijau */
+            color: #fff; /* Warna teks putih untuk kontras */
+        }
+
+        .rounded-lg {
+            border-radius: 1rem;
+        }
+
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .text-gray-500 {
+            color: #999;
+        }
+
+        .text-gray-700 {
+            color: #333;
+        }
+
+        /* CSS untuk balasan (replies) */
+        .my-4 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        /* Tombol "Reply this Thread" */
+        #replyLink {
+            text-decoration: none;
+            color: #fff; /* Warna teks putih */
+            cursor: pointer;
+            background-color: #4CAF50; /* Warna hijau */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        #replyLink:hover {
+            background-color: #45a049; /* Warna hijau yang lebih gelap saat dihover */
+        }
+
+        /* Gaya untuk modal reply */
+        .modal-dialog {
+            max-width: 600px;
+        }
+
+        .modal-content {
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+
+        .fs-5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .font-weight-bold {
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Gaya untuk balasan dalam modal */
+        .modal-body {
+            padding: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Tombol "Reply" dalam modal */
+        .btn-primary {
+            background-color: #4CAF50; /* Warna hijau */
+            color: #fff; /* Warna teks putih */
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #45a049; /* Warna hijau yang lebih gelap saat dihover */
+        }
+    </style>
+{% endblock meta %}
+
+{% block content %}
+<div data-thread-id="{{ threadId }}"></div>
+<div class="container">
+    <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8 my-4">
+        <h1 class="text-2xl font-bold">{{ title }}</h1>
+        <p class="text-gray-500">Created by {{ user }} - {{ date_create }}</p>
+        <p class="text-gray-700 my-4">{{ content }}</p>
+    </div>
+    <div id="replies-container" class="max-w-3xl mx-auto mt-4">
+    </div>
+    <a href="#" id="replyLink" data-bs-toggle="modal" data-bs-target="#replyModal">Reply this Thread</a>
+</div>
+
+<div class="modal fade" id="replyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="exampleModalLabel">Add Your Reply</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="thread-detail mb-3">
+                <h5 class="font-weight-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)" id="thread-modal-title">Reply for: {{ title }}</h5>
+                <p class="card-text" id="thread-modal-author">Created by {{ user }} - {{ date_create }}</p>
+            </div>
+            <div id="reply-threadId" hidden="true">{{ threadId }}</div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        <label for="reply-content">Reply Message</label>
+                        <textarea class="form-control" id="reply-content" name="reply-content" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button-add" data-bs-dismiss="modal">Reply</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function getReply(threadId) {
+        return fetch(`{% url 'discussion:get_reply_thread' threadId %}`)
+            .then((res) => res.json())
+    }
+
+    async function refreshReply(){
+        const threadId = document.querySelector('[data-thread-id]').getAttribute('data-thread-id')
+        const repliesContainer = document.getElementById("replies-container");
+        repliesContainer.innerHTML = "";
+
+        const replyData = await getReply(threadId);
+        const replies = replyData.replys;
+
+        if (replies.length > 0) {
+            replies.forEach(reply => {
+                const date = new Date(reply.date_create);
+                const formattedDate = date.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+                const replyHTML = `
+                <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-4 my-4">
+                    <p class="text-gray-500">Created by ${reply.user} - ${formattedDate}</p>
+                    <p class="text-gray-700 my-2">${reply.content}</p>
+                </div>
+                <div
+                ${thread.is_author ?
+                        `<div class="button-container">
+                        <a class="button delete-button" id="delete-reply" name="delete-reply">Delete</button>
+                        <a class="button edit-button" id="edit-reply" name="edit-reply">Edit</button> 
+                        </div>` : ``}
+                
+                `;
+                
+                repliesContainer.innerHTML += replyHTML;
+            });
+        } else {
+            repliesContainer.innerHTML = "<p>No replies available for this thread.</p>";
+        }
+    }
+    refreshReply();
+
+    async function addReply(threadId, userId){
+        console.log("Masuk Fungsi addReply")
+        document.getElementById("form").reset();
+        $('#replyModal').modal('show');
+    }
+    
+    async function addReplyConfirmed() {
+        const formData = new FormData(document.querySelector('#form'));
+        formData.append("reply-threadId", document.getElementById('reply-threadId').innerHTML);
+        fetch("{% url 'discussion:add_reply_discussion' %}", {
+            method: "POST",
+            body: formData
+        }).then(refreshReply);
+    }
+    document.getElementById("button-add").onclick = addReplyConfirmed;
+</script>
+{% endblock content %}
