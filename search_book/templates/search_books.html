@@ -109,7 +109,7 @@
             </form>
             <div id="search-block" class="search-block">
                 {% for book in books %}
-                <a href="">
+                <a href="{% url 'book_catalog:show' book.pk %}">
                     <div class="result-search" id="result-search">
                         <img src={{book.images}} alt="{{book.title}} Cover" id="image-book">
                         <div class="info-book" id="info-book">
@@ -179,6 +179,15 @@
 
     // })
 
+    function showBook(id) {
+        console.log(id)
+        console.log(typeof id)
+        var url = "{% url 'book_catalog:show' 0 %}".replace("0", id)
+        console.log(url)
+        window.location = url
+
+    }
+
     var ascendingOrder = document.getElementById('ascending-btn').addEventListener('click', function() {
         var checkbox = document.querySelectorAll('input[type="checkbox"][id="selectedgenre"]')
 
@@ -202,11 +211,11 @@
             let content = ``
             books.forEach(book => {
                 content += `\n
-                <a href="">
-                    <div class="result-search" id="result-search">
+                <a href="/book/show/${book.pk}/">
+                    <div class="result-search" id="result-search")>
                         <img src=${book.fields.images} alt=${book.fields.title} id="image-book">
                         <div class="info-book" id="info-book">
-                            <div class="title-book"><strong>${book.fields.title}</strong>${book.fields.title}</div>
+                            <div class="title-book"><strong>${book.fields.title}</strong></div>
                             <div class="author-book">${book.fields.author}</div>
                             <div class="categories-book">${book.fields.categories}</div>
                         </div>
@@ -242,11 +251,11 @@
             let content = ``
             books.forEach(book => {
                 content += `\n
-                <a href="">
+                <a href="/book/show/${book.pk}/">
                     <div class="result-search" id="result-search">
                         <img src=${book.fields.images} alt=${book.fields.title} id="image-book">
                         <div class="info-book" id="info-book">
-                            <div class="title-book"><strong>${book.fields.title}</strong>${book.fields.title}</div>
+                            <div class="title-book"><strong>${book.fields.title}</strong></div>
                             <div class="author-book">${book.fields.author}</div>
                             <div class="categories-book">${book.fields.categories}</div>
                         </div>
@@ -288,7 +297,7 @@
             let content = ``
             books.forEach(book => {
                 content += `\n
-                <a href="">
+                <a href="/book/show/${book.pk}/">
                     <div class="result-search" id="result-search">
                         <img src=${book.fields.images} alt=${book.fields.title} id="image-book">
                         <div class="info-book" id="info-book">
@@ -348,7 +357,7 @@
             let content = ``
             books.forEach(book => {
                 content += `\n
-                <a href="">
+                <a href="/book/show/${book.pk}/">
                     <div class="result-search" id="result-search">
                         <img src=${book.fields.images} alt=${book.fields.title} id="image-book">
                         <div class="info-book" id="info-book">
@@ -364,6 +373,5 @@
             document.getElementById('search-block').innerHTML = content
         })
     }
-
 </script>
 {% endblock content %}
