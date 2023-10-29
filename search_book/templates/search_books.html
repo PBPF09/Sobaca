@@ -1,0 +1,379 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'search_book.css' %}">
+{% endblock meta %}
+
+{% block content %}
+    <div class="container-search">
+        <h1>Book Searching</h1>
+        <div class="search-content">
+            <div class="search-input">
+                <input type="search" id="search-book" placeholder="Title Book" name="searching">
+            </div>
+            <div class="btn-search">
+                <button class="ascending-btn" id="ascending-btn">Ascending</button>
+                <button class="descending-btn" id="descending-btn">Descending</button>
+                <button class="btn-genre-filter" id="btn-genre-filter">Filter by Genre</button>
+                <a href="{% url 'search_book:navigation_to_review_book' %}"><button class="objective-btn" id="objective-btn">Lihat Targetmu</button></a>
+            </div>
+            <form method=POST action="">
+                <div class="filter-genre" id="filter-genre">
+                    {% csrf_token %}
+                    <div class="checkbox-genre">
+                        <label for="">
+                            <input type="checkbox" name="selected-genre" id="selectedgenre" value="['Fiction']">Fiction
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-genre" id="selectedgenre" value="['Drama']">Drama
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-genre" id="selectedgenre" value="['History']">History
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Juvenile Fiction']">Juvenile Fiction
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Psychology']">Psychology
+                        </label>
+                    </div>
+                    <div class="checkbox-genre">
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Games']">Games
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-genre" id="selectedgenre" value="['Chile']">Chile
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-genre" id="selectedgenre" value="['Comics & Graphic Novels']">Comics & Graphic Novels
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-genre" id="selectedgenre" value="['Biography & Autobiography']">Biography & Autobiography
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Poetry']">Poetry
+                        </label>
+                    </div>
+                    <div class="checkbox-genre">
+                        <label for="">    
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Family & Relationships']">Family & Relationships
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Health & Fitness']">Health & Fitness
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-genre" id="selectedgenre" value="['Business & Economics']">Business & Economics
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-genre" id="selectedgenre" value="['Humor']">Humor
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Czech Americans']">Czech Americans
+                        </label>
+                    </div>
+                    <div class="checkbox-genre">
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Travel']">Travel
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Education']">Education
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Literary Collections']">Literary Collections
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Religion']">Religion
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Young Adult Fiction']">Young Adult Fiction
+                        </label>
+                    </div>
+                    <div class="checkbox-genre">
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Literary Criticism']">Literary Criticism
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Self-Help']">Self-Help
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['True Crime']">True Crime
+                        </label>
+                        <label for="">
+                            <input type="checkbox" name="selected-grade" id="selectedgenre" value="['Curiosities and wonders']">Curiosities and wonders
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <div id="search-block" class="search-block">
+                {% for book in books %}
+                <a href="{% url 'search_book:navigation_to_review_book' %}">
+                    <div class="result-search" id="result-search">
+                        <img src={{book.images}} alt="{{book.title}} Cover" id="image-book">
+                        <div class="info-book" id="info-book">
+                            <p class="title-book">{{book.title}}</p>
+                            <p class="author-book">{{book.author}}</p>
+                            <p class="genre-book">{{book.categories}}</p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="request-book" id="request-book">
+            <h5>Buku yang dicari tidak ditemukan di Sobaca?</h5>
+            <h5>Tekan ini untuk melakukan permintaan penambahan buku yang sedang kamu cari!</h5>
+        </div>
+    </div>
+    <div class="container-modal" id="container-modal">
+        <div class="modal-background" id="modal-background"></div>
+        <div class="request-modal"  id="modal-request">
+            <div class="modal-request">
+                <h2>Request Book</h2>
+                <div class="request-form">
+                    <form method="POST" id="form">
+                        {% csrf_token %}
+                        <div class="title-form">
+                            <input type="text" class="title-input" id="title" name="title" placeholder="Title Book">
+                        </div>
+                        <div class="author-form">
+                            <input type="text" class="author-input" id="author" name="author" placeholder="Author Book">
+                        </div>
+                        <div class="year-form">
+                            <input type="number" class="year-input" id="year" name="year" placeholder="Year">
+                        </div>
+                        <div class="btn-request">
+                            <input type="submit" id="yes-request" value="Yes"/>
+                            <input type="submit" id="cancel-request" value="Cancel"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    document.getElementById('filter-genre').style.display = 'none';
+
+    document.getElementById('btn-genre-filter').addEventListener('click', function() {
+        if(document.getElementById('filter-genre').style.display == 'none') {
+            document.getElementById('filter-genre').style.display = 'flex';
+        } else {
+            document.getElementById('filter-genre').style.display = 'none';
+        }
+    })
+
+    document.getElementById('container-modal').style.display = 'none'
+    document.getElementById('modal-request').style.display = 'none'
+    document.getElementById('request-book').addEventListener('click', function() {
+        document.getElementById('container-modal').style.display = 'flex'
+        document.getElementById('modal-request').style.display = 'block'
+    })
+    
+    document.getElementById('yes-request').addEventListener('click', function() {
+        document.getElementById('container-modal').style.display = 'none'
+        document.getElementById('modal-request').style.display = 'none'
+        addRequestBook()
+    })
+    
+    function addRequestBook() {
+        fetch(`{% url 'search_book:add_request_book' %}`, {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then("")
+        
+        document.getElementById("form").reset()
+        return false
+    }
+    
+    document.getElementById('cancel-request').addEventListener('click', function() {
+        document.getElementById('container-modal').style.display = 'none'
+        document.getElementById('modal-request').style.display = 'none'
+        
+    })
+    
+    document.getElementById('modal-background').addEventListener('click', function() {
+        document.getElementById('container-modal').style.display = 'none'
+        document.getElementById('modal-request').style.display = 'none'
+
+    })
+
+    var ascendingOrder = document.getElementById('ascending-btn').addEventListener('click', function() {
+        var checkbox = document.querySelectorAll('input[type="checkbox"][id="selectedgenre"]')
+
+        checkbox.forEach(function(reset){
+            if (reset.checked) {
+                reset.checked = false
+                var index = selectedGenre.indexOf(reset.value)
+                if (index !== -1) {
+                    selectedGenre.splice(index, 1)
+                }
+            }
+        })
+        orderBooksByAscending("ascending")
+    })
+
+    function orderBooksByAscending(orderBy){
+        fetch(`http://127.0.0.1:8000/search_book/search/ascending`)
+        .then(response => response.json())
+        .then(books => {
+            document.getElementById('search-block').innerHTML = ""
+            let content = ``
+            books.forEach(book => {
+                content += `\n
+                <a href="{% url 'search_book:navigation_to_review_book' %}">
+                    <div class="result-search" id="result-search">
+                        <img src=${book.fields.images} alt=${book.fields.title} id="image-book">
+                        <div class="info-book" id="info-book">
+                            <p class="title-book">${book.fields.title}</p>
+                            <p class="author-book">${book.fields.author}</p>
+                            <p class="categories-book">${book.fields.categories}</p>
+                        </div>
+                    </div>
+                </a>`
+            });
+
+            document.getElementById('search-block').innerHTML = content
+            console.log(orderBy)
+        })
+    }
+
+    var descendingOrder = document.getElementById('descending-btn').addEventListener('click', function() {
+        var checkbox = document.querySelectorAll('input[type="checkbox"][id="selectedgenre"]')
+
+        checkbox.forEach(function(reset){
+            if (reset.checked) {
+                reset.checked = false
+                var index = selectedGenre.indexOf(reset.value)
+                if (index !== -1) {
+                    selectedGenre.splice(index, 1)
+                }
+            }
+        })
+        orderBooksByDescending("descending")
+    })
+
+    function orderBooksByDescending(orderBy){
+        fetch(`http://127.0.0.1:8000/search_book/search/descending`)
+        .then(response => response.json())
+        .then(books => {
+            document.getElementById('search-block').innerHTML = ""
+            let content = ``
+            books.forEach(book => {
+                content += `\n
+                <a href="{% url 'search_book:navigation_to_review_book' %}">
+                    <div class="result-search" id="result-search">
+                        <img src=${book.fields.images} alt=${book.fields.title} id="image-book">
+                        <div class="info-book" id="info-book">
+                            <p class="title-book">${book.fields.title}</p>
+                            <p class="author-book">${book.fields.author}</p>
+                            <p class="categories-book">${book.fields.categories}</p>
+                        </div>
+                    </div>
+                </a>`
+            });
+
+            document.getElementById('search-block').innerHTML = content
+            console.log(orderBy)
+        })
+    }
+
+    var inputSearch = document.getElementById('search-book')
+    var resultSearch = ''
+    
+    inputSearch.addEventListener('keyup', function() {
+        resultSearch = inputSearch.value
+        searchBooksByOrder(resultSearch)
+    })
+
+
+    async function searchBooksByOrder(resultSearch) {
+        fetch(`http://127.0.0.1:8000/search_book/${resultSearch}`)
+        .then(response => response.json())
+        .then(books => {
+            console.log(books)
+            document.getElementById('search-block').innerHTML = ""
+            let content = ``
+            books.forEach(book => {
+                content += `\n
+                <a href="{% url 'search_book:navigation_to_review_book' %}">
+                    <div class="result-search" id="result-search">
+                            <img src=${book.fields.images} alt=${book.fields.title} id="image-boodiv>
+                        <div class="info-book" id="info-book">
+                            <p class="title-book">${book.fields.title}</p>
+                            <p class="author-book">${book.fields.author}</p>
+                            <p class="categories-book">${book.fields.categories}</p>
+                        </div>
+                    </div>
+                </a>`
+                console.log(content)
+            });
+
+            document.getElementById('search-block').innerHTML = content
+        })
+    }
+
+    
+    var checkboxex = document.querySelectorAll('input[type="checkbox"][id=selectedgenre]')
+    var selectedGenre = []
+
+    checkboxex.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                // console.log("masuk if")
+                selectedGenre.push(this.value)
+                filterByGenre(selectedGenre)
+                // console.log(selectedGenre)
+                
+            } else {
+                console.log("masuk else")
+                var index = selectedGenre.indexOf(this.value)
+                if (index !== -1) {
+                    selectedGenre.splice(index, 1)
+                    filterByGenre(selectedGenre)
+                    // console.log(selectedGenre)
+                }
+            }
+        })
+    })
+
+    function filterByGenre(selectedGenre) {
+        var books = JSON.stringify(selectedGenre)
+
+        fetch(`http://127.0.0.1:8000/search_book/filter/`, {
+            method: "POST",
+            headers: {
+                'content_type': 'application/json',
+                "X-CSRFToken": csrftoken
+            },
+            body: books,
+        })
+        .then(response => response.json())
+        .then(books => {
+            console.log(books)
+            document.getElementById('search-block').innerHTML = ""
+            let content = ``
+            books.forEach(book => {
+                content += `\n
+                <a href="{% url 'search_book:navigation_to_review_book' %}">
+                    <div class="result-search" id="result-search">
+                        <img src=${book.fields.images} alt=${book.fields.title} id="image-book">
+                        <div class="info-book" id="info-book">
+                            <p class="title-book">${book.fields.title}</p>
+                            <p class="author-book">${book.fields.author}</p>
+                            <p class="categories-book">${book.fields.categories}</p>
+                        </div>
+                    </div>
+                </a>`
+                console.log(content)
+            });
+
+            document.getElementById('search-block').innerHTML = content
+        })
+    }
+
+</script>
+{% endblock content %}
