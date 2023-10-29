@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -147,6 +150,13 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#optionModal">
                     Tambahkan ke Rak
                 </button>
+                <!-- tombol untuk menambahkan ke favorit -->
+                <form method="post" action="{% url 'book_catalog:add_favorite' book.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-secondary" formmethod="post">
+                        Tambahkan ke Favorit
+                    </button>
+                </form>
             </div>
         </div>
         <div class="BookPage_RightColumn">
@@ -310,3 +320,4 @@
     fetchReviews();
 </script>
 </html>
+{% endblock %}
