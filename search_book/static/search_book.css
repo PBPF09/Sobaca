@@ -1,123 +1,230 @@
 .container-search {
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* text-align: center; */
+  background-color: #e0f0e3;
+  padding-bottom: 30px;
 }
 
 .container-search h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .container-search .search-content {
-    background-color: #e0f0e3;
+  background-color: #e0f0e3;
 }
 
 .container-search .search-content .search-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
 }
 
 .container-search .search-content .search-input input {
-    width: 50vw;
-    height: 5vh;
-    border-radius: 8px;
-    text-align: center;
+  width: 50vw;
+  height: 5vh;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .container-search .search-content .btn-search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .container-search .search-content .btn-search button {
-    margin: 0px 20px 0px 20px;
-    border-radius: 8px;
-    color: black;
-    background-color: #b8d8be;
+  margin: 0px 20px 0px 20px;
+  border-radius: 8px;
+  color: black;
+  background-color: #b8d8be;
+  cursor: pointer;
+  padding: 5px 10px 5px 10px;
 }
 
 .container-search .search-content .filter-genre {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    background-color: #b8d8be;
-    border-radius: 20px;
-    flex-wrap: wrap;
-    padding-left: 20px;
-    padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  background-color: #b8d8be;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .container-search .search-content .filter-genre .checkbox-genre {
-    display: inline-block;
-    margin-top: 20px;
-    margin-right: 5px;
-    margin-bottom: 20px;
-    flex-direction: column;
-    border: 5px;
-    white-space: nowrap;
-    flex-wrap: wrap;
-    overflow: hidden;
-    
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  flex-direction: column;
+  border: 5px;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  overflow: hidden;
+  
 }
 
 .container-search .search-content .filter-genre .checkbox-genre label {
-    display: flex;
-    margin: 5px 0;
-    white-space: nowrap;
-    overflow: hidden;
+  display: flex;
+  margin: 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .container-search .search-content .filter-genre .checkbox-genre input[type="checkbox"] {
-    display: flex;
+  display: flex;
 }
 
 .container-search .search-content .search-block {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .container-search .search-content .search-block a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .container-search .search-content .search-block a .result-search {
-    display: flex;
-    margin-right: 30px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 200px;
-    border: 2px solid #b8d8be;
-    border-radius: 8px;
+  display: flex;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  border: 2px solid #b8d8be;
+  border-radius: 8px;
 }
 
+.container-search .search-content .search-block a .result-search:hover {
+  scale: 1.05;
+  background-color: #c8e1cc;
+}
 
 .container-search .search-content .search-block a .result-search .info-book {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .container-search .search-content .search-block a .result-search .info-book p {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
 }
 
+.container-search .request-book {
+  text-align: center;
+  border: 2px solid #b8d8be;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 6px;
+  background-color: #c8e1cc;
+}
+
+.container-search .request-book:hover {
+  background-color: #b8d8be;
+}
+
+.container-modal {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal-background {
+  background-color: #3c3b3b42;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+
+.request-modal {
+  display: flex;
+  /* justify-content: center;
+  align-items: center;
+  text-align: center; */
+  background-color: #c8e1cc;
+  padding: 40px;
+  z-index: 1000;
+  border-radius: 6px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+
+.request-modal .modal-request h2 {
+  color: #074a13;
+  text-align: center;
+}
+
+.request-modal .modal-request .request-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.request-modal .modal-request .request-form .title-form .title-input{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  width: 20vw;
+}
+
+.request-modal .modal-request .request-form .author-form .author-input{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  width: 20vw;
+}
+
+.request-modal .modal-request .request-form .year-form .year-input{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  width: 20vw;
+}
+
+.request-modal .modal-request .request-form .btn-request {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.request-modal .modal-request .request-form .btn-request input {
+  border-radius: 6px;
+  background-color: #b8d8be;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}

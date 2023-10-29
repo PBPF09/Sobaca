@@ -16,6 +16,7 @@
                 <button class="ascending-btn" id="ascending-btn">Ascending</button>
                 <button class="descending-btn" id="descending-btn">Descending</button>
                 <button class="btn-genre-filter" id="btn-genre-filter">Filter by Genre</button>
+                <a href="{% url 'search_book:navigation_to_review_book' %}"><button class="objective-btn" id="objective-btn">Lihat Targetmu</button></a>
             </div>
             <form method=POST action="">
                 <div class="filter-genre" id="filter-genre">
@@ -119,6 +120,36 @@
                 {% endfor %}
             </div>
         </div>
+        <div class="request-book" id="request-book">
+            <h5>Buku yang dicari tidak ditemukan di Sobaca?</h5>
+            <h5>Tekan ini untuk melakukan permintaan penambahan buku yang sedang kamu cari!</h5>
+        </div>
+    </div>
+    <div class="container-modal" id="container-modal">
+        <div class="modal-background" id="modal-background"></div>
+        <div class="request-modal"  id="modal-request">
+            <div class="modal-request">
+                <h2>Request Book</h2>
+                <div class="request-form">
+                    <form method="POST" id="form">
+                        {% csrf_token %}
+                        <div class="title-form">
+                            <input type="text" class="title-input" id="title" name="title" placeholder="Title Book">
+                        </div>
+                        <div class="author-form">
+                            <input type="text" class="author-input" id="author" name="author" placeholder="Author Book">
+                        </div>
+                        <div class="year-form">
+                            <input type="number" class="year-input" id="year" name="year" placeholder="Year">
+                        </div>
+                        <div class="btn-request">
+                            <input type="submit" id="yes-request" value="Yes"/>
+                            <input type="submit" id="cancel-request" value="Cancel"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -133,6 +164,41 @@
         } else {
             document.getElementById('filter-genre').style.display = 'none';
         }
+    })
+
+    document.getElementById('container-modal').style.display = 'none'
+    document.getElementById('modal-request').style.display = 'none'
+    document.getElementById('request-book').addEventListener('click', function() {
+        document.getElementById('container-modal').style.display = 'flex'
+        document.getElementById('modal-request').style.display = 'block'
+    })
+    
+    document.getElementById('yes-request').addEventListener('click', function() {
+        document.getElementById('container-modal').style.display = 'none'
+        document.getElementById('modal-request').style.display = 'none'
+        addRequestBook()
+    })
+    
+    function addRequestBook() {
+        fetch(`{% url 'search_book:add_request_book' %}`, {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then("")
+        
+        document.getElementById("form").reset()
+        return false
+    }
+    
+    document.getElementById('cancel-request').addEventListener('click', function() {
+        document.getElementById('container-modal').style.display = 'none'
+        document.getElementById('modal-request').style.display = 'none'
+        
+    })
+    
+    document.getElementById('modal-background').addEventListener('click', function() {
+        document.getElementById('container-modal').style.display = 'none'
+        document.getElementById('modal-request').style.display = 'none'
+
     })
 
     var ascendingOrder = document.getElementById('ascending-btn').addEventListener('click', function() {

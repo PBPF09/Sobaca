@@ -1,8 +1,9 @@
 import json
 from django.shortcuts import render
 from django.core import serializers
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from book.models import Book
+from search_book.models import Request
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
@@ -46,3 +47,17 @@ def search_book(request):
 
 def navigation_to_review_book(request):
     return render(request, 'review_book.html', {})
+
+@csrf_exempt
+def add_request_book(request):
+    if request.method == 'POST':
+        title = request.POST.get("title")
+        author = request.POST.get("author")
+        year = request.POST.get("year")
+
+        new_request = Request(title=title, author=author, year=year)
+        new_request.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
