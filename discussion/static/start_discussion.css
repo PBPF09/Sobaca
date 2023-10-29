@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+#books-library {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.custom-card {
+    background-color: #e8f4ea;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin : 0px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.custom-card img {
+    height: 300px;
+    object-fit:fill;
+    width: 100%;
+}
+
+.card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.book-detail{
+    justify-content: center;
+    text-align: center;
+}
+
+.book-detail img{
+    height: 100px;
+    object-fit: fill;
+    width: 70px;
+}

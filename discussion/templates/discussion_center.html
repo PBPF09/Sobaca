@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'discussion_center.css' %}">
+    <style>
+        /* .thread-card {
+            display: flex;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        } */
+    
+        #threads-library {
+            display: flex; 
+            flex-wrap: wrap;
+        }
+    
+        .thread-card {
+            flex: 0 0 calc(100% - 20px);
+            margin: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            max-height:max-content;
+        }
+    
+        .book-identity {
+            flex: 1;
+            max-width: 150px;
+            max-height: max-content;
+            margin-right: 10px;
+            padding-right: 10px;
+            font-size: 12px;
+            text-align: center;
+            border-right: 1px solid #ccc;
+        }
+        .book-identity p {
+            text-align: justify;
+            margin-bottom: 1px;
+        }
+    
+        .book-identity img {
+            width: 50%;
+            object-fit: fill;
+            height: 100px;
+        }
+    
+        .thread-info {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .thread-info h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    
+        .thread-info p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    
+        /* Button styling */
+        .discussion-button {
+            background-color: #008000;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+    
+        .discussion-button:hover {
+            background-color: #b8d8be;
+        }
+    </style>
+    
+{% endblock meta %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" id="threads-library">
+        </div>
+    </div>
+    
+    <script>
+        async function getThreads() {
+            return fetch("{% url 'discussion:get_thread_json' %}").then((res) => res.json())
+        }
+
+        async function refreshThread() {
+            document.getElementById("threads-library").innerHTML = ""
+            const threads = await getThreads()
+            let htmlString = ``
+            dataThreads = threads.threads
+            dataThreads.forEach(thread => {
+                var date = new Date(thread.date_create)
+                var day = date.toLocaleDateString('en-US', {weekday:"long"})
+                var localeDate = date.toLocaleString('en-US', {day:"2-digit", month:"long", year:"numeric", hour:"numeric", minute:"numeric"})
+                date = day + ", " + localeDate
+                htmlString += `
+                <div class="thread-card">
+                    <div class="book-identity">
+                        <img src="${thread.book.image}" alt="Gambar Buku"><br>
+                        <small>${thread.book.isbn}</small>
+                        <p><b>${thread.book.title}</b></p>
+                        <p>Author : ${thread.book.author}</p>
+                        <p>Publish Year : ${thread.book.year}</p>
+                    </div>
+                    <div class="thread-info">
+                        <h3>${thread.title}</h3>
+                        <p>Created by ${thread.user} - ${date}</p>
+                        <p>${thread.content}</p>
+                        <button class="discussion-button view-detail-button" id="view-detail"
+                            name="view-detail" data-book-id="${thread.id}">View Detail</button>
+                        ${thread.is_author ?
+                            `<button class="discussion-button" id="edit-thread" name="edit-thread">Edit</button>` : ``}
+                    </div>
+                </div>
+                `
+                const addButtons = document.querySelectorAll(".view-detail-button");
+                addButtons.forEach((button) => {
+                    button.addEventListener("click", function(){
+                        const id = this.getAttribute('data-book-id');
+                        viewDetail(id);
+                    });
+                });
+            });
+            document.getElementById("threads-library").innerHTML = htmlString
+        }
+        refreshThread()
+        function viewDetail(threadId) {
+            window.location.href = "{% url 'discussion:detail_discussion' 0 %}".replace("0", threadId);
+        }
+
+    </script>
+{% endblock content %}

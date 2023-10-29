@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Style for reply card */
+        .reply-card {
+            position: absolute;
+            top: 0;
+            right: -300px; /* Hidden initially */
+            width: 300px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            transition: right 0.3s ease;
+        }
+
+        /* Style for book modal */
+        .book-modal {
+            display: none; /* Hidden initially */
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Thread Card -->
+    <div class="max-w-sm rounded overflow-hidden shadow-lg m-4 relative">
+        <img src="book.jpg" alt="Book" class="w-full">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">Thread Title</div>
+            <p class="text-gray-700 text-base">Thread Content...</p>
+            <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="showReplyCard()">Reply</button>
+        </div>
+    </div>
+
+    <!-- Reply Card -->
+    <div class="reply-card">
+        <div class="bg-white p-2">
+            <p>Reply Content...</p>
+        </div>
+    </div>
+
+    <!-- Book Modal -->
+    <div class="book-modal">
+        <div class="modal-content max-w-md">
+            <h2 class="text-xl font-bold">Book Title</h2>
+            <p>Author: Author Name</p>
+            <p>Published Year: 2023</p>
+            <p>ISBN: 1234567890</p>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="hideBookModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showReplyCard() {
+            const replyCard = document.querySelector('.reply-card');
+            replyCard.style.right = '0';
+        }
+
+        function hideReplyCard() {
+            const replyCard = document.querySelector('.reply-card');
+            replyCard.style.right = '-300px'; // Hide it
+        }
+
+        function showBookModal() {
+            const bookModal = document.querySelector('.book-modal');
+            bookModal.style.display = 'block';
+        }
+
+        function hideBookModal() {
+            const bookModal = document.querySelector('.book-modal');
+            bookModal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

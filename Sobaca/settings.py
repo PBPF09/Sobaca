@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'discussion',
+    'modul_data_buku',
+    'book',
 ]
 
 MIDDLEWARE = [
