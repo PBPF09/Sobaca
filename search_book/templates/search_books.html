@@ -16,7 +16,7 @@
                 <button class="ascending-btn" id="ascending-btn">A-Z</button>
                 <button class="descending-btn" id="descending-btn">Z-A</button>
                 <button class="btn-genre-filter" id="btn-genre-filter">Filter by Genre</button>
-                <a href="">
+                <a href="{% url 'challenges:objectives_list' %}">
                     <button class="objective-btn" id="objective-btn">Lihat Targetmu</button>
                 </a>
             </div>
@@ -109,7 +109,7 @@
             </form>
             <div id="search-block" class="search-block">
                 {% for book in books %}
-                <a href="">
+                <a href="{% url 'book_catalog:show' book.id %}">
                     <div class="result-search" id="result-search">
                         <img src={{book.images}} alt="{{book.title}} Cover" id="image-book">
                         <div class="info-book" id="info-book">
