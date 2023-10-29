@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'discussion',
     'modul_data_buku',
     'book',
+    'user_registered',
 ]
 
 MIDDLEWARE = [
