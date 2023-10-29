@@ -1,4 +1,5 @@
 import json
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.core import serializers
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
@@ -10,14 +11,17 @@ from search_book.forms import RequestForm
 from django.db.models import Q
 
 # Create your views here.
+@login_required(login_url='/login')
 def get_books_by_ascending(request):
     books = Book.objects.all().order_by('title')
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")
 
+@login_required(login_url='/login')
 def get_books_by_descending(request):
     books = Book.objects.all().order_by('-title')
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")
-    
+
+@login_required(login_url='/login')
 def get_books_by_typing(request, typing):
     if len(typing) == 0:
         books = Book.objects.filter(
@@ -31,6 +35,7 @@ def get_books_by_typing(request, typing):
     
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")
 
+@login_required(login_url='/login')
 @csrf_exempt
 def filter_book_by_genre(request):
     if request.method == "POST":
@@ -52,6 +57,7 @@ def search_book(request):
     }
     return render(request, 'search_books.html', context)
 
+@login_required(login_url='/login')
 @csrf_exempt
 def add_request_book(request):
     form = RequestForm(request.POST)
