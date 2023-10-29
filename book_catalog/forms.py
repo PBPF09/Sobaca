@@ -1,7 +1,7 @@
 from django.forms import ModelForm
-from book.models import Book
+from book_catalog.models import Review
 
-class BookForm(ModelForm):
+class ReviewForm(ModelForm):
     class Meta:
-        model = Book
-        fields = ['isbn', 'title', 'categories', 'author', 'year', 'publisher', 'description', 'images']
+        model = Review
+        fields = ['review']
