@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'request_book.css' %}">
+{% endblock meta %}
+
+{% block content %}
+    <div class="container-modal" id="container-modal">
+        <div class="modal-background" id="modal-background"></div>
+        <div class="request-modal"  id="modal-request">
+            <div class="modal-request">
+                <h2>Request Book</h2>
+                <div class="request-form">
+                    <form method="POST" id="form">
+                        {% csrf_token %}
+                        <div class="title-form">
+                            {{ form.title }}
+                        </div>
+                        <div class="author-form">
+                            {{ form.author }}
+                        </div>
+                        <div class="year-form">
+                            {{ form.year }}
+                        </div>
+                        <div class="btn-request">
+                            <input type="submit" id="yes-request" value="Yes"/>
+                            <a href="{% url 'search_book:search_book' %}">
+                                <button type="button" id="cancel-request">Cancel</button>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
