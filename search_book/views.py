@@ -1,10 +1,13 @@
 import json
 from django.shortcuts import render
 from django.core import serializers
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 from book.models import Book
 from search_book.models import Request
 from django.views.decorators.csrf import csrf_exempt
+from search_book.forms import RequestForm
+from django.db.models import Q
 
 # Create your views here.
 def get_books_by_ascending(request):
@@ -17,10 +20,14 @@ def get_books_by_descending(request):
     
 def get_books_by_typing(request, typing):
     if len(typing) == 0:
-        books = Book.objects.filter(title__contains=typing).order_by('?')
+        books = Book.objects.filter(
+            Q(title__contains=typing) | Q(author__contains=typing)
+            ).order_by('?')
     
     else:
-        books = Book.objects.filter(title__contains=typing).order_by('title')
+        books = Book.objects.filter(
+            Q(title__contains=typing) | Q(author__contains=typing)
+            ).order_by('title')
     
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")
 
@@ -45,19 +52,17 @@ def search_book(request):
     }
     return render(request, 'search_books.html', context)
 
-def navigation_to_review_book(request):
-    return render(request, 'review_book.html', {})
-
 @csrf_exempt
 def add_request_book(request):
-    if request.method == 'POST':
-        title = request.POST.get("title")
-        author = request.POST.get("author")
-        year = request.POST.get("year")
+    form = RequestForm(request.POST)
+    
+    if request.method == 'POST' and form.is_valid():
+        book_request = form.save(commit=False)
+        book_request.user = request.user
+        book_request.save()
+        return HttpResponseRedirect(reverse('search_book:search_book'))
 
-        new_request = Request(title=title, author=author, year=year)
-        new_request.save()
-
-        return HttpResponse(b"CREATED", status=201)
-
-    return HttpResponseNotFound()
+    context = {
+        'form': form
+    }
+    return render(request, "request_book.html", context)

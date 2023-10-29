@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+* {
+    font-family: 'Arial', sans-serif;
+}
+
 .container-search {
   display: flex;
   justify-content: center;
@@ -99,6 +104,12 @@
   color: black;
 }
 
+.container-search .search-content .search-block a img {
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+
 .container-search .search-content .search-block a .result-search {
   display: flex;
   margin-right: 30px;
@@ -119,20 +130,35 @@
 }
 
 .container-search .search-content .search-block a .result-search .info-book {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.container-search .search-content .search-block a .result-search .info-book p {
+.container-search .search-content .search-block a .result-search .info-book div {
   align-items: center;
   justify-content: center;
   text-align: center;
-  
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.container-search .request-book {
+.container-search .search-content .search-block a .result-search .info-book .author-book {
+  font-size: 14px;
+}
+
+.container-search .search-content .search-block a .result-search .info-book .categories-book {
+  font-size: 12px;
+}
+
+
+.container-search a {
+  text-decoration: none;
+  color: black;
+}
+
+.container-search a .request-book {
   text-align: center;
   border: 2px solid #b8d8be;
   cursor: pointer;
@@ -141,90 +167,9 @@
   padding: 10px 10px 10px 10px;
   border-radius: 6px;
   background-color: #c8e1cc;
+  
 }
 
-.container-search .request-book:hover {
+.container-search a .request-book:hover {
   background-color: #b8d8be;
-}
-
-.container-modal {
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 100vh;
-}
-
-.modal-background {
-  background-color: #3c3b3b42;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  z-index: 999;
-}
-
-.request-modal {
-  display: flex;
-  /* justify-content: center;
-  align-items: center;
-  text-align: center; */
-  background-color: #c8e1cc;
-  padding: 40px;
-  z-index: 1000;
-  border-radius: 6px;
-  box-shadow: 0 15px 35px rgba(0,0,0,9);
-}
-
-.request-modal .modal-request h2 {
-  color: #074a13;
-  text-align: center;
-}
-
-.request-modal .modal-request .request-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.request-modal .modal-request .request-form .title-form .title-input{
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  width: 20vw;
-}
-
-.request-modal .modal-request .request-form .author-form .author-input{
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  width: 20vw;
-}
-
-.request-modal .modal-request .request-form .year-form .year-input{
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  width: 20vw;
-}
-
-.request-modal .modal-request .request-form .btn-request {
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
-  margin-top: 15px;
-}
-
-.request-modal .modal-request .request-form .btn-request input {
-  border-radius: 6px;
-  background-color: #b8d8be;
-  padding: 5px 10px 5px 10px;
-  cursor: pointer;
 }
