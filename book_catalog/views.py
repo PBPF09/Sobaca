@@ -6,6 +6,7 @@ from book.models import Book
 from book_catalog.models import Review, WantToRead, Reading, Read
 from book_catalog.forms import ReviewForm
 from django.core import serializers
+from django.contrib.auth.decorators import login_required
 
 def book_show(request, id_buku):
     book = Book.objects.get(id=id_buku)
@@ -20,6 +21,7 @@ def book_show(request, id_buku):
     return render(request, 'show.html', context)
 
 # fungsi untuk menambahkan buku ke daftar buku yang ingin dibaca
+@login_required(login_url='login')
 @csrf_exempt
 def add_want_to_read(request, id_buku):
     if request.method == "POST":
@@ -31,6 +33,7 @@ def add_want_to_read(request, id_buku):
     return HttpResponseNotFound(b"NOT FOUND")
 
 # fungsi untuk menambahkan buku ke daftar buku yang sedang dibaca
+@login_required(login_url='login')
 @csrf_exempt
 def add_reading(request, id_buku):
     if request.method == "POST":
@@ -42,6 +45,7 @@ def add_reading(request, id_buku):
     return HttpResponseNotFound(b"NOT FOUND")
 
 # fungsi untuk menambahkan buku ke daftar buku yang sudah dibaca
+@login_required(login_url='login')
 @csrf_exempt
 def add_read(request, id_buku):
     if request.method == "POST":
@@ -53,6 +57,7 @@ def add_read(request, id_buku):
     return HttpResponseNotFound(b"NOT FOUND")
 
 # fungsi untuk menambahkan komentar pada buku
+@login_required(login_url='login')
 @csrf_exempt
 def add_review(request, id_buku):
     if request.method == "POST":
