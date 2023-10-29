@@ -2,6 +2,32 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <style>
+            .navbar {
+                background: #b8d8be; /* Use the background color from the palette for the navbar */
+                padding: 16px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 100;
+            }
+
+            .navbar .app-name {
+                font-family: 'Poppins', sans-serif;
+                font-size: 24px;
+                font-weight: bold;
+                color: antiquewhite;
+                text-decoration: none;
+            }
+
+            .navbar .app-name:hover {
+                text-decoration: none;
+            }
+        </style>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         {% block meta %}
@@ -18,6 +44,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="navbar">
+            <a class="app-name" href="#">Sobaca</a>
+            <a class="app-name" href="{% url 'discussion:show_discussion' %}">Discussion</a>
+        </div>
         {% block content %}
         {% endblock content %}
     </body>

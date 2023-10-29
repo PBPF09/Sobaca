@@ -1,27 +1,32 @@
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, JsonResponse
 from django.core import serializers
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import reverse
 from .models import DiscussionReply, DiscussionThread
 from book.models import Book
 from django.views.decorators.csrf import csrf_exempt
-from .forms import ThreadForm
+from django.contrib.auth.decorators import login_required
+from .forms import ThreadForm, ReplyForm
 
 # Create your views here.
+@login_required(login_url='/login')
 def show_discussion(request):
     context = {'user' : request.user}
     return render(request, "discussion_landing.html", context)
 
+@login_required(login_url='/login')
 def start_discussion(request):
     books = Book.objects.all()
     context = {'books' : books}
     return render(request, 'start_discussion.html', context)
 
+@login_required(login_url='/login')
 def join_discussion(request):
     threads = DiscussionThread.objects.all()
     context = {'threads' : threads}
     return render(request, 'discussion_center.html', context)
 
+@login_required(login_url='/login')
 def detail_discussion(request, threadId):
     thread = DiscussionThread.objects.get(pk=threadId)
     title = thread.title
@@ -31,6 +36,29 @@ def detail_discussion(request, threadId):
     context = {'threadId' : threadId, 'title': title, 'content' : content, 'user' : user, 'date_create' : date_create }
     return render(request, 'discussion_detail.html', context)
 
+
+def edit_thread(request, id):
+    data = DiscussionThread.objects.get(pk = id)
+    form = ThreadForm(request.POST or None, instance=data)
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('discussion:join_discussion'))
+    context = {'form': form}
+    return render(request, "edit_thread.html", context)
+
+def edit_reply(request, id):
+    data = DiscussionReply.objects.get(pk = id)
+    form = ReplyForm(request.POST or None, instance=data)
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('discussion:join_discussion'))
+    context = {'form': form}
+    return render(request, "edit_reply.html", context)
+
+def delete_reply(request, id):
+    data = DiscussionReply.objects.filter(pk=id)
+    data.delete()
+    return redirect('discussion:detail_discussion' + id )
 
 def get_book_json(request):
     book = Book.objects.all()
