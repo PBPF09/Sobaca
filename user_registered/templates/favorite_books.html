@@ -52,7 +52,7 @@
         async function refreshItems() {
             document.getElementById("quote_text").innerHTML = ""
             const quotes = await getQuotes()
-            let htmlString = `<h3>📚 ${quotes[quotes.length -1].fields.text}</h3>`
+            let htmlString = `<h3> ${quotes[quotes.length -1].fields.text}</h3>`
  
             
             document.getElementById("quote_text").innerHTML = htmlString
@@ -61,7 +61,7 @@
         refreshItems()
         
         async function getQuotes() {
-            return fetch("{% url 'reader:get_quote_json' %}").then((res) => res.json())
+            return fetch("{% url 'reader:get_quote' %}").then((res) => res.json())
         }
 
         function addQuote() {
