@@ -88,6 +88,14 @@ def add_reply_discussion(request):
         return HttpResponse(b'CREATED', status=201)
     return HttpResponseNotFound
 
+def show_reply_json(request):
+    data = DiscussionReply.objects.all()
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+def show_thread_json(request):
+    data = DiscussionThread.objects.all()
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+    
 def get_thread_json(request):
     threads = DiscussionThread.objects.all()
     thread_data = []
