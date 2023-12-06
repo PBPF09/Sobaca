@@ -45,7 +45,7 @@
     </head>
     <body style="margin-top: 100px;">
         <div class="navbar">
-            <a class="app-name" href="#">Sobaca</a>
+            <a class="app-name" href="{% url 'search_book:search_book' %}">Sobaca</a>
             <div>
                 <a href="{% url 'user_registered:profile' %}">
                     <h5>Welcome {{ user.username }}</h5>
