@@ -26,4 +26,5 @@ urlpatterns = [
     path('search_book/', include('search_book.urls')),
     path('book/', include('book_catalog.urls')),
     path('user_registered/', include('user_registered.urls')),
+    path('auth/', include('authentication.urls')),
 ]
