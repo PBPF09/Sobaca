@@ -18,4 +18,6 @@ urlpatterns = [
     path('delete_reply/<int:id>', delete_reply, name='delete_reply'),
     path('edit_reply/<int:id>', edit_reply, name='edit_reply'),
     path('edit_thread/<int:id>', edit_thread, name='edit_thread'),
+    path('show-reply-json', show_reply_json, name='show_reply_json'),
+    path('show-thread-json', show_thread_json, name='show_thread_json'),
 ]

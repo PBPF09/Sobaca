@@ -9,6 +9,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from book.models import Book
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+
 
 @login_required(login_url='/login')
 def show_main(request):
@@ -24,7 +26,7 @@ def show_main(request):
     }
     return render(request, "main.html", context)
 
-
+# @csrf_exempt
 def register(request):
     form = UserCreationForm()
     if request.method == "POST":
@@ -37,7 +39,7 @@ def register(request):
     return render(request, 'register.html', context)
 
 
-
+# @csrf_exempt
 def login_user(request):
     random_id = random.randint(1,Book.objects.count())
     books = Book.objects.get(pk=random_id)
@@ -47,7 +49,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            response = HttpResponseRedirect(reverse("main:show_main")) 
+            response = HttpResponseRedirect(reverse("search_book:search_book")) 
             response.set_cookie('last_login', str(datetime.datetime.now()))
             return response
         else:
@@ -56,7 +58,7 @@ def login_user(request):
     return render(request, 'login.html', context)
 
 
-
+# @csrf_exempt
 def logout_user(request):
     logout(request)
     response = HttpResponseRedirect(reverse('main:login'))
