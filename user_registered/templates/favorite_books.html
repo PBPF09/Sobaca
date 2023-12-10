@@ -32,61 +32,6 @@
         </a>
         {% endfor %}
         </ul>
-        
-    <br>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5 flex items-center justify-center" id="exampleModalLabel">Tambahkan quote favorit kamu!</h1>
-                    </div>
-                    <div class="modal-body flex items-center justify-center">
-                        <form id="form" onsubmit="return false;">
-                            {% csrf_token %}
-                            <div class="mb-3">
-                                <textarea class="form-control" id="text" name="text"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer flex items-center justify-center">
-                        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="button_add" data-bs-dismiss="modal">Add Quote</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <br>
-        <div id = "quote_text" class="flex items-center justify-center"></div>
-    <br>
 </main>
 
-{% block scripts %}
-    <script>
-        async function refreshItems() {
-            document.getElementById("quote_text").innerHTML = ""
-            const quotes = await getQuotes()
-            let htmlString = `<h3> ${quotes[quotes.length -1].fields.text}</h3>`
-            
-            document.getElementById("quote_text").innerHTML = htmlString
-        }
-
-        refreshItems()
-        
-        async function getQuotes() {
-            return fetch("{% url 'user_registered:get_quote' %}").then((res) => res.json())
-        }
-
-        function addQuote() {
-            fetch("{% url 'user_registered:create_quote' %}", {
-                method: "POST",
-                body: new FormData(document.querySelector('#form'))
-            }).then(refreshItems)
-
-            document.getElementById("form").reset()
-            return false
-        }
-
-        document.getElementById("button_add").onclick = addQuote
-
-    </script>
-{% endblock scripts %}
 {% endblock content %}
