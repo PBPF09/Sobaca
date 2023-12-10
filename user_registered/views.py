@@ -59,5 +59,5 @@ def favorite(request):
     return render(request, "favorite_books.html", context)
 
 def get_favoriteBook(request):
-    favorite_books = FavoriteBook.objects.filter(owner=request.user)
+    favorite_books = FavoriteBook.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', favorite_books))
