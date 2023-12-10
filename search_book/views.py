@@ -12,12 +12,12 @@ from django.db.models import Q
 from django.contrib.auth import authenticate, login as auth_login
 
 # Create your views here.
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def get_books_by_ascending(request):
     books = Book.objects.all().order_by('title')
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def get_books_by_descending(request):
     books = Book.objects.all().order_by('-title')
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")

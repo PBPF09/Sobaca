@@ -2,12 +2,14 @@ from django.http import HttpResponse
 from django.core import serializers
 from book.models import Book
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 
 def get_books(request):
     data = Book.objects.all().order_by('?')
     return HttpResponse(serializers.serialize("json", data), content_type="application/json") 
 
+@login_required(login_url='/login')
 def get_books_by_typing(request, typing):
     if len(typing) == 0:
         books = Book.objects.filter(
@@ -21,6 +23,7 @@ def get_books_by_typing(request, typing):
     
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")
 
+@login_required(login_url='/login')
 def get_books_by_genre(request, genre):
     if genre == "All":
         books = Book.objects.all().order_by('?')
