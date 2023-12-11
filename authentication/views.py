@@ -50,7 +50,8 @@ def logout(request):
         "status": False,
         "message": "Logout gagal."
         }, status=401)
-    
+
+@csrf_exempt
 def register_flutter(request):
     if request.method == 'POST':
         try:
