@@ -12,12 +12,12 @@ from django.db.models import Q
 from django.contrib.auth import authenticate, login as auth_login
 
 # Create your views here.
-# @login_required(login_url='/login')
+@login_required(login_url='/login')
 def get_books_by_ascending(request):
     books = Book.objects.all().order_by('title')
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")
 
-# @login_required(login_url='/login')
+@login_required(login_url='/login')
 def get_books_by_descending(request):
     books = Book.objects.all().order_by('-title')
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")
@@ -79,6 +79,7 @@ def add_request_book(request):
 @csrf_exempt
 def request_book(request):
     if request.method == 'POST':
+        print(request.user)
         data = json.loads(request.body)
 
         new_request = Request.objects.create(
@@ -94,7 +95,7 @@ def request_book(request):
     else:
         return JsonResponse({"status": "error"}, status=401)
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def request_json(request):
     request_book = Request.objects.all()
     return HttpResponse(serializers.serialize("json", request_book), content_type="application/json")
@@ -107,6 +108,7 @@ def login(request):
     if user is not None:
         if user.is_active:
             auth_login(request, user)
+            print(request.user)
             # Status login sukses.
             return JsonResponse({
                 "username": user.username,
