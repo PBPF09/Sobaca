@@ -51,12 +51,25 @@ def complete_objective(request, objective_id):
     objective.save()
     return HttpResponseRedirect(reverse('challenges:objectives_list'))
 
-
-
 def get_objectives_json(request):
-    objective_item = Objective.objects.filter(user=request.user)
-    return HttpResponse(serializers.serialize('json', objective_item))
+    objectives = Objective.objects.filter(user = request.user)
+    return HttpResponse(serializers.serialize('json', objectives), content_type="application/json")
 
+@csrf_exempt
+def get_objectives_mobile(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        print(data["status"])
+        status = data["status"]
+        if status == 'completed':
+            objectives = Objective.objects.filter(user=request.user, is_completed=True)
+        elif status == 'noncompleted':
+            objectives = Objective.objects.filter(user=request.user, is_completed=False)
+        else:
+            objectives = Objective.objects.filter(user=request.user) 
+        return HttpResponse(serializers.serialize('json', objectives), content_type="application/json")
+    
+    return HttpResponse(serializers.serialize('json', []), content_type="application/json")
 
 @csrf_exempt
 def create_objective_mobile(request):
@@ -106,19 +119,3 @@ def complete_objective_mobile(request):
             return JsonResponse({"status": True}, status=200)
     
     return JsonResponse({"status": False}, status=400)
-
-@csrf_exempt
-def get_objectives_mobile(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        print(data["status"])
-        status = data["status"]
-        if status == 'completed':
-            objectives = Objective.objects.filter(user=request.user, is_completed=True)
-        elif status == 'noncompleted':
-            objectives = Objective.objects.filter(user=request.user, is_completed=False)
-        else:
-            objectives = Objective.objects.filter(user=request.user) 
-        return HttpResponse(serializers.serialize('json', objectives), content_type="application/json")
-    
-    return HttpResponse(serializers.serialize('json', []), content_type="application/json")

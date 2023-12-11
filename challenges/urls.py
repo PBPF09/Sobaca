@@ -1,6 +1,6 @@
 from django.urls import path
-from challenges.views import create_objective, edit_objective, complete_objective, objectives_list,get_objectives_json
-from challenges.views import get_objectives_mobile, create_objective_mobile, delete_objective_mobile, edit_objective_mobile, complete_objective_mobile
+from challenges.views import *
+
 app_name = 'challenges'
 
 urlpatterns = [
