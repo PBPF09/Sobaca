@@ -151,7 +151,7 @@
                     Tambahkan ke Rak
                 </button>
                 <!-- tombol untuk menambahkan ke favorit -->
-                <form method="post" action="{% url 'book_catalog:add_favorite' book.pk %}">
+                <form method="post" action="{% url 'book_catalog:add_favorite' id_buku=id_buku id_user=id_user %}">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-secondary" formmethod="post">
                         Tambahkan ke Favorit

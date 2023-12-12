@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
-from django.http import HttpResponseNotFound, HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseNotFound, HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -20,7 +20,8 @@ def profile(request):
     else:
         profile =Profile.objects.get(user=request.user)
 
-    context = {'username':request.user,
+    context = {'user': request.user,
+               'username': request.user.username,
                 'name': profile.name,
                 'city': profile.city,
                 'fav_genre': profile.fav_genre,
@@ -31,6 +32,7 @@ def profile(request):
 def edit_profile(request):
     if request.method == 'POST':
         profile = Profile.objects.get(user=request.user.id)
+        username = request.POST.get('username')
         name = request.POST.get("name")
         city = request.POST.get("city")
         fav_genre = request.POST.get("fav_genre")
@@ -48,16 +50,54 @@ def get_profile(request):
     profile = Profile.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize('json', profile))
 
+
 @login_required(login_url='login')
 @csrf_exempt
-def favorite(request):       
-    favorite_books = FavoriteBook.objects.filter(user=request.user)
-
-    context = {
-        'favorite_books': favorite_books,
-    }
+def favorite(request):
+    user_profile = Profile.objects.get(user=request.user)
+    favorite_books = user_profile.favorite_books.all()
+    context = {'favorite_books': favorite_books}
     return render(request, "favorite_books.html", context)
 
-def get_favoriteBook(request):
-    favorite_books = FavoriteBook.objects.filter(user=request.user)
+def get_favorite(request):
+    user_profile = Profile.objects.get(user=request.user)
+    favorite_books = user_profile.favorite_books.all()
     return HttpResponse(serializers.serialize('json', favorite_books))
+
+@csrf_exempt
+def profile_flutter(request):
+    if request.method == 'POST':
+        
+        data = json.loads(request.body)
+
+        new_profile = Profile.objects.create(
+            user = request.user,
+            name = data["name"],
+            city = int(data["city"]),
+            favGenre = data["fav_genre"]
+        )
+
+        new_profile.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+    
+@csrf_exempt
+def add_favorite_flutter(request):
+    if request.method == 'POST':
+        
+        data = json.loads(request.body)
+
+        new_product = Favorite.objects.create(
+            user = request.user,
+            name = data["name"],
+            price = int(data["price"]),
+            description = data["description"]
+        )
+
+        new_product.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)

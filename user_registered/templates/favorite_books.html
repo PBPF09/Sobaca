@@ -1,6 +1,6 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
-{% load static %} 
+{% load static %}
 
 {% block content %}
 
@@ -15,23 +15,51 @@
         font-family: 'Poppins', sans-serif;
         align-items: center;
     }
+
+    .card {
+        display: flex;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 200px;
+        border: 2px solid #b8d8be;
+        border-radius: 8px;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card h3 {
+        font-size: 18px; /* Adjust the font size for the title */
+        margin-bottom: 8px; /* Add margin for spacing */
+    }
+
+    .card small {
+        font-size: 14px; /* Adjust the font size for the author */
+        color: #888; /* Optionally adjust the color */
+    }
 </style>
 
 <main class="p-3 sm:p-5 flex flex-col">
     <h1 class="text-2xl sm:text-3xl font-semibold">Favorite Books</h1>
-        <ul id="list_fav_book" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 mt-8" >
-        {% for favorite_book in favorite_books %}
-        <a href="{% url 'book_catalog:show' favorite_book.book.id %}"> 
-            <li class="rounded-md shadow bg-white relative">
-                <img src="{{ favorite_book.book.images }}" alt="{{ favorite_book.book.title }}" class="rounded-t-md w-full aspect-[4/6] object-cover bg-slate-300" />
-                <div class="p-3 pt-1 border-t-2 border-t-slate-200">
-                <h3 class="text-lg sm:text-xl font-semibold max-w-[20ch] overflow-hidden truncate">{{ favorite_book.book.title }}</h3>
-                <small>{{ favorite_book.book.author}}</small>
+    <div id="list_fav_book" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-8">
+        {% for book in favorite_books %}
+            <a href="{% url 'book_catalog:show' book.id %}" class="w-full">
+                <div id="card-{{ book.id }}" class="card">
+                    <img src="{{ book.images }}" alt="{{ book.title }}" class="w-full aspect-[4/6] object-cover bg-slate-300" />
+                    <div class="p-3 pt-1">
+                        <h3 class="text-lg sm:text-xl font-semibold max-w-[20ch] overflow-hidden truncate">{{ book.title }}</h3>
+                        <small>{{ book.author }}</small>
+                    </div>
                 </div>
-            </li>
-        </a>
+            </a>
         {% endfor %}
-        </ul>
+    </div>
 </main>
 
 {% endblock content %}
