@@ -4,10 +4,11 @@ from django.shortcuts import render
 from django.urls import reverse
 from book.models import Book
 from book_catalog.models import Review, WantToRead, Reading, Read
-from user_registered.models import FavoriteBook
 from book_catalog.forms import ReviewForm
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
+
+from user_registered.models import Profile
 
 def book_show(request, id_buku):
     book = Book.objects.get(id=id_buku)
@@ -16,6 +17,8 @@ def book_show(request, id_buku):
 
     context = {
         'book': book,
+        'id_buku': book.id,  
+        'id_user': request.user.id,  
         'reviewForm': reviewForm,
         'reviews': reviews,
     }
@@ -82,11 +85,8 @@ def get_reviews(request, id_buku):
 # fungsi untuk menambahkan ke favorite
 @login_required(login_url='login')
 @csrf_exempt
-def add_favorite(request, id_buku):
-    if request.method == "POST":
-        add_book = Book.objects.get(pk=id_buku)
-        add_user = request.user
-        favorite = FavoriteBook(book=add_book, user=add_user)
-        favorite.save()
-        return HttpResponseRedirect(reverse('book_catalog:show', args=(id_buku,)))
-    return HttpResponseNotFound(b"NOT FOUND")
+def add_favorite(request, id_buku, id_user):
+    book = Book.objects.get(pk=id_buku)
+    user_profile = Profile.objects.get(user=request.user)
+    user_profile.favorite_books.add(book)
+    return HttpResponseRedirect(reverse('book_catalog:show', args=(id_buku,)))
