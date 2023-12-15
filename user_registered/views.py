@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
@@ -64,39 +65,20 @@ def get_favorite(request):
     favorite_books = user_profile.favorite_books.all()
     return HttpResponse(serializers.serialize('json', favorite_books))
 
-@csrf_exempt
-def profile_flutter(request):
+@csrf_exempt   
+def edit_profile_flutter(request):
     if request.method == 'POST':
-        
         data = json.loads(request.body)
 
-        new_profile = Profile.objects.create(
-            user = request.user,
-            name = data["name"],
-            city = int(data["city"]),
-            favGenre = data["fav_genre"]
-        )
+        new_profile = Profile.objects.get(user=request.user)
 
+        # Update the profile fields
+        new_profile.name = data['name']
+        new_profile.city = data['city']
+        new_profile.fav_genre = data['fav_genre']
+
+        # Save the changes
         new_profile.save()
-
-        return JsonResponse({"status": "success"}, status=200)
-    else:
-        return JsonResponse({"status": "error"}, status=401)
-    
-@csrf_exempt
-def add_favorite_flutter(request):
-    if request.method == 'POST':
-        
-        data = json.loads(request.body)
-
-        new_product = Favorite.objects.create(
-            user = request.user,
-            name = data["name"],
-            price = int(data["price"]),
-            description = data["description"]
-        )
-
-        new_product.save()
 
         return JsonResponse({"status": "success"}, status=200)
     else:

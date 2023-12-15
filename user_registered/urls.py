@@ -9,5 +9,5 @@ urlpatterns = [
     path('get_profile/', get_profile,name = 'get_profile'),
     path('favorite/', favorite, name='favorite'),
     path('get_favorite/', get_favorite, name='get_favorite'),
-    path('profile_flutter/', profile_flutter, name='profile_flutter'),
+    path('edit_profile_flutter/', edit_profile_flutter, name='edit_profile_flutter'),
 ]
