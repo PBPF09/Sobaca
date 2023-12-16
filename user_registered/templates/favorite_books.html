@@ -11,55 +11,161 @@
 
 <style>
     body {
-        background-color: #d2e7d6; 
+        background-color: #d2e7d6;
         font-family: 'Poppins', sans-serif;
         align-items: center;
     }
 
-    .card {
-        display: flex;
-        margin-right: 30px;
-        margin-bottom: 20px;
-        overflow: hidden;
-        flex-wrap: wrap;
+    h1 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        width: 200px;
+        margin: 0 auto;
+    }
+
+    .card {
+        text-decoration: none;
+        border: none;
+        overflow: hidden;
         border: 2px solid #b8d8be;
         border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
     }
 
     .card:hover {
         transform: scale(1.05);
     }
 
+    .card img {
+        width: 100%;
+        aspect-ratio: 4/6;
+        object-fit: cover;
+        background-color: #ccc; 
+    }
+
+    .card-content {
+        padding: 1rem;
+        text-align: center;
+    }
+
     .card h3 {
-        font-size: 18px; /* Adjust the font size for the title */
-        margin-bottom: 8px; /* Add margin for spacing */
+        font-size: 18px;
+        margin-bottom: 8px;
+        margin-top: 8px;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #333; 
+        text-align: center;
     }
 
     .card small {
-        font-size: 14px; /* Adjust the font size for the author */
-        color: #888; /* Optionally adjust the color */
+        font-size: 14px;
+        color: #555; 
+        font-weight: normal; 
+        text-align: center;
     }
+
+    .items-center {
+        text-align: center;
+    }
+
+    .items-center a {
+        background-color: #48bb78;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+        text-decoration: none;
+        border: none;
+        display: inline-block; 
+        margin-bottom: 15px;
+    }
+
+    .items-center a:hover {
+        background-color: #38a169;
+    }
+
+    .card a {
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+}
 </style>
 
 <main class="p-3 sm:p-5 flex flex-col">
     <h1 class="text-2xl sm:text-3xl font-semibold">Favorite Books</h1>
     <div id="list_fav_book" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-8">
         {% for book in favorite_books %}
-            <a href="{% url 'book_catalog:show' book.id %}" class="w-full">
-                <div id="card-{{ book.id }}" class="card">
-                    <img src="{{ book.images }}" alt="{{ book.title }}" class="w-full aspect-[4/6] object-cover bg-slate-300" />
-                    <div class="p-3 pt-1">
-                        <h3 class="text-lg sm:text-xl font-semibold max-w-[20ch] overflow-hidden truncate">{{ book.title }}</h3>
-                        <small>{{ book.author }}</small>
+            <div class="grid-col">
+                <a href="{% url 'book_catalog:show' book.id %}" class="w-full">
+                    <div id="card-{{ book.id }}" class="card">
+                        <img src="{{ book.images }}" alt="{{ book.title }}" class="w-full aspect-[4/6] object-cover bg-slate-300" />
+                        <div class="p-3 pt-1">
+                            <h3 class="text-lg sm:text-xl font-semibold max-w-[20ch] overflow-hidden truncate">{{ book.title }}</h3>
+                            <small>{{ book.author }}</small>
+                        </div>
+                        <div class="items-center">
+                            <a href="{% url 'user_registered:delete_favorite' book.id %}">Delete</a>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         {% endfor %}
     </div>
 </main>
+
+<script>
+    // Grabs all the Elements by their IDs which we had given them
+    let modal = document.getElementById("update-modal");
+    let editBtn = document.getElementById("edit-btn");
+    let closeBtn = document.getElementById("close-btn");
+
+    async function getProducts() {
+        console.log("mask")
+        return fetch("{% url 'user_registered:get_favorite' %}").then((res) => res.json())
+    }
+    async function refreshProducts() {
+        document.getElementById("ganti1").innerHTML = ""
+        const products = await getProducts()
+        let htmlString =  `<div id="list_fav_book" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-8">
+        {% for book in favorite_books %}
+            <div class="grid-col">
+                <a href="{% url 'book_catalog:show' book.id %}" class="w-full">
+                    <div id="card-{{ book.id }}" class="card">
+                        <img src="{{ book.images }}" alt="{{ book.title }}" class="w-full aspect-[4/6] object-cover bg-slate-300" />
+                        <div class="p-3 pt-1">
+                            <h3 class="text-lg sm:text-xl font-semibold max-w-[20ch] overflow-hidden truncate">{{ book.title }}</h3>
+                            <small>{{ book.author }}</small>
+                        </div>
+                        <div class="items-center">
+                            <a href="{% url 'user_registered:delete_favorite' book.id %}">Delete</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>` 
+        document.getElementById("ganti1").innerHTML = htmlString
+    }
+
+    refreshProducts()
+   
+    function addProduct() {
+        fetch("{'user_registered:delete_favorite' book.id %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset()
+        return false
+    }
+    document.getElementById("button_add").onclick = addProduct
+</script>
 
 {% endblock content %}
