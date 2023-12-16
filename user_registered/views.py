@@ -60,6 +60,41 @@ def favorite(request):
     context = {'favorite_books': favorite_books}
     return render(request, "favorite_books.html", context)
 
+def delete_favorite(request, book_id):
+    user_profile = Profile.objects.get(user=request.user)
+    favorite_books = user_profile.favorite_books.all()
+    delete_book = user_profile.favorite_books.get(id=book_id)
+
+    user_profile.favorite_books.remove(delete_book)
+
+    return HttpResponseRedirect(reverse('user_registered:favorite'))
+
+@csrf_exempt
+def delete_favorite_flutter(request, book_id):
+    if request.method == 'POST':
+        user_profile = Profile.objects.get(user=request.user)
+        favorite_books = user_profile.favorite_books.all()
+        delete_book = user_profile.favorite_books.get(id=book_id)
+
+        user_profile.favorite_books.remove(delete_book)
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+
+@csrf_exempt
+def delete_favorite_ajax(request, book_id):
+    if request.method == "POST":
+        user_profile = Profile.objects.get(user=request.user)
+        favorite_books = user_profile.favorite_books.all()
+        delete_book = user_profile.favorite_books.get(id=book_id)
+
+        user_profile.favorite_books.remove(delete_book)
+
+        return HttpResponse(b"OK", status = 200)
+    
+    return HttpResponseNotFound()
+
 def get_favorite(request):
     user_profile = Profile.objects.get(user=request.user)
     favorite_books = user_profile.favorite_books.all()
