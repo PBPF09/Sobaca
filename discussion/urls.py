@@ -18,4 +18,10 @@ urlpatterns = [
     path('delete_reply/<int:id>', delete_reply, name='delete_reply'),
     path('edit_reply/<int:id>', edit_reply, name='edit_reply'),
     path('edit_thread/<int:id>', edit_thread, name='edit_thread'),
+    path('show-reply-json', show_reply_json, name='show_reply_json'),
+    path('show-thread-json', show_thread_json, name='show_thread_json'),
+    path('show-thread-mobile', get_thread_mobile, name='show_thread_mobile'),
+    path('show-reply-mobile/<int:threadId>', get_reply_mobile, name='show_reply_mobile'),
+    path('add-thread-mobile/', add_thread_mobile, name='add_thread_mobile'),
+    path('add-reply-mobile/', add_reply_mobile, name='add_reply_mobile'),
 ]

@@ -2,13 +2,14 @@ import json
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.core import serializers
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from book.models import Book
 from search_book.models import Request
 from django.views.decorators.csrf import csrf_exempt
 from search_book.forms import RequestForm
 from django.db.models import Q
+from django.contrib.auth import authenticate, login as auth_login
 
 # Create your views here.
 @login_required(login_url='/login')
@@ -72,3 +73,57 @@ def add_request_book(request):
         'form': form
     }
     return render(request, "request_book.html", context)
+
+
+@login_required(login_url='/login')
+@csrf_exempt
+def request_book(request):
+    if request.method == 'POST':
+        print(request.user)
+        data = json.loads(request.body)
+
+        new_request = Request.objects.create(
+            user = request.user,
+            title = data["title"],
+            author = data["author"],
+            year = data["year"],
+        )
+
+        new_request.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+
+# @login_required(login_url='/login')
+def request_json(request):
+    request_book = Request.objects.all()
+    return HttpResponse(serializers.serialize("json", request_book), content_type="application/json")
+
+@csrf_exempt
+def login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            auth_login(request, user)
+            print(request.user)
+            # Status login sukses.
+            return JsonResponse({
+                "username": user.username,
+                "status": True,
+                "message": "Login sukses!"
+                # Tambahkan data lainnya jika ingin mengirim data ke Flutter.
+            }, status=200)
+        else:
+            return JsonResponse({
+                "status": False,
+                "message": "Login gagal, akun dinonaktifkan."
+            }, status=401)
+
+    else:
+        return JsonResponse({
+            "status": False,
+            "message": "Login gagal, periksa kembali email atau kata sandi."
+        }, status=401)

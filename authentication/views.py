@@ -1,5 +1,9 @@
-from django.shortcuts import render, redirect
+from django.conf import UserSettingsHolder
+from django.shortcuts import render
 from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth.models import User
+from django.contrib.auth import logout as auth_logout
+from django.contrib.auth.hashers import make_password
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import logout as auth_logout
@@ -34,7 +38,7 @@ def login(request):
             "message": "Login gagal, periksa kembali email atau kata sandi."
         }, status=401)
     
-
+@csrf_exempt
 def logout(request):
     username = request.user.username
 
@@ -50,23 +54,19 @@ def logout(request):
         "status": False,
         "message": "Logout gagal."
         }, status=401)
-    
-    
-@csrf_exempt
-def register(request):
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
 
-        new_user = User.objects.create_user(username=username, password=password)
-            
-        return JsonResponse({
-            "status": True,
-            "message": "Account created successfully!",
-            "user_id": new_user.id 
-        }, status=200)
-    
-    return JsonResponse({
-        "status": False,
-        "message": "Invalid request method."
-    }, status=405)
+@csrf_exempt
+def register_flutter(request):
+    if request.method == 'POST':
+        try:
+            data = request.POST
+            username = data.get('username')
+            password = data.get('password')
+            if not username or not password:
+                return JsonResponse({'message': 'Username and password are required.'}, status=400)            
+            user = User.objects.create(username=username, password=make_password(password))
+            return JsonResponse({'message': 'User registered successfully.'}, status=201)
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=500)
+    else:
+        return JsonResponse({'message': 'Invalid request method.'}, status=405)

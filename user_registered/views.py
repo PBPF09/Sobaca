@@ -1,7 +1,8 @@
+import json
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
-from django.http import HttpResponseNotFound, HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseNotFound, HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -20,7 +21,8 @@ def profile(request):
     else:
         profile =Profile.objects.get(user=request.user)
 
-    context = {'username':request.user,
+    context = {'user': request.user,
+               'username': request.user.username,
                 'name': profile.name,
                 'city': profile.city,
                 'fav_genre': profile.fav_genre,
@@ -31,6 +33,7 @@ def profile(request):
 def edit_profile(request):
     if request.method == 'POST':
         profile = Profile.objects.get(user=request.user.id)
+        username = request.POST.get('username')
         name = request.POST.get("name")
         city = request.POST.get("city")
         fav_genre = request.POST.get("fav_genre")
@@ -48,31 +51,70 @@ def get_profile(request):
     profile = Profile.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize('json', profile))
 
+
 @login_required(login_url='login')
 @csrf_exempt
-def favorite(request):       
-    favorite_books = FavoriteBook.objects.filter(user=request.user)
-
-    context = {
-        'favorite_books': favorite_books,
-    }
+def favorite(request):
+    user_profile = Profile.objects.get(user=request.user)
+    favorite_books = user_profile.favorite_books.all()
+    context = {'favorite_books': favorite_books}
     return render(request, "favorite_books.html", context)
 
-def get_favoriteBook(request):
-    favorite_books = FavoriteBook.objects.filter(owner=request.user)
-    return HttpResponse(serializers.serialize('json', favorite_books))
+def delete_favorite(request, book_id):
+    user_profile = Profile.objects.get(user=request.user)
+    favorite_books = user_profile.favorite_books.all()
+    delete_book = user_profile.favorite_books.get(id=book_id)
+
+    user_profile.favorite_books.remove(delete_book)
+
+    return HttpResponseRedirect(reverse('user_registered:favorite'))
 
 @csrf_exempt
-def create_quote(request):
+def delete_favorite_flutter(request, book_id):
     if request.method == 'POST':
-        text = request.POST.get("text")
+        user_profile = Profile.objects.get(user=request.user)
+        favorite_books = user_profile.favorite_books.all()
+        delete_book = user_profile.favorite_books.get(id=book_id)
 
-        new_quote = Quote(text=text)
-        new_quote.save()
-        return HttpResponse(b"CREATED", status=201)
+        user_profile.favorite_books.remove(delete_book)
 
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+
+@csrf_exempt
+def delete_favorite_ajax(request, book_id):
+    if request.method == "POST":
+        user_profile = Profile.objects.get(user=request.user)
+        favorite_books = user_profile.favorite_books.all()
+        delete_book = user_profile.favorite_books.get(id=book_id)
+
+        user_profile.favorite_books.remove(delete_book)
+
+        return HttpResponse(b"OK", status = 200)
+    
     return HttpResponseNotFound()
 
-def get_quote(request):
-    quote = Quote.objects.all()
-    return HttpResponse(serializers.serialize('json', quote))
+def get_favorite(request):
+    user_profile = Profile.objects.get(user=request.user)
+    favorite_books = user_profile.favorite_books.all()
+    return HttpResponse(serializers.serialize('json', favorite_books))
+
+@csrf_exempt   
+def edit_profile_flutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+
+        new_profile = Profile.objects.get(user=request.user)
+
+        # Update the profile fields
+        new_profile.name = data['name']
+        new_profile.city = data['city']
+        new_profile.fav_genre = data['fav_genre']
+
+        # Save the changes
+        new_profile.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)

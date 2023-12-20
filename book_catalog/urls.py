@@ -10,5 +10,5 @@ urlpatterns = [
     path('add-read/<int:id_buku>', add_read, name='add_read'),
     path('add-review/<int:id_buku>', add_review, name='add_review'),
     path('get-reviews/<int:id_buku>', get_reviews, name='get_reviews'),
-    path('add-favorite/<int:id_buku>', add_favorite, name='add_favorite'),
+    path('add-favorite/<int:id_buku>/<int:id_user>/', add_favorite, name='add_favorite'),
 ]
