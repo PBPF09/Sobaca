@@ -1,6 +1,5 @@
 from django.urls import path
-from book_catalog.views import book_show, add_want_to_read, add_reading, add_read, add_review, get_reviews, add_favorite
-
+from book_catalog.views import *
 app_name = 'book_catalog'
 
 urlpatterns = [
@@ -11,4 +10,12 @@ urlpatterns = [
     path('add-review/<int:id_buku>', add_review, name='add_review'),
     path('get-reviews/<int:id_buku>', get_reviews, name='get_reviews'),
     path('add-favorite/<int:id_buku>/<int:id_user>/', add_favorite, name='add_favorite'),
+    path('show-review-json/<int:id_buku>', show_review_json, name='show_review_json'),
+    path('add-favorite-flutter/<int:book_id>/', add_favorite_flutter, name='add_favorite_flutter'),
+    path('add-review-flutter/<int:book_id>/', add_review_flutter, name='add_review_flutter'),
+    path('delete-review/<int:review_id>/', delete_review, name='delete_review'),
+    path('edit-review/<int:review_id>/', edit_review, name='edit_review'),
+    path('get-review/<int:review_id>/', get_review, name='get_review'),
+    path('is-favorite/<int:id_buku>/', is_favorite, name='is_favorite'),
+    path('get-user-book-data/', get_user_book_data, name='get_user_book_data'),
 ]
