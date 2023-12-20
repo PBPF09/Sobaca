@@ -6,6 +6,10 @@ from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.hashers import make_password
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth import logout as auth_logout
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from django.contrib.auth.models import User
 
 @csrf_exempt
 def login(request):
